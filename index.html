@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Instagram広告運用代行｜リール動画制作込みで月額11,000円〜【株式会社しっとる】</title>
 <meta name="description" content="整骨院・美容室・飲食店・塾など店舗経営者様へ。リール動画制作込みのInstagram広告運用代行が月額11,000円〜。無料相談はGoogleフォームから1分で完了。">
+<link rel="icon" type="image/png" href="assets/shittoru_logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -73,14 +74,17 @@ header{
 }
 .brand{display:flex;align-items:center;gap:12px;color:#fff}
 .brand-mark{
-  width:40px;height:40px;border-radius:12px;flex:none;
-  background:linear-gradient(135deg,var(--navy-700),var(--navy-800));
-  border:1px solid rgba(255,255,255,.14);
-  display:grid;place-items:center;font-weight:900;color:var(--orange);font-size:1.15rem;
+  width:44px;height:44px;border-radius:12px;flex:none;
+  background:#fff;padding:5px;
+  display:grid;place-items:center;
 }
+.brand-mark img{width:100%;height:100%;object-fit:contain;display:block}
 .brand-tag{font-size:.68rem;letter-spacing:.28em;color:rgba(255,255,255,.72)}
 .brand-name{font-weight:900;font-size:1.2rem;line-height:1.3}
-.brand-name small{font-size:.62em;font-weight:500;color:rgba(255,255,255,.75);margin-left:.4em}
+.brand-name small{font-size:.62em;font-weight:500;color:rgba(255,255,255,.75);margin-right:.2em}
+.footer-logo{
+  width:76px;height:auto;background:#fff;border-radius:18px;padding:9px;margin-bottom:4px;
+}
 .header-cta{font-size:.92rem;padding:.75em 1.6em;box-shadow:0 4px 14px rgba(244,101,14,.4)}
 @media(max-width:560px){
   .brand-tag{display:none}
@@ -423,10 +427,10 @@ footer .copy{margin-top:22px;font-size:.78rem;color:rgba(255,255,255,.45)}
 <header>
   <div class="header-inner">
     <a class="brand" href="#top">
-      <span class="brand-mark">↗</span>
+      <span class="brand-mark"><img src="assets/shittoru_logo.png" alt="株式会社しっとる ロゴ"></span>
       <span>
         <span class="brand-tag">SNS集客のパートナー</span><br>
-        <span class="brand-name">しっとる<small>株式会社</small></span>
+        <span class="brand-name"><small>株式会社</small>しっとる</span>
       </span>
     </a>
     <a class="btn header-cta js-form-link" href="#" target="_blank" rel="noopener">無料相談はこちら</a>
@@ -926,8 +930,9 @@ footer .copy{margin-top:22px;font-size:.78rem;color:rgba(255,255,255,.45)}
 <footer>
   <div class="wrap">
     <div class="brand">
+      <img class="footer-logo" src="assets/shittoru_logo.png" alt="株式会社しっとる ロゴ">
       <span class="brand-tag" style="letter-spacing:.28em">SNS集客のパートナー</span>
-      <span class="brand-name" style="color:#fff">しっとる<small>株式会社</small></span>
+      <span class="brand-name" style="color:#fff"><small>株式会社</small>しっとる</span>
     </div>
     <p class="addr">〒700-0901 岡山県岡山市北区本町6-36 第一セントラルビル4階</p>
     <p class="copy">© 2026 Shittoru Inc. All rights reserved.</p>
