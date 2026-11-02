@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>マカセルの使い方</title>
+<meta name="description" content="広告が始まってから、公式LINEでマカセルを毎月どう使うか。動画の希望・構成案・成績・本数・よくある質問。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ef;--paper:#fffdf9;--ink:#1f2622;--mut:#4f5b56;--pine:#1c3f3a;--or:#b4501f;--soft:#e3ece9;--line:#d9e2df;--ors:#f8e7dc}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141816;--paper:#1c2220;--ink:#e8ece9;--mut:#a9b5b0;--pine:#8fc7b8;--or:#e59a6f;--soft:#24302c;--line:#33403b;--ors:#3a2a21}}
+:root[data-theme="dark"]{--bg:#141816;--paper:#1c2220;--ink:#e8ece9;--mut:#a9b5b0;--pine:#8fc7b8;--or:#e59a6f;--soft:#24302c;--line:#33403b;--ors:#3a2a21}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;font-size:16px;line-height:1.8;overflow-wrap:anywhere}
+.wrap{max-width:760px;margin:0 auto;padding:24px 16px 64px}
+header{padding:28px 0 8px}
+.kicker{color:var(--or);font-weight:700;font-size:13px;letter-spacing:.06em}
+h1{font-size:26px;line-height:1.4;margin:6px 0 10px;color:var(--pine)}
+.lead{color:var(--mut);margin:0}
+nav.toc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:22px 0}
+nav.toc b{display:block;margin-bottom:4px}
+nav.toc ol{margin:0;padding-left:1.4em}
+nav.toc a{color:var(--pine)}
+section{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 18px;margin:18px 0}
+h2{font-size:20px;line-height:1.5;margin:0 0 12px;color:var(--pine)}
+h2 .n{display:inline-block;min-width:1.8em;color:var(--or)}
+h3{font-size:16px;margin:18px 0 6px}
+p{margin:8px 0}
+ol.steps{padding-left:1.4em;margin:8px 0}
+ol.steps li{margin:6px 0}
+.note{background:var(--soft);border-radius:10px;padding:10px 14px;margin:12px 0;font-size:15px}
+.warn{background:var(--ors);border-radius:10px;padding:10px 14px;margin:12px 0;font-size:15px}
+.tblwrap{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+th{color:var(--mut);font-weight:700}
+td.num{white-space:nowrap}
+.id{font-family:ui-monospace,Menlo,monospace;font-size:18px;font-weight:700;letter-spacing:.04em;background:var(--soft);padding:2px 8px;border-radius:6px}
+a.btn{display:inline-block;background:var(--pine);color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:10px;margin:6px 0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) a.btn{color:#10201c}}
+.cmd{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:0 6px;background:var(--soft);font-weight:700}
+details{border-bottom:1px solid var(--line);padding:10px 0}
+details:last-child{border-bottom:0}
+summary{cursor:pointer;font-weight:700;list-style:none;position:relative;padding-right:24px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:0;color:var(--or);font-size:20px;line-height:1.4}
+details[open] summary::after{content:"−"}
+details p{margin:8px 0 0}
+.flow{display:grid;gap:8px;margin:10px 0;padding:0;list-style:none;counter-reset:f}
+.flow li{counter-increment:f;border:1px solid var(--line);border-radius:10px;padding:10px 12px 10px 48px;position:relative}
+.flow li::before{content:counter(f);position:absolute;left:12px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--pine);color:var(--paper);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.flow b{display:block}
+footer{color:var(--mut);font-size:13px;text-align:center;margin-top:28px}
+figure{margin:12px 0}figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:10px;display:block}figcaption{font-size:13px;color:var(--mut);margin-top:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kicker">株式会社しっとる　Meta広告（Instagram・Facebook）</div>
+  <h1>マカセルの使い方</h1>
+  <p class="lead">広告が始まってから、毎月どのようにマカセルを使っていくかをまとめました。ほとんどの操作は、公式LINE「マカセル通知」のボタンで済みます。</p>
+  <p class="lead">お申し込みと権限の渡し方は<a href="../" style="color:var(--pine)">ご利用ガイド</a>をご覧ください。</p>
+</header>
+
+<nav class="toc" aria-label="目次">
+  <b>目次</b>
+  <ol>
+    <li><a href="#month">1か月の流れ</a></li>
+    <li><a href="#menu">公式LINEのメニュー</a></li>
+    <li><a href="#brief">毎月の「動画の希望」に答える</a></li>
+    <li><a href="#review">構成案・動画・投稿を確かめる</a></li>
+    <li><a href="#media">お店の動画・写真を送る</a></li>
+    <li><a href="#self">ご自身で作る（動画・広告・キャッチコピー・規約チェック）</a></li>
+    <li><a href="#result">広告の成績を見る・入れ替える</a></li>
+    <li><a href="#count">作れる本数</a></li>
+    <li><a href="#app">アプリの画面でできること</a></li>
+    <li><a href="#members">社内の複数の方で受け取る</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+  </ol>
+</nav>
+
+<section id="month">
+  <h2><span class="n">1</span>1か月の流れ</h2>
+  <ol class="flow">
+    <li><b>お支払いの日：「今月の動画の希望」が届く</b>先月と同じでよければボタンを1回押すだけです。</li>
+    <li><b>構成案が3つ届く</b>見比べて「この案にする」を押します。合わなければ「直してほしい」。</li>
+    <li><b>動画ができる</b>選んだ構成で、しっとるが動画を作ります。必要なときは、できた動画やInstagramの投稿を公式LINEでお見せします。</li>
+    <li><b>しっとるが広告を出す</b>お客様が承認したものだけを出します。</li>
+    <li><b>毎朝の判定・毎週月曜のレポート</b>広告ごとの「続ける・止める・替える」と、1週間の成績が届きます。</li>
+    <li><b>見飽きられた広告は入れ替え</b>新しい動画をお送りします。「この動画に入れ替える」を押すと、しっとるが入れ替えます。</li>
+  </ol>
+  <div class="note">広告を出す・止める・予算を決めるのは、いつもお客様のご判断です。予算を上げるのは、お客様から文字でご了解をいただいたときだけです。</div>
+</section>
+
+<section id="menu">
+  <h2><span class="n">2</span>公式LINEのメニュー</h2>
+  <p>トークの下のメニューは、上のタブで「つくる」と「見る・管理」を切り替えます。</p>
+  <figure><img src="line_menu.jpg" alt="公式LINEのメニュー「つくる」のタブ" width="1400" height="944" loading="lazy"><figcaption>実際のメニュー（「つくる」のタブ）</figcaption></figure>
+  <h3>「つくる」のタブ</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>ボタン</th><th>できること</th></tr></thead>
+    <tbody>
+      <tr><td>動画をつくる</td><td>お店の動画・写真を送って、ショート動画を作る</td></tr>
+      <tr><td>広告をつくる</td><td>画像・複数枚・動画の広告の案を作る</td></tr>
+      <tr><td>確認・承認</td><td>できた案を見て、承認する</td></tr>
+      <tr><td>撮り方</td><td>広告に使う動画の撮り方を見る</td></tr>
+      <tr><td>キャッチコピー</td><td>テーマを一言送ると、キャッチコピーが10案届く</td></tr>
+      <tr><td>規約チェック</td><td>広告の文を貼ると、使えない言葉がないか確かめる</td></tr>
+    </tbody>
+  </table></div>
+  <h3>「見る・管理」のタブ</h3>
+  <div class="tblwrap"><table>
+    <thead><tr><th>ボタン</th><th>できること</th></tr></thead>
+    <tbody>
+      <tr><td>成果レポート</td><td>直近7日の広告ごとの判定（続ける・止める・替える）を見る</td></tr>
+      <tr><td>準備と状況</td><td>次にやることを見る</td></tr>
+      <tr><td>残りの本数</td><td>この期間に作れる残りと、次に戻る日を見る</td></tr>
+      <tr><td>店舗の設定</td><td>お店の地域・予算・Instagramなどを見る・変える</td></tr>
+      <tr><td>使い方</td><td>困ったとき・手順を見る</td></tr>
+      <tr><td>質問・連絡</td><td>このトークに送るだけで、担当につながる</td></tr>
+    </tbody>
+  </table></div>
+  <p>メニューのほかに、トークに次の言葉を送っても使えます：<span class="cmd">動画の希望</span> <span class="cmd">撮り方</span> <span class="cmd">残りの本数</span> <span class="cmd">成果レポート</span> <span class="cmd">確認</span></p>
+</section>
+
+<section id="brief">
+  <h2><span class="n">3</span>毎月の「動画の希望」に答える</h2>
+  <p>お支払いの日（日本時間の10時〜20時）に、お店ごとに「今月の動画の希望」が届きます。しっとるが作る動画は、この内容に沿って作ります。</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>聞くこと</th><th>答え方</th></tr></thead>
+    <tbody>
+      <tr><td>宣伝したいこと</td><td>文字で送る（「おまかせ」も選べます）</td></tr>
+      <tr><td>見てほしいお客様</td><td>文字で送る（「おまかせ」も選べます）</td></tr>
+      <tr><td>見せたい場面</td><td>いくつでも選べます</td></tr>
+      <tr><td>雰囲気</td><td>いくつでも選べます</td></tr>
+      <tr><td>参考の動画・広告</td><td>URLを送るか「なし」</td></tr>
+      <tr><td>使わない言葉など</td><td>映してほしくないもの・使ってほしくない言葉を送るか「特になし」</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><b>先月と同じでよいとき</b>：「この内容でOK」を押すだけです。</li>
+    <li><b>一部だけ変えたいとき</b>：「一部を変える」から、変えたい項目だけ選んで書き直します。ほかの項目はそのまま残ります。</li>
+    <li><b>押し間違えたとき</b>：「1つ戻る」で前の質問に戻れます。</li>
+    <li><b>月の途中で変えたいとき</b>：トークに<span class="cmd">動画の希望</span>と送ると、今の内容が出ます。</li>
+  </ul>
+  <div class="note">はじめての月は、打ち合わせの内容を担当がまとめた案が届きます。合っていれば「この内容でOK」を押してください。</div>
+</section>
+
+<section id="review">
+  <h2><span class="n">4</span>構成案・動画・投稿を確かめる</h2>
+  <h3>構成案（文字と場面の順番）</h3>
+  <ol class="steps">
+    <li>構成案が3つ、下見の画像つきで届きます。横に動かして見比べます。</li>
+    <li>作りたい案の「この案にする」を押します。</li>
+    <li>合わないときは「直してほしい」を押して、直したい所をそのまま送ります（例：「2行目をもっとやさしい言い方に」）。その内容で作り直してお送りします。</li>
+  </ol>
+  <h3>動画・Instagramの投稿</h3>
+  <p>できた動画や、Instagramに投稿したものを公式LINEでお見せすることがあります。よければ「この案にする」、直したいときは「直してほしい」を押してください。</p>
+  <h3>広告の決まりのお知らせ</h3>
+  <p>治療院・整骨院などの広告の決まりに当たりそうな言葉があるときは、お知らせと言い換えの例が一緒に届きます。ご確認いただいてから進めます。</p>
+  <div class="note">お返事がないときは、1日後と、さらに2日後に1回ずつ、もう一度お知らせします（日本時間の9時〜20時だけ）。</div>
+</section>
+
+<section id="media">
+  <h2><span class="n">5</span>お店の動画・写真を送る</h2>
+  <p>撮れたものから、公式LINEのトークにそのまま送ってください。お店の素材として保存され、構成案や動画づくりに使います。</p>
+  <ul>
+    <li>スマホを縦向きに、1本10秒ほど（3秒より短いと使えません）</li>
+    <li>長い動画は、10〜15秒ほどに分けて送ると確実です</li>
+    <li>LINEで送るときは「オリジナル画質」で</li>
+    <li>施術や接客の様子、お店の入口や中、スタッフなどがあると作りやすくなります</li>
+    <li>人が写るときは、写る方の了解をお取りください</li>
+  </ul>
+  <p>何を撮ればよいか迷ったら、メニューの「撮り方」を押してください。</p>
+</section>
+
+<section id="self">
+  <h2><span class="n">6</span>ご自身で作る</h2>
+  <p>しっとるが作る分とは別に、メニューからご自身でも作れます。</p>
+  <h3>動画をつくる</h3>
+  <ol class="steps">
+    <li>「動画をつくる」を押し、お店を選びます。</li>
+    <li>お店の動画か写真を2〜6本送り、「作る」を押します（前に送った素材で作ることもできます）。</li>
+    <li>テロップ案が3つ届きます（1分ほど）。作りたい案の「この案で動画を作る」を押します。</li>
+    <li>2〜3分で動画が届きます。「承認して素材を受け取る」「Instagramに投稿する」「別の案で作る」から選びます。</li>
+  </ol>
+  <h3>広告をつくる</h3>
+  <p>「広告をつくる」を押してお店を選び、画像・複数枚・動画のどれで作るかを選びます。</p>
+  <h3>キャッチコピー・規約チェック</h3>
+  <ul>
+    <li><b>キャッチコピー</b>：テーマを一言送ると（例：「産後の骨盤」「肩こりの会社員向け」）、10案届きます。</li>
+    <li><b>規約チェック</b>：見出し・本文・テロップなどの文を貼って送ると、使えない言葉がないか確かめます。</li>
+  </ul>
+</section>
+
+<section id="result">
+  <h2><span class="n">7</span>広告の成績を見る・入れ替える</h2>
+  <ul>
+    <li><b>毎朝</b>：広告ごとに「続ける・止める・画像を替える」の判定が届きます。メニューの「成果レポート」でも見られます。</li>
+    <li><b>毎週月曜の朝</b>：1週間の成績のレポートが届きます。</li>
+    <li><b>入れ替え</b>：見飽きられ始めた広告には、新しい動画をお送りします。「この動画に入れ替える」を押すと、しっとるが入れ替えます。広告費の設定は変わりません。</li>
+  </ul>
+  <div class="note">広告を出してから3〜4日は、Metaが見せる相手を調整する期間です。設定は変えずに様子を見ます。</div>
+</section>
+
+<section id="count">
+  <h2><span class="n">8</span>作れる本数</h2>
+  <div class="tblwrap"><table>
+    <thead><tr><th></th><th>ライト</th><th>プロ</th><th>ビジネス</th></tr></thead>
+    <tbody>
+      <tr><td>しっとるが作る数（月）</td><td class="num">1本</td><td class="num">3本</td><td class="num">5本</td></tr>
+      <tr><td>ご自身で作れる数（月）</td><td class="num">60本</td><td class="num">120本</td><td class="num">200本</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>本数は、お支払いの日ごとに元に戻ります。残りはメニューの「残りの本数」で見られます。</li>
+    <li>ご自身で作れる数を使い切ったときは、追加パック（30本・買った日から30日間）か、上のプランへの変更をお選びいただけます。</li>
+  </ul>
+</section>
+
+<section id="app">
+  <h2><span class="n">9</span>アプリの画面でできること</h2>
+  <p>メニューの「店舗の設定」「使い方」や、トークに届くリンクから、マカセルの画面が開きます。</p>
+  <div class="tblwrap"><table>
+    <thead><tr><th>画面</th><th>できること</th></tr></thead>
+    <tbody>
+      <tr><td>商材・店舗</td><td>お店の地域・予算・Instagramなどを見る・変える</td></tr>
+      <tr><td>設定・連携</td><td>公式LINEをつなぐ人を足す・外す、契約内容を見る（印刷・PDFで保存）</td></tr>
+      <tr><td>料金プラン</td><td>プランの変更・追加パック・解約</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="members">
+  <h2><span class="n">10</span>社内の複数の方で受け取る</h2>
+  <p>確認のお願い・構成案・レポートを、ほかの方のLINEにも届けられます。1人ずつ、次の順でつなぎます。</p>
+  <ol class="steps">
+    <li>つなぎたい方が、スマホで公式LINE「マカセル通知」を友だち追加します。<br><a class="btn" href="https://line.me/R/ti/p/@073phbtx">公式LINEを友だち追加</a></li>
+    <li>マカセルの画面の「設定・連携」で「別のLINEをつなぐ（6桁のコードを出す）」を押します。</li>
+    <li>出た6桁の数字を、つなぎたい方が公式LINEのトークにそのまま送ります（10分以内）。</li>
+  </ol>
+  <div class="tblwrap"><table>
+    <thead><tr><th>プラン</th><th>つなげる人数</th></tr></thead>
+    <tbody>
+      <tr><td>ライト</td><td>1人</td></tr>
+      <tr><td>プロ</td><td>3人まで</td></tr>
+      <tr><td>ビジネス</td><td>何人でも</td></tr>
+    </tbody>
+  </table></div>
+  <p>外すときは「設定・連携」の「外す」から外せます。</p>
+</section>
+
+<section id="faq">
+  <h2><span class="n">11</span>よくある質問</h2>
+  <details><summary>「動画の希望」に答えないと、どうなりますか？</summary><p>前に答えていただいた内容のまま進めます。変えたいときは、いつでもトークに「動画の希望」と送ってください。</p></details>
+  <details><summary>構成案がどれも合いません。</summary><p>「直してほしい」を押して、直したい所をそのまま文字で送ってください。その内容で作り直してお送りします。</p></details>
+  <details><summary>選んだあとで、別の案にしたくなりました。</summary><p>トークにそのまま書いて送ってください。担当が確かめてご案内します。</p></details>
+  <details><summary>勝手にInstagramに投稿されたり、広告が出たりしませんか？</summary><p>しません。広告やInstagramへの投稿は、お客様が公式LINEや画面で承認したものだけです。ふだんの投稿やメッセージを、しっとるが変えることはありません。</p></details>
+  <details><summary>広告を止めたい・予算を変えたいときは？</summary><p>トークにそのまま書いて送ってください。担当が対応します。予算を上げるのは、お客様から文字でご了解をいただいたときだけです。</p></details>
+  <details><summary>顔を出したくない・映してほしくないものがあります。</summary><p>「動画の希望」の「使わない言葉など」に書いてください。その内容を外して作ります。</p></details>
+  <details><summary>動画を送ったのに保存されません。</summary><p>長い動画は保存できないことがあります。1本10〜15秒ほどに分けて送ってください。</p></details>
+  <details><summary>しっとるが作る数と、自分で作れる数は別ですか？</summary><p>別です。しっとるが作る分を使っても、ご自身で作れる数は減りません。</p></details>
+  <details><summary>本数を使い切ったらどうなりますか？</summary><p>次のお支払いの日に元に戻ります。その前に必要なときは、追加パック（30本・買った日から30日間）か、上のプランへの変更をお選びいただけます。</p></details>
+  <details><summary>お店が複数あります。</summary><p>動画の希望と構成案は、お店ごとに届きます。ご自身で作るときは、最初にお店を選びます。</p></details>
+  <details><summary>ほかのスタッフにも通知を届けたいです。</summary><p>「社内の複数の方で受け取る」の手順で、1人ずつつないでください（ライト1人・プロ3人まで・ビジネスは何人でも）。</p></details>
+  <details><summary>レポートの見方が分かりません。</summary><p>毎朝の判定は「続ける」「止める」「画像を替える」の3つです。分からないところは、レポートの画面の写真をトークに送ってください。担当がご説明します。</p></details>
+  <details><summary>プランを変えたい・解約したいときは？</summary><p>マカセルの画面の「料金プラン」から変更・解約ができます。解約すると次回からのお支払いが止まり、お支払い済みの期間の終わりまでお使いいただけます。</p></details>
+  <details><summary>問い合わせはどこにすればよいですか？</summary><p>公式LINEのトークに、そのまま文字や画面の写真を送ってください（お電話ではお受けしていません）。担当者の対応は、当社の営業日・営業時間内に行います。</p></details>
+</section>
+
+<footer>株式会社しっとる　マカセル　<a href="../" style="color:inherit">ご利用ガイド</a>　利用規約：<a href="https://app.s-toru.com/terms" style="color:inherit">app.s-toru.com/terms</a></footer>
+</div>
+</body>
+</html>
