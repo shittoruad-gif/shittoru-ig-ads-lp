@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../makaseru-mark.svg" type="image/svg+xml">
+<link rel="icon" href="../icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<title>広告をはじめる準備（お客様用）</title>
+<meta name="description" content="マカセルで広告をはじめる前の準備。お客様にお願いすることと、しっとるが代わりに行うこと。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPMincho:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#efece5;--ink:#1f2622;--mut:#4f5b56;--pine:#1c3f3a;--line:#d9e2df;--paper:#fffdf9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141816;--ink:#e8ece9;--mut:#a9b5b0;--pine:#8fc7b8;--line:#33403b;--paper:#1c2220}}
+:root[data-theme="dark"]{--bg:#141816;--ink:#e8ece9;--mut:#a9b5b0;--pine:#8fc7b8;--line:#33403b;--paper:#1c2220}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.7}
+.top{max-width:1280px;margin:0 auto;padding:20px 16px 8px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px}
+.top h1{margin:0;font-size:18px;line-height:1.5;color:var(--pine)}
+.top .co{margin:0;font-size:12px;color:var(--mut)}
+.viewsw{display:none;gap:6px}
+.viewsw button{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.viewsw button[aria-pressed="true"]{background:var(--pine);color:var(--paper);border-color:var(--pine)}
+@media (max-width:899px){.viewsw{display:flex}}
+.deck{max-width:1280px;margin:0 auto;padding:8px 16px 0;display:flex;flex-direction:column;gap:20px}
+.slide{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.12);background:#fff}
+.slide>section{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(var(--s,.18));overflow:hidden;box-sizing:border-box}
+/* slide-format defaults (no margins, div = flex column, heading/text defaults, ruled cells) */
+.slide section *{margin:0;box-sizing:border-box}
+.slide section{font-size:32px;line-height:1.4;overflow-wrap:anywhere}
+.slide section .one{white-space:nowrap;overflow-wrap:normal}
+.slide section div{min-width:0}
+.slide section div:not([style*="display"]){display:flex;flex-direction:column}
+.slide section h1{font-size:96px;font-weight:600;line-height:1.1}
+.slide section h2{font-size:64px;font-weight:600;line-height:1.15}
+.slide section h3{font-size:44px;font-weight:600;line-height:1.2}
+.slide section ul,.slide section ol{padding-left:1.3em}
+.slide section img{display:block;flex:none;max-width:none}
+.slide section .xi{display:block;flex:none}
+.slide section .xshape{flex:none}
+.slide section hr{border:0;border-top:1px solid currentColor;width:100%;height:0}
+.slide section table{border-collapse:separate;border-spacing:0;width:100%;overflow:hidden}
+.slide section th,.slide section td{padding:.35em .6em;text-align:left;vertical-align:middle;border-bottom:1px solid rgba(0,0,0,.12)}
+.slide section th{font-weight:600}
+.slide section tr:last-child td{border-bottom:0}
+.slide section a{color:inherit}
+/* phone reading mode: same slide markup, one column, larger text */
+body.reflow .slide{aspect-ratio:auto;overflow:visible}
+body.reflow .slide>section{position:relative;width:auto;height:auto;transform:none;zoom:var(--z,.55);padding:56px 40px 48px!important;gap:32px!important;justify-content:flex-start!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;border-radius:10px}
+body.reflow .slide section [style*="position:absolute"]{position:static!important;width:auto!important;height:auto!important;order:10}
+body.reflow .slide section div[style*="position:absolute"]:empty{display:none!important}
+body.reflow .slide section [style*="width:"]{max-width:100%}
+body.reflow .slide section div[style*="height:"]{height:auto!important}
+body.reflow .slide section img{width:100%!important;height:auto!important;max-height:none!important}
+body.reflow .slide section table{width:100%!important}
+body.reflow .slide section .xshape{display:none!important}
+body.reflow .slide section .rcol{flex-direction:column!important;align-items:stretch!important}
+body.reflow .slide section .gcol{grid-template-columns:1fr!important}
+/* closing slide: the QR captions sit on a light card in the slide; in reading mode they sit on the dark slide */
+body.reflow #about-close p[style*="right:160px"]{color:#F7F4EE!important}
+body.reflow #about-close p[style*="right:160px"][style*="font-size:26px"]{color:#C9DBD6!important}
+body.reflow #about-close img{max-width:360px!important;align-self:center}
+
+.docnav{max-width:820px;margin:32px auto 0;padding:16px 18px;border-top:1px solid var(--dn-line,#d9e2df);font-family:"Noto Sans JP",system-ui,sans-serif}
+.docnav-h{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--dn-mut,#4f5b56)}
+.docnav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 10px}
+.docnav li{margin:0;padding:0}
+.docnav a{display:inline-block;font-size:14px;line-height:1.5;padding:6px 12px;border:1px solid var(--dn-line,#d9e2df);border-radius:999px;color:var(--dn-ink,#1c3f3a);text-decoration:none;background:var(--dn-bg,#fffdf9)}
+.docnav a[aria-current="page"]{background:var(--dn-ink,#1c3f3a);color:var(--dn-bg,#fffdf9);border-color:var(--dn-ink,#1c3f3a)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .docnav{--dn-line:#33403b;--dn-mut:#a9b5b0;--dn-ink:#8fc7b8;--dn-bg:#1c2220}}
+:root[data-theme="dark"] .docnav{--dn-line:#33403b;--dn-mut:#a9b5b0;--dn-ink:#8fc7b8;--dn-bg:#1c2220}
+</style>
+</head>
+<body>
+<header class="top">
+<div><h1>広告をはじめる準備（お客様用）</h1><p class="co">株式会社しっとる</p></div>
+<div class="viewsw" role="group" aria-label="表示の切り替え"><button type="button" data-mode="reflow" aria-pressed="false">読みやすい表示</button><button type="button" data-mode="slide" aria-pressed="false">スライドのまま</button></div>
+</header>
+<main class="deck">
+<div class="slide" role="group" aria-label="1枚目">
+<section id="junbi-cover" style="background:#1c3f3a;color:#f6f4ef;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:40px">
+<p style="font-size:32px;font-weight:700;color:#f0a074;letter-spacing:4px">株式会社しっとる　Instagram・Facebook広告</p>
+<h1 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:112px;font-weight:700;line-height:1.15;color:#fbfbf8">広告をはじめる準備</h1>
+<p style="font-size:44px;line-height:1.5;color:#cfe0dc">お客様にお願いすることと、しっとるが代わりに行うこと</p>
+<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:28px;color:#9fbfb8">分からないところは、画面の写真をLINEで送ってください。Zoomで画面を見ながら一緒に進めることもできます。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="2枚目">
+<section id="junbi-overview" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">はじめに</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">お願いすることは、4つだけです</h2></div><div style="display:flex;gap:28px"><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#f8e7dc;padding:32px 36px;border:1px solid #f8e7dc;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#b4501f">お客様にお願いすること</h3><ul style="font-size:28px;line-height:1.55;color:#1f2622"><li>マカセルに登録して、プランを申し込む（公式LINEから）</li><li>Facebookの準備（ご本人のアカウント・お店のページ・Instagramをページにつなぐ）</li><li>広告アカウントを作り、広告費を払うカードをご自身で登録する</li><li>しっとるをパートナーに追加して、「使ってよい」と許可する</li></ul></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#e2efe3;padding:32px 36px;border:1px solid #e2efe3;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#2f6b3a">しっとるが行うこと</h3><ul style="font-size:28px;line-height:1.55;color:#1f2622"><li>マカセルへのお店の登録と、Metaとのつなぎ</li><li>つながっているかの点検</li><li>広告の文章・画像・動画づくり</li><li>広告の公開・毎日の見直し・入れ替え</li></ul></div></div><p style="font-size:30px;line-height:1.6;color:#1f2622">全部で<b>30分〜1時間</b>ほどです。途中でやめても続きから再開できます。<b>パスワードやカード番号を、しっとるがお聞きすることはありません。</b></p><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="3枚目">
+<section id="junbi-prepare" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">はじめに</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">ご用意いただくもの</h2></div><div style="display:flex;gap:28px"><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#fffdf9;padding:32px 36px;border:1px solid #dcd8cf;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">手元に</h3><ul style="font-size:28px;line-height:1.55;color:#1f2622"><li>Facebookにログインできる<b>パソコン</b>（ビジネスの設定はパソコンが必要です）</li><li>お店のInstagramにログインできるスマホ</li><li>広告費を払うカード（クレジット・デビット）</li><li>マカセルの料金を払うカード</li></ul></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#fffdf9;padding:32px 36px;border:1px solid #dcd8cf;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">分かれば</h3><ul style="font-size:28px;line-height:1.55;color:#1f2622"><li>お店の正式な名前（看板と同じ）と住所</li><li>ホームページやネット予約のURL</li><li>公式LINEの友だち追加のURL</li></ul></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#e3ece9;padding:32px 36px;border:1px solid #e3ece9;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">こんなときは</h3><ul style="font-size:28px;line-height:1.55;color:#1f2622"><li>Facebookを持っていない → 準備2で、ご本人の名前で作成</li><li>Instagramが個人用のまま → 準備5で切り替え</li><li>以前ほかの会社に広告を頼んでいた → 次のページ</li><li>分からない → 画面の写真をLINEで</li></ul></div></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="4枚目">
+<section id="junbi-before" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">はじめる前に</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">以前ほかの会社に広告を頼んでいた方へ</h2></div><div style="display:flex;gap:28px"><div style="flex:1.25;display:flex;flex-direction:column;gap:14px;background:#fffdf9;padding:32px 36px;border:1px solid #dcd8cf;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">先に確かめてください</h3><ol style="font-size:27px;line-height:1.55;color:#1f2622"><li>Instagram・Facebookの広告や運用を、外部の会社に頼んだことがあるか（会社名と、今も契約中か）</li><li>その会社と、今も連絡が取れるか</li><li>パソコンで <b>business.facebook.com/latest/settings/instagram_account</b> を開き、お店のInstagramが出るか（画面の写真をLINEへ）</li><li>出ないときは、前の会社に「御社の管理画面から、うちのInstagram（と広告アカウント）を外してください」とお願いする</li></ol></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#f8e7dc;padding:32px 36px;border:1px solid #f8e7dc;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#b4501f">しっとるにお伝えいただかないもの</h3><ul style="font-size:27px;line-height:1.55;color:#1f2622"><li>Facebook・Instagramのパスワード</li><li>カードの番号（画面共有中は、入れる間だけ共有を止めてください）</li><li>スマホに届く確認の番号（認証コード）</li></ul></div></div><p style="font-size:27px;line-height:1.55;color:#4f5b56">前の会社の管理画面の中で作られた広告アカウントは、お店の側に移せません。そのときは準備6で新しく作ります。前の会社と連絡が取れないときは、LINEでご相談ください。</p><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="5枚目">
+<section id="junbi-reg" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 1</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">マカセルに登録して、プランを申し込む</h2></div><div style="display:flex;gap:28px"><div style="flex:1.2;display:flex;flex-direction:column;gap:18px"><div style="display:flex"><p style="font-size:26px;font-weight:700;color:#b4501f;background:#f8e7dc;padding:8px 20px;border-radius:999px">お客様にお願いします</p></div><ol style="font-size:28px;line-height:1.55;color:#1f2622"><li>LINE公式アカウント<b>「マカセル通知」（@073phbtx）</b>を友だち追加し、メニューの左上<b>「アカウントを作る」</b>を押す</li><li><b>ご担当者のお名前（フルネーム）</b>・メールアドレス・パスワード（ご自身で決める）を入れて登録。登録と同時にLINEとつながります</li><li>最初の設定で<b>利用規約</b>を確かめて同意し、<b>会社名・店舗名</b>を入れる</li><li>「料金プラン」から、しっとるがご案内したプランを選び、<b>カードを登録</b>する</li></ol></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#e3ece9;padding:32px 36px;border:1px solid #e3ece9;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">申し込むと</h3><ul style="font-size:26px;line-height:1.55;color:#1f2622"><li>はじめての方は<b>7日間無料</b>。8日目に初回のお支払い</li><li>ご登録のメールに<b>「マカセル ご契約内容のお知らせ（契約書）」</b>が自動で届きます（迷惑メールのフォルダもご確認ください）</li><li>契約書は、マカセルの「設定」→「アカウント情報」→「契約内容を見る」からいつでも見られます</li><li>登録・規約への同意・カードの登録は、契約のため<b>ご本人</b>にお願いしています</li></ul></div></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　1　／　友だち追加：line.me/R/ti/p/@073phbtx</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="6枚目">
+<section id="junbi-regreal" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:96px 128px 140px;display:flex;flex-direction:column;gap:26px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 1　実際の画面</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:56px;font-weight:700;line-height:1.15;color:#1c3f3a">マカセル通知（公式LINE）のメニュー</h2></div><div style="display:grid;grid-template-columns:816px 816px;gap:20px 32px"><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="line_start.jpg" alt="友だち追加したばかりのときのメニュー。左上の「アカウントを作る」で登録します（すでにアカウントがある方は「LINEとつなぐ」）" style="width:816px;height:550px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">友だち追加したばかりのときのメニュー。左上の「アカウントを作る」で登録します（すでにアカウントがある方は「LINEとつなぐ」）</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="line_main.jpg" alt="つながったあとのメニュー。広告や動画の確認・承認は、ここ（「つくる」「見る・管理」）から行います" style="width:816px;height:550px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">つながったあとのメニュー。広告や動画の確認・承認は、ここ（「つくる」「見る・管理」）から行います</p></div></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　1　／　画面は実際のもの</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="7枚目">
+<section id="junbi-fbacct" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 2</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">Facebookの個人アカウントを用意する</h2></div><div style="display:flex;gap:28px"><div style="flex:1.2;display:flex;flex-direction:column;gap:18px"><div style="display:flex"><p style="font-size:26px;font-weight:700;color:#b4501f;background:#f8e7dc;padding:8px 20px;border-radius:999px">お客様にお願いします</p></div><ol style="font-size:28px;line-height:1.55;color:#1f2622"><li>すでにFacebookにログインできる方は、<b>新しく作らず</b>そのまま次へ</li><li>持っていない方だけ、Facebookの「新しいアカウントを作成」から作る</li><li><b>ご本人の名前</b>で作る（お店の名前では作れません）</li><li>ログインのときにスマホに番号が届く設定（二段階認証）をしておくと安心です</li></ol></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#e3ece9;padding:32px 36px;border:1px solid #e3ece9;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">アカウントとページの違い</h3><ul style="font-size:26px;line-height:1.55;color:#1f2622"><li><b>Facebookアカウント</b>：ご本人のもの。ログインに使う（1人1つ）</li><li><b>Facebookページ</b>：お店の看板。アカウントを持つ人が作って管理する</li><li>広告はページとInstagramの名前で出ます。ご本人のお名前が広告に出ることはありません</li><li>新しく作ったアカウントは制限がかかりやすいため、今お持ちのものを使います</li></ul></div></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　2　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="8枚目">
+<section id="junbi-s1" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 3</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">ビジネスポートフォリオを1つに決める</h2></div><div style="display:flex;gap:28px"><div style="flex:1;display:flex;flex-direction:column;gap:18px"><div style="display:flex"><p style="font-size:26px;font-weight:700;color:#1c3f3a;background:#e3ece9;padding:8px 20px;border-radius:999px">Zoomで一緒に進められます</p></div><ol style="font-size:28px;line-height:1.55;color:#1f2622"><li>パソコンで <b>business.facebook.com/settings</b> を開き、ご本人のFacebookでログイン</li><li>左上の名前を押すと、入っているビジネスポートフォリオの一覧が出ます</li><li>お店のものがあれば、それを使います。以降はすべて、左上がお店の名前になっている状態で進めます</li></ol></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#e3ece9;padding:32px 36px;border:1px solid #e3ece9;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">お店のものが無いとき</h3><ul style="font-size:26px;line-height:1.55;color:#1f2622"><li>すぐに新しく作りません。<b>1人が作れるのは2つまで</b>です</li><li>ページ・Instagram・広告アカウントが何もつながっていない空のものがあれば、それを使い、「ビジネス情報」で名前をお店の名前に変えます</li><li>覚えのないものは、Instagramをプロアカウントにしたときに自動でできていることがあります</li><li>無ければ「ビジネスポートフォリオを作成」。名前は<b>会社名か屋号</b>（記号は使えません）</li></ul></div></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　3　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="9枚目">
+<section id="junbi-s2" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 4</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">Facebookページを確かめる（無ければ作る）</h2></div><div style="display:flex;gap:56px;align-items:flex-start;flex:1"><div style="width:640px;display:flex;flex-direction:column;gap:22px"><div style="display:flex"><p style="font-size:26px;font-weight:700;color:#1c3f3a;background:#e3ece9;padding:8px 20px;border-radius:999px">Zoomで一緒に進められます</p></div><ol style="font-size:28px;line-height:1.55;color:#1f2622"><li>左のメニューの「アカウント」→<b>「ページ」</b>に、お店のページが出ていれば、そのままで大丈夫です</li><li>無いときは右上の「＋追加」→<b>「新しいFacebookページを作成」</b>（次のページの画面）</li><li>ページの写真や紹介文はあとからで大丈夫です。投稿も要りません</li></ol><p style="font-size:25px;line-height:1.5;color:#7a3a17;background:#f8e7dc;border-radius:12px;padding:14px 20px">ページは広告の名義になります。ページが無いと、広告づくり・Instagramへの投稿ができません</p></div><img loading="lazy" decoding="async" src="zm01.jpg" alt="「ページ」にお店のページが出ていればOK" style="width:960px;height:444px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　4　／　画面は実際のもの（見本は株式会社しっとるの店舗）</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="10枚目">
+<section id="junbi-s2real" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:96px 128px 140px;display:flex;flex-direction:column;gap:26px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 4　実際の画面</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:56px;font-weight:700;line-height:1.15;color:#1c3f3a">Facebookページを作る（番号の順に押す）</h2></div><div style="display:grid;grid-template-columns:816px 816px;gap:20px 32px"><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="pc01.jpg" alt="① 設定の「ページ」　② 右上の「＋追加」" style="width:728px;height:300px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">① 設定の「ページ」　② 右上の「＋追加」</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="pc02.jpg" alt="①「新しいFacebookページを作成」を押す" style="width:728px;height:300px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">①「新しいFacebookページを作成」を押す</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="pc03.jpg" alt="① ページ名（お店の名前）　② カテゴリ（業種）　③「Next」" style="width:728px;height:300px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">① ページ名（お店の名前）　② カテゴリ（業種）　③「Next」</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="pc04.jpg" alt="① 同意のチェック　②「ページを作成」" style="width:728px;height:300px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">① 同意のチェック　②「ページを作成」</p></div></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　4　／　画面は実際のもの（他のお店の名前・金額はぼかしています）</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="11枚目">
+<section id="junbi-s3" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 5</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">InstagramをFacebookページにつなぐ</h2></div><div style="display:flex;gap:56px;align-items:flex-start;flex:1"><div style="width:700px;display:flex;flex-direction:column;gap:22px"><div style="display:flex"><p style="font-size:26px;font-weight:700;color:#1c3f3a;background:#e3ece9;padding:8px 20px;border-radius:999px">Zoomで一緒に進められます</p></div><ol style="font-size:27px;line-height:1.55;color:#1f2622"><li>Instagramアプリで「プロアカウント」にする（設定→アカウントの種類とツール。無料・投稿はそのまま）</li><li>パソコンのFacebookで、お店のページを開いて<b>「切り替える」</b></li><li>「設定とプライバシー」→「設定」→<b>「Instagram」</b>→<b>「アカウントをリンク」</b></li><li>Instagramのユーザーネームとパスワードは<b>ご本人が</b>入れます</li></ol><p style="font-size:25px;line-height:1.5;color:#7a3a17;background:#f8e7dc;border-radius:12px;padding:14px 20px">1つのページにつなげるInstagramは1つだけ。「アカウントセンター」の「アカウントを追加」や、ビジネス設定に追加しただけでは、ページにはつながりません</p></div><img loading="lazy" decoding="async" src="il01.jpg" alt="作ったページを開いて「切り替える」" style="width:900px;height:400px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　5　／　画面は実際のもの（他のお店の名前・金額はぼかしています）</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="12枚目">
+<section id="junbi-s3real" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:96px 128px 140px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 5　実際の画面</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:56px;font-weight:700;line-height:1.15;color:#1c3f3a">Instagramをつなぐ（番号の順に押す）</h2></div><div style="display:grid;grid-template-columns:533px 533px 533px;gap:20px 32px"><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="il02.jpg" alt="②「新しいページにようこそ」は「ページを使用」で閉じる" style="width:533px;height:260px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">②「新しいページにようこそ」は「ページを使用」で閉じる</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="il03.jpg" alt="③ 設定 →「Instagram」→「アカウントをリンク」" style="width:533px;height:260px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">③ 設定 →「Instagram」→「アカウントをリンク」</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="il04.jpg" alt="④ 説明を読んで「リンクする」" style="width:533px;height:260px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">④ 説明を読んで「リンクする」</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="il06.jpg" alt="⑥「別のプロフィールを使用」→ お店のInstagramでログイン" style="width:533px;height:260px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">⑥「別のプロフィールを使用」→ お店のInstagramでログイン</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="il07.jpg" alt="⑦ お店のビジネスポートフォリオに「追加」" style="width:533px;height:260px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">⑦ お店のビジネスポートフォリオに「追加」</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="il08.jpg" alt="⑧ リンクできたら「完了」" style="width:533px;height:260px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">⑧ リンクできたら「完了」</p></div></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　5　／　画面は実際のもの（他のお店の名前・金額はぼかしています）</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="13枚目">
+<section id="junbi-s3done" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:96px 128px 140px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 5　確かめ</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:56px;font-weight:700;line-height:1.15;color:#1c3f3a">つながったかを確かめる</h2></div><div style="display:grid;grid-template-columns:816px 816px;gap:20px 32px"><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="il09.jpg" alt="Facebookの設定の「Instagram」に、お店のInstagramが出ていれば完了" style="width:816px;height:440px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">Facebookの設定の「Instagram」に、お店のInstagramが出ていれば完了</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="zm02.jpg" alt="ビジネス設定の「Instagramプロフィール」にも、お店のInstagramが出ます" style="width:816px;height:440px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">ビジネス設定の「Instagramプロフィール」にも、お店のInstagramが出ます</p></div></div><p style="font-size:27px;line-height:1.55;color:#1f2622">スマホのInstagramアプリでも確かめられます。「プロフィールを編集」に<b>お店のページの名前</b>が出ていれば、つながっています。</p><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　5　／　画面は実際のもの（他のお店の名前・金額はぼかしています）</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="14枚目">
+<section id="junbi-s4" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 6</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">広告アカウントを確かめる（無ければ作る）</h2></div><div style="display:flex;gap:56px;align-items:flex-start;flex:1"><div style="width:780px;display:flex;flex-direction:column;gap:22px"><div style="display:flex"><p style="font-size:26px;font-weight:700;color:#1c3f3a;background:#e3ece9;padding:8px 20px;border-radius:999px">Zoomで一緒に進められます</p></div><ol style="font-size:28px;line-height:1.55;color:#1f2622"><li>左のメニューの「広告アカウント」に、お店の広告アカウントがあるか見る</li><li>無いときは「＋追加」→<b>「新しい広告アカウントを作成」</b></li></ol><div style="display:flex;flex-direction:column;gap:8px;background:#fffdf9;border:2px solid #b4501f;border-radius:14px;padding:22px 28px"><p style="font-size:27px"><b>広告アカウント名：</b>店舗名_地域_Meta広告</p><p style="font-size:25px;color:#4f5b56">例：さくら整骨院_倉敷市_Meta広告</p><p style="font-size:27px"><b>時間帯：</b>Asia/Tokyo　<b>通貨：</b>JPY（日本円）</p></div><p style="font-size:25px;line-height:1.5;color:#7a3a17;background:#f8e7dc;border-radius:12px;padding:14px 20px">時間帯と通貨は<b>あとから変えられません</b>。新しいポートフォリオでは、広告アカウントは最初1つしか作れません</p></div><img loading="lazy" decoding="async" src="zm03.jpg" alt="いちばん上の「新しい広告アカウントを作成」" style="width:820px;height:600px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　6　／　画面は実際のもの</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="15枚目">
+<section id="junbi-s4real" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:96px 128px 140px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 6　実際の画面</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:56px;font-weight:700;line-height:1.15;color:#1c3f3a">時間帯と通貨を選ぶ</h2></div><div style="display:grid;grid-template-columns:533px 533px 533px;gap:20px 32px"><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="zm04.jpg" alt="時間帯は最初「ロサンゼルス」。欄を押して検索に「T」と打ち、Asia/Tokyo を選ぶ" style="width:533px;height:410px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">時間帯は最初「ロサンゼルス」。欄を押して検索に「T」と打ち、Asia/Tokyo を選ぶ</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="zm05.jpg" alt="通貨は最初「米ドル」。欄を押して「J」と打ち、JPY（日本円）を選ぶ" style="width:533px;height:410px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">通貨は最初「米ドル」。欄を押して「J」と打ち、JPY（日本円）を選ぶ</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="zm06.jpg" alt="「次へ」→「自分のビジネス」→ 確認の画面でチェックを入れて「広告アカウントを作成」" style="width:533px;height:410px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">「次へ」→「自分のビジネス」→ 確認の画面でチェックを入れて「広告アカウントを作成」</p></div></div><p style="font-size:27px;line-height:1.55;color:#1f2622">「広告アカウントを作成」を押す前に、名前・時間帯・通貨をもう一度読み上げて確かめてください。</p><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　6　／　画面は実際のもの（見本では作成ボタンは押していません）</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="16枚目">
+<section id="junbi-s5" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 7</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">広告費のお支払い方法を登録する</h2></div><div style="display:flex;gap:56px;align-items:flex-start;flex:1"><div style="width:640px;display:flex;flex-direction:column;gap:22px"><div style="display:flex"><p style="font-size:26px;font-weight:700;color:#b4501f;background:#f8e7dc;padding:8px 20px;border-radius:999px">お客様にお願いします</p></div><ol style="font-size:28px;line-height:1.55;color:#1f2622"><li>左のメニューの下のほうの「請求と支払い」を押し、お店の広告アカウントを選ぶ</li><li><b>「支払い方法を追加」</b>→ カードを登録。カード会社の本人確認が出たら最後まで進める</li><li>「支払い方法」にカードが出て、「有効」になれば完了</li></ol><p style="font-size:26px;line-height:1.5;color:#7a3a17;background:#f8e7dc;border-radius:12px;padding:14px 20px"><b>カード番号は必ずご自身で</b>入れてください。Zoomで画面を共有しているときは、<b>番号を入れる間だけ共有を止めて</b>、入れ終わってから再開してください</p></div><img loading="lazy" decoding="async" src="zm07.jpg" alt="請求と支払いの画面。右下の「支払い方法を追加」" style="width:960px;height:444px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　7　／　画面は実際のもの（他のお店の名前・金額はぼかしています）</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="17枚目">
+<section id="junbi-s6" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 8</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">しっとるをパートナーとして追加する</h2></div><div style="display:flex;gap:28px"><div style="flex:1.2;display:flex;flex-direction:column;gap:18px"><div style="display:flex"><p style="font-size:26px;font-weight:700;color:#b4501f;background:#f8e7dc;padding:8px 20px;border-radius:999px">お客様にお願いします</p></div><ol style="font-size:29px;line-height:1.55;color:#1f2622"><li><b>business.facebook.com/settings</b> に戻り、左上がお店の名前か確かめる</li><li>左のメニューの「ユーザー」→<b>「パートナー」</b></li><li>右上の<b>「＋追加」</b>を押す</li><li><b>「パートナーにアセットへのアクセスを許可」</b>を選ぶ（「…アクセスをリクエスト」は選びません）</li></ol></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#e3ece9;padding:32px 36px;border:1px solid #e3ece9;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">安心してください</h3><ul style="font-size:27px;line-height:1.55;color:#1f2622"><li>お店のページ・Instagram・広告アカウントの持ち主は、お店のままです</li><li>しっとるには、広告を作るのに要る分だけを許可します</li><li>契約が終わったら、この画面からいつでも外せます</li></ul></div></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　8　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="18枚目">
+<section id="junbi-s7" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 8　つづき</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">しっとるのビジネスIDを入れる</h2></div><div style="display:flex;gap:56px;align-items:flex-start;flex:1"><div style="width:700px;display:flex;flex-direction:column;gap:22px"><div style="display:flex"><p style="font-size:26px;font-weight:700;color:#b4501f;background:#f8e7dc;padding:8px 20px;border-radius:999px">お客様にお願いします</p></div><ol style="font-size:29px;line-height:1.55;color:#1f2622"><li>「パートナーのビジネスIDを入力」に、次の番号を入れる（コピーして貼り付けると間違えません）</li><li>「次へ」を押す</li></ol><p style="font-size:56px;font-weight:700;color:#1c3f3a;background:#fffdf9;border:2px solid #1c3f3a;border-radius:14px;padding:16px 28px;letter-spacing:3px">3286784271457726</p><p style="font-size:26px;color:#4f5b56">この番号はどのお店でも同じです（株式会社しっとるの番号）。</p></div><img loading="lazy" decoding="async" src="zm09.jpg" alt="パートナーのビジネスIDを入れる画面" style="width:900px;height:495px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　8　／　画面は実際のもの</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="19枚目">
+<section id="junbi-s8" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 8　つづき</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">しっとるに渡すものを選ぶ</h2></div><div style="display:flex;gap:48px;align-items:flex-start;flex:1"><div style="width:820px;display:flex;flex-direction:column;gap:20px"><p style="font-size:28px;line-height:1.5">左の「アセットタイプを選択」で次の3つを順に選び、お店のものにチェックを入れて、右のスイッチをオンにします。</p><table style="font-size:27px;color:#1f2622;width:820px"><tr style="background:#e3ece9"><th style="width:36%">選ぶもの</th><th style="width:64%">オンにするもの</th></tr><tr><td>広告アカウント</td><td>いちばん下のフルアクセス<b>「広告アカウントの管理」</b></td></tr><tr><td>Facebookページ</td><td><b>「広告」「コンテンツ」「インサイト」</b></td></tr><tr><td>Instagramアカウント</td><td><b>「広告」「コンテンツ」「インサイト」</b></td></tr></table><p style="font-size:25px;line-height:1.5;color:#4f5b56">「メッセージ」「コミュニティアクティビティ」など、ほかはオンにしません。ボタンが「保存」と出ていても「次へ」で進みます。</p></div><img loading="lazy" decoding="async" src="zm10.jpg" alt="広告アカウント：フルアクセス「広告アカウントの管理」をオン" style="width:796px;height:438px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　8　／　画面は実際のもの</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="20枚目">
+<section id="junbi-s8real" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:96px 128px 140px;display:flex;flex-direction:column;gap:26px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 8　実際の画面</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:56px;font-weight:700;line-height:1.15;color:#1c3f3a">Instagramを選んで、確認する</h2></div><div style="display:grid;grid-template-columns:816px 816px;gap:20px 32px"><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="zm11.jpg" alt="Instagramアカウント：お店のInstagramにチェック →「広告」「コンテンツ」「インサイト」をオン（見本は「コンテンツ」を入れる前の画面です）" style="width:816px;height:450px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">Instagramアカウント：お店のInstagramにチェック →「広告」「コンテンツ」「インサイト」をオン（見本は「コンテンツ」を入れる前の画面です）</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="zm12.jpg" alt="確認の画面。しっとるのIDと、広告アカウント（フルアクセス）・ページ・Instagramが出ていれば「Confirm」" style="width:816px;height:450px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">確認の画面。しっとるのIDと、広告アカウント（フルアクセス）・ページ・Instagramが出ていれば「Confirm」</p></div></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　8　／　画面は実際のもの</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="21枚目">
+<section id="junbi-s8done" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:96px 128px 140px;display:flex;flex-direction:column;gap:26px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 8　確かめ</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:56px;font-weight:700;line-height:1.15;color:#1c3f3a">パートナーに「株式会社しっとる」が出れば完了</h2></div><div style="display:grid;grid-template-columns:816px 816px;gap:20px 32px"><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="zm13.jpg" alt="「もう少しで完了です」と出たら「アカウントを認証」を押し、案内どおりに進める" style="width:816px;height:450px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">「もう少しで完了です」と出たら「アカウントを認証」を押し、案内どおりに進める</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="zm14.jpg" alt="「パートナー」の一覧に株式会社しっとるが出て、押すと渡したものが並んでいれば完了" style="width:816px;height:450px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">「パートナー」の一覧に株式会社しっとるが出て、押すと渡したものが並んでいれば完了</p></div></div><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　8　／　画面は実際のもの</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="22枚目">
+<section id="junbi-multi" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">お店が2つ以上あるとき</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">ページやInstagramが何個も出てきたら</h2></div><table style="font-size:27px;color:#1f2622;width:1664px"><tr style="background:#e3ece9"><th style="width:44%">こんなとき</th><th style="width:56%">選ぶもの</th></tr><tr><td>広告アカウントが店ごとに分かれている</td><td>広告を出す店の広告アカウントを全部（それぞれ「広告アカウントの管理」）</td></tr><tr><td>1つの広告アカウントを2店で使っている</td><td>その広告アカウント1つだけ</td></tr><tr><td>店ごとのFacebookページ・Instagram</td><td>広告を出す店の分を全部（それぞれ「広告」「コンテンツ」「インサイト」）</td></tr><tr><td>Instagramがつながっていない、店名の無い本体のページ</td><td>選ばなくて大丈夫（その名前の広告を続けたいときは、しっとるからご案内します）</td></tr><tr><td>閉めた店・使っていないページや広告アカウント</td><td>選びません</td></tr></table><p style="font-size:27px;line-height:1.55;color:#4f5b56">マカセルに登録できる店の数はプランで決まっています（ライト1店・プロ3店・ビジネス6店）。迷ったら、出てきた一覧の画面の写真をLINEで送ってください。</p><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="23枚目">
+<section id="junbi-pagepartner" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:96px 128px 140px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">入れ忘れたとき・あとから足すとき</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:56px;font-weight:700;line-height:1.15;color:#1c3f3a">あとから、しっとるに渡す分を足す</h2></div><div style="display:grid;grid-template-columns:816px 816px;gap:20px 32px"><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="zm15.jpg" alt="「パートナー」→ 株式会社しっとる → 右上の「アセットを割り当てる」で、足りない分を選んで「広告」「コンテンツ」「インサイト」をオン" style="width:816px;height:420px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">「パートナー」→ 株式会社しっとる → 右上の「アセットを割り当てる」で、足りない分を選んで「広告」「コンテンツ」「インサイト」をオン</p></div><div style="display:flex;flex-direction:column;gap:8px"><img loading="lazy" decoding="async" src="pc07.jpg" alt="あとから作ったページは、ページの画面の「パートナーを割り当てる」からも渡せます（コンテンツ・広告・インサイトをオン）" style="width:816px;height:420px;object-fit:contain;background:#ffffff;border:1px solid #dcd8cf;border-radius:12px"><p style="font-size:24px;line-height:1.4;color:#1f2622">あとから作ったページは、ページの画面の「パートナーを割り当てる」からも渡せます（コンテンツ・広告・インサイトをオン）</p></div></div><p style="font-size:26px;line-height:1.55;color:#1f2622">1つ入れ忘れても大きな問題はありません。Zoomをやり直さなくても、この画面で足せます。</p><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　／　画面は実際のもの（他のお店の名前・金額はぼかしています）</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="24枚目">
+<section id="junbi-s9" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">準備 9</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">終わったら、LINEでお知らせください</h2></div><div style="display:flex;gap:28px"><div style="flex:1;display:flex;flex-direction:column;gap:18px"><div style="display:flex"><p style="font-size:26px;font-weight:700;color:#b4501f;background:#f8e7dc;padding:8px 20px;border-radius:999px">お客様の作業は、ここまでです</p></div><ol style="font-size:29px;line-height:1.55;color:#1f2622"><li>LINEで「権限を渡しました」と一言お送りください</li><li>マカセルの画面で「Metaと連携する」を押したり、お店を登録したりする必要はありません</li></ol></div><div style="flex:1.2;display:flex;flex-direction:column;gap:14px;background:#e2efe3;padding:32px 36px;border:1px solid #e2efe3;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#2f6b3a">そのあと、しっとるが行うこと</h3><ul style="font-size:27px;line-height:1.55;color:#1f2622"><li>受け取った許可を、しっとるの担当とマカセルに割り当てる</li><li>広告費のカードが「有効」か確かめる</li><li>マカセルにお店を登録し、Metaとつなぐ</li><li>ページ・Instagram・広告アカウントが正しくつながっているか点検する</li><li>名前を整える必要があるときは、ご了解をいただいてから直す</li></ul></div></div><p style="font-size:27px;line-height:1.55;color:#4f5b56">準備ができると、マカセル通知のLINEメニュー「はじめ方」に「済み」と出ます。そのあとは、LINEのメニューから広告や動画の確認・承認ができます。</p><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　9　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="25枚目">
+<section id="junbi-trouble" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">困ったとき</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">途中で止まったときは</h2></div><div style="display:flex;gap:28px"><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#fffdf9;padding:32px 36px;border:1px solid #dcd8cf;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">本人確認・コードを求められた</h3><ul style="font-size:27px;line-height:1.55;color:#1f2622"><li>Metaから、スマホへのコードや身分証の確認が出ることがあります</li><li>画面の指示どおりに、ご本人が進めてください</li><li>何を求められているか分からないときは、画面の写真をLINEへ</li></ul></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#fffdf9;padding:32px 36px;border:1px solid #dcd8cf;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">エラーが出た</h3><ul style="font-size:27px;line-height:1.55;color:#1f2622"><li>「アセットが割り当てられませんでした」「既存の所有権を削除できませんでした」は、別の会社の管理画面に入ったままのことが多いです（「はじめる前に」のページ）</li><li>ページ・Instagram・広告アカウントが同じポートフォリオに入っているかも確かめます</li></ul></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#e3ece9;padding:32px 36px;border:1px solid #e3ece9;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">名前やボタンが違う</h3><ul style="font-size:27px;line-height:1.55;color:#1f2622"><li>Metaの画面の言葉は、ときどき変わります</li><li>似た名前のボタンを押す前に、画面の写真をLINEへ</li><li>しっとるが押す場所を文字でお返しします</li></ul></div></div><p style="font-size:28px;color:#4f5b56">しっとるが、お客様の代わりにログインしたり、パスワードやカード番号をお聞きしたりすることはありません。</p><p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="26枚目">
+<section id="junbi-questions" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">広告づくり</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">広告を作るために、4つ教えてください</h2></div>
+<table style="font-size:29px;color:#1f2622;width:1664px"><tr style="background:#e3ece9"><th style="width:42%">教えていただくこと</th><th style="width:58%">例・決まり</th></tr><tr><td>1か月に広告に使う金額</td><td>お店でお決めください（こちらから金額はお勧めしません）</td></tr><tr><td>予約・お問い合わせ1件に、いくらまで出せるか</td><td>分からなければ「分からない」で大丈夫（初回の料金と同じ額で始めます）</td></tr><tr><td>広告を見た方を、どこに案内したいか</td><td>公式LINE／ネット予約ページ／ホームページ／お電話 など。そのURLも</td></tr><tr><td>広告に出したくない言葉</td><td>なければ「なし」で大丈夫</td></tr></table><p style="font-size:28px;color:#4f5b56">ホームページやホットペッパーのページがあれば、URLも教えてください。お店の説明はそこから作ります。</p>
+<p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="27枚目">
+<section id="junbi-filming" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">広告づくり</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">お店の動画を撮ってください（6本）</h2></div>
+<div style="display:flex;gap:28px"><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#fffdf9;padding:32px 36px;border:1px solid #dcd8cf;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">撮り方</h3><ul style="font-size:28px;line-height:1.55;color:#1f2622"><li>スマホを<b>縦向き</b>、1本<b>10秒</b>ほど（3秒より短いと使えません）</li><li>iPhoneは「設定→カメラ→ビデオ撮影」を「4K/30fps」に</li><li>LINEで送るときは「オリジナル画質」で</li><li>人が写るときは、写る方の了解をお願いします</li></ul></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#e3ece9;padding:32px 36px;border:1px solid #e3ece9;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">撮るもの</h3><ul style="font-size:28px;line-height:1.55;color:#1f2622"><li>① 最寄り駅の看板か、お店の外観〜入口</li><li>② お話を聞いている場面</li><li>③ 施術やサービスの手元（寄り）</li><li>④ 少し離れて全体</li><li>⑤ 横か真上から</li><li>⑥ 受けている方の表情</li></ul></div></div><p style="font-size:28px;color:#4f5b56">実際のお店が映る動画で作ると、いちばん反応が取れやすくなります。動画が難しければ写真でも作れます。</p>
+<p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="28枚目">
+<section id="junbi-after" style="background:#f6f4ef;color:#1f2622;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:104px 128px 150px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:10px"><p style="font-size:26px;font-weight:700;color:#b4501f;letter-spacing:2px">公開と公開後</p>
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:64px;font-weight:700;line-height:1.15;color:#1c3f3a">公開したあとの流れ</h2></div>
+<div style="display:flex;gap:28px"><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#fffdf9;padding:32px 36px;border:1px solid #dcd8cf;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">公開の日</h3><ul style="font-size:28px;line-height:1.55;color:#1f2622"><li>しっとるが広告を公開し、LINEでお知らせします</li><li>Metaの審査は多くが24時間以内</li><li>1日の広告費は、月の金額÷30を超えません</li></ul></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#fffdf9;padding:32px 36px;border:1px solid #dcd8cf;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#1c3f3a">3〜4日</h3><ul style="font-size:28px;line-height:1.55;color:#1f2622"><li>Metaが見せる相手を調整する期間</li><li>この間は設定を変えずに様子を見ます</li></ul></div><div style="flex:1;display:flex;flex-direction:column;gap:14px;background:#e2efe3;padding:32px 36px;border:1px solid #e2efe3;border-radius:16px"><h3 style="font-size:34px;font-weight:700;color:#2f6b3a">そのあと毎日</h3><ul style="font-size:28px;line-height:1.55;color:#1f2622"><li>数字を見て、反応が落ちた広告を入れ替えます</li><li>予算を上げるのは、お客様のご了解をいただいたときだけ</li><li>毎週、来られた方の数を伺うことがあります</li></ul></div></div>
+<p style="position:absolute;left:128px;bottom:56px;width:1664px;font-size:24px;color:#7a857f">広告をはじめる準備　　／　分からないときは画面の写真をLINEで</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="29枚目">
+<section id="junbi-contact" style="background:#1c3f3a;color:#f6f4ef;font-family:'BIZ UDPGothic', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:36px">
+<h2 style="font-family:'BIZ UDPMincho', Georgia, serif;font-size:76px;font-weight:700;color:#fbfbf8">ご連絡はLINEで</h2>
+<p style="font-size:40px;line-height:1.6;color:#cfe0dc">お電話ではお受けしていません。分からない画面は、写真をLINEで送ってください。<br>必要なときは、Zoomで画面を見ながら一緒に進めます。</p>
+<p style="font-size:34px;color:#f0a074">パスワードやカード番号を、しっとるがお聞きすることはありません</p>
+
+</section>
+</div>
+</main>
+<nav class="docnav" aria-label="マカセルの資料"><p class="docnav-h">マカセルの資料</p><ul><li><a href="/makaseru/about/">マカセル サービス紹介</a></li><li><a href="/makaseru/junbi/" aria-current="page">広告をはじめる準備（マカセルをお使いのお客様）</a></li><li><a href="/makaseru/junbi-ads/">広告を始める準備（マカセルを使わないお客様）</a></li><li><a href="/makaseru/tsukaikata/">マカセルの使い方</a></li></ul></nav>
+<div style="height:40px"></div>
+<script>
+(function(){
+  var body=document.body, deck=document.querySelector('.deck');
+  var mode = window.innerWidth < 900 ? 'reflow' : 'slide';
+  function narrow(){
+    // In reading mode, stack side-by-side boxes whose text gets too narrow.
+    deck.querySelectorAll('.slide section div, .slide section').forEach(function(el){
+      var cs=getComputedStyle(el);
+      if(cs.display==='grid'){
+        var n=cs.gridTemplateColumns.split(' ').length;
+        if(n>2 || (n===2 && el.clientWidth<560)) el.classList.add('gcol');
+        return;
+      }
+      if(el.tagName==='SECTION'||cs.display!=='flex'||cs.flexDirection.indexOf('row')!==0||cs.flexWrap==='wrap') return;
+      var kids=[].slice.call(el.children).filter(function(k){return k.tagName!=='svg'&&!k.classList.contains('xshape')&&getComputedStyle(k).position!=='absolute';});
+      if(kids.length<2) return;
+      var tight=kids.some(function(k){return k.offsetWidth<240 && (k.textContent||'').trim().length>8;})
+        || kids.some(function(k){return k.tagName==='IMG';});
+      if(tight) el.classList.add('rcol');
+    });
+  }
+  // A single long token (e.g. a business ID) that is wider than its box shrinks to fit instead of breaking.
+  var ones=[].slice.call(deck.querySelectorAll('.slide section p, .slide section h3')).filter(function(p){return /^[\x21-\x7e]{8,}$/.test(p.textContent.trim()) && !p.children.length;});
+  ones.forEach(function(p){p.classList.add('one'); p.dataset.fs=parseFloat(getComputedStyle(p).fontSize);});
+  function shrink(){
+    ones.forEach(function(p){
+      var fs=+p.dataset.fs; p.style.fontSize=fs+'px';
+      while(p.scrollWidth>p.clientWidth+1 && fs>+p.dataset.fs*0.5){fs=fs*0.95; p.style.fontSize=fs.toFixed(1)+'px';}
+    });
+  }
+  function fit(){
+    var first=deck.querySelector('.slide'); if(!first) return;
+    var w=first.clientWidth;
+    deck.style.setProperty('--s', (w/1920).toFixed(5));
+    deck.style.setProperty('--z', Math.min(0.55, w/600).toFixed(4));
+  }
+  function apply(m){
+    mode=m;
+    body.classList.toggle('reflow', m==='reflow');
+    document.querySelectorAll('.viewsw button').forEach(function(b){b.setAttribute('aria-pressed', String(b.dataset.mode===m));});
+    fit();
+    if(m==='reflow') narrow();
+    shrink();
+  }
+  document.querySelectorAll('.viewsw button').forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.mode);});});
+  apply(mode);
+  var lastW=window.innerWidth;
+  window.addEventListener('resize',function(){fit(); if(Math.abs(window.innerWidth-lastW)>40){lastW=window.innerWidth; if(mode==='reflow') narrow(); shrink();}});
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ if(mode==='reflow') narrow(); shrink(); });
+})();
+</script>
+</body>
+</html>

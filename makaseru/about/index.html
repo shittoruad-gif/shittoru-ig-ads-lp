@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../makaseru-mark.svg" type="image/svg+xml">
+<link rel="icon" href="../icon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<title>マカセル サービス紹介</title>
+<meta name="description" content="マカセル（公式LINEで完結するInstagram・Facebook広告の運用サービス）のご紹介。できること、料金、始めるまでの流れ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500..800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#efece5;--ink:#1f2622;--mut:#4f5b56;--pine:#1c3f3a;--line:#d9e2df;--paper:#fffdf9}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141816;--ink:#e8ece9;--mut:#a9b5b0;--pine:#8fc7b8;--line:#33403b;--paper:#1c2220}}
+:root[data-theme="dark"]{--bg:#141816;--ink:#e8ece9;--mut:#a9b5b0;--pine:#8fc7b8;--line:#33403b;--paper:#1c2220}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.7}
+.top{max-width:1280px;margin:0 auto;padding:20px 16px 8px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px}
+.top h1{margin:0;font-size:18px;line-height:1.5;color:var(--pine)}
+.top .co{margin:0;font-size:12px;color:var(--mut)}
+.viewsw{display:none;gap:6px}
+.viewsw button{font:inherit;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.viewsw button[aria-pressed="true"]{background:var(--pine);color:var(--paper);border-color:var(--pine)}
+@media (max-width:899px){.viewsw{display:flex}}
+.deck{max-width:1280px;margin:0 auto;padding:8px 16px 0;display:flex;flex-direction:column;gap:20px}
+.slide{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:10px;box-shadow:0 2px 12px rgba(0,0,0,.12);background:#fff}
+.slide>section{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;transform:scale(var(--s,.18));overflow:hidden;box-sizing:border-box}
+/* slide-format defaults (no margins, div = flex column, heading/text defaults, ruled cells) */
+.slide section *{margin:0;box-sizing:border-box}
+.slide section{font-size:32px;line-height:1.4;overflow-wrap:anywhere}
+.slide section .one{white-space:nowrap;overflow-wrap:normal}
+.slide section div{min-width:0}
+.slide section div:not([style*="display"]){display:flex;flex-direction:column}
+.slide section h1{font-size:96px;font-weight:600;line-height:1.1}
+.slide section h2{font-size:64px;font-weight:600;line-height:1.15}
+.slide section h3{font-size:44px;font-weight:600;line-height:1.2}
+.slide section ul,.slide section ol{padding-left:1.3em}
+.slide section img{display:block;flex:none;max-width:none}
+.slide section .xi{display:block;flex:none}
+.slide section .xshape{flex:none}
+.slide section hr{border:0;border-top:1px solid currentColor;width:100%;height:0}
+.slide section table{border-collapse:separate;border-spacing:0;width:100%;overflow:hidden}
+.slide section th,.slide section td{padding:.35em .6em;text-align:left;vertical-align:middle;border-bottom:1px solid rgba(0,0,0,.12)}
+.slide section th{font-weight:600}
+.slide section tr:last-child td{border-bottom:0}
+.slide section a{color:inherit}
+/* phone reading mode: same slide markup, one column, larger text */
+body.reflow .slide{aspect-ratio:auto;overflow:visible}
+body.reflow .slide>section{position:relative;width:auto;height:auto;transform:none;zoom:var(--z,.55);padding:56px 40px 48px!important;gap:32px!important;justify-content:flex-start!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;border-radius:10px}
+body.reflow .slide section [style*="position:absolute"]{position:static!important;width:auto!important;height:auto!important;order:10}
+body.reflow .slide section div[style*="position:absolute"]:empty{display:none!important}
+body.reflow .slide section [style*="width:"]{max-width:100%}
+body.reflow .slide section div[style*="height:"]{height:auto!important}
+body.reflow .slide section img{width:100%!important;height:auto!important;max-height:none!important}
+body.reflow .slide section table{width:100%!important}
+body.reflow .slide section .xshape{display:none!important}
+body.reflow .slide section .rcol{flex-direction:column!important;align-items:stretch!important}
+body.reflow .slide section .gcol{grid-template-columns:1fr!important}
+/* closing slide: the QR captions sit on a light card in the slide; in reading mode they sit on the dark slide */
+body.reflow #about-close p[style*="right:160px"]{color:#F7F4EE!important}
+body.reflow #about-close p[style*="right:160px"][style*="font-size:26px"]{color:#C9DBD6!important}
+body.reflow #about-close img{max-width:360px!important;align-self:center}
+
+.docnav{max-width:820px;margin:32px auto 0;padding:16px 18px;border-top:1px solid var(--dn-line,#d9e2df);font-family:"Noto Sans JP",system-ui,sans-serif}
+.docnav-h{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--dn-mut,#4f5b56)}
+.docnav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 10px}
+.docnav li{margin:0;padding:0}
+.docnav a{display:inline-block;font-size:14px;line-height:1.5;padding:6px 12px;border:1px solid var(--dn-line,#d9e2df);border-radius:999px;color:var(--dn-ink,#1c3f3a);text-decoration:none;background:var(--dn-bg,#fffdf9)}
+.docnav a[aria-current="page"]{background:var(--dn-ink,#1c3f3a);color:var(--dn-bg,#fffdf9);border-color:var(--dn-ink,#1c3f3a)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .docnav{--dn-line:#33403b;--dn-mut:#a9b5b0;--dn-ink:#8fc7b8;--dn-bg:#1c2220}}
+:root[data-theme="dark"] .docnav{--dn-line:#33403b;--dn-mut:#a9b5b0;--dn-ink:#8fc7b8;--dn-bg:#1c2220}
+</style>
+</head>
+<body>
+<header class="top">
+<div><h1>マカセル サービス紹介</h1><p class="co">株式会社しっとる</p></div>
+<div class="viewsw" role="group" aria-label="表示の切り替え"><button type="button" data-mode="reflow" aria-pressed="false">読みやすい表示</button><button type="button" data-mode="slide" aria-pressed="false">スライドのまま</button></div>
+</header>
+<main class="deck">
+<div class="slide" role="group" aria-label="1枚目">
+<section id="about-cover" style="background:#15302C;color:#F7F4EE;font-family:'Noto Sans JP', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:44px">
+<div style="position:absolute;right:0;top:0;width:600px;height:1080px;background:linear-gradient(160deg, #1F4540 0%, #15302C 70%)"></div>
+<p style="position:absolute;left:1416px;top:360px;width:376px;font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:700;line-height:2.1;color:#C9DBD6">毎月の動画づくり<br>投稿と広告の運用<br>毎週のレポート<br>ご自身での追加</p>
+<svg aria-label="マカセルのロゴ" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349 100" width="349" height="100" style="width:628px;height:180px"><rect width="100" height="100" rx="28" fill="#fff"/><path d="M20 70 L38 40 L50 58" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#1C3F3A" stroke-width="11"/><path d="M50 58 L64 34 L80 60" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke="#E0662E" stroke-width="11"/><g transform="translate(122 8) scale(0.027344)"><path d="M158 286.24H1721L1870 421.24Q1715 755.24 1502 1007.24Q1337 1201.24 1121 1370.24Q1291 1552.24 1397 1691.24L1213 1853.24Q863 1388.24 332 952.24L490 794.24Q712 971.24 973 1220.24Q1244 1011.24 1432 748.24Q1522 621.24 1581 491.24H158Z M2209 499.24H2819Q2827 277.24 2827 102.24000000000001H3059Q3057 330.24 3048 499.24H3784Q3778 1208.24 3726 1586.24Q3703 1758.24 3633 1822.24Q3560 1888.24 3382 1888.24Q3253 1888.24 3108 1867.24L3071 1642.24Q3244 1673.24 3354 1673.24Q3430 1673.24 3453 1650.24Q3479 1625.24 3496 1494.24Q3545 1106.24 3548 704.24H3038Q3000 1116.24 2863 1364.24Q2685 1685.24 2328 1888.24L2176 1710.24Q2400 1587.24 2558 1401.24Q2677 1261.24 2734 1084.24Q2789 917.24 2809 704.24H2209Z M4583 114.24000000000001H4812V585.24L5773 456.24L5898 581.24Q5787 891.24 5629 1082.24Q5521 1213.24 5373 1304.24L5199 1159.24Q5373 1062.24 5495 904.24Q5580 794.24 5619 677.24L4812 794.24V1484.24Q4812 1603.24 4894 1626.24Q4965 1647.24 5208 1647.24Q5484 1647.24 5781 1617.24V1845.24Q5510 1865.24 5222 1865.24Q4823 1865.24 4726 1825.24Q4583 1767.24 4583 1548.24V827.24L4163 888.24L4141 675.24L4583 616.24Z M6519 207.24H6744V571.24Q6744 1094.24 6666 1335.24Q6563 1654.24 6234 1867.24L6081 1689.24Q6309 1529.24 6402 1357.24Q6480 1212.24 6505 968.24Q6519 830.24 6519 575.24ZM7031 149.24H7256V1570.24Q7455 1467.24 7605 1277.24Q7769 1069.24 7850 784.24L8026 954.24Q7926 1251.24 7752 1461.24Q7533 1726.24 7178 1878.24L7031 1751.24Z" fill="#fff"/></g><g transform="translate(124 76) scale(0.012500)"><path d="M715 880.0 719 379.0H716L532 880.0H412L233 379.0H230L234 880.0H73V172.0H316L477 626.0H481L635 172.0H882V880.0Z M1768 880.0 1713 741.0H1439L1387 880.0H1201L1498 172.0H1664L1958 880.0ZM1578 361.0 1488 604.0H1666Z M2710 880.0 2447 554.0H2445V880.0H2277V172.0H2445V460.0H2448L2701 172.0H2915L2610 498.0L2933 880.0Z M3728 880.0 3673 741.0H3399L3347 880.0H3161L3458 172.0H3624L3918 880.0ZM3538 361.0 3448 604.0H3626Z M4611 356.0Q4589 328.0 4553.5 311.5Q4518 295.0 4485 295.0Q4468 295.0 4450.5 298.0Q4433 301.0 4419.0 309.5Q4405 318.0 4395.5 331.5Q4386 345.0 4386 366.0Q4386 384.0 4393.5 396.0Q4401 408.0 4415.5 417.0Q4430 426.0 4450.0 433.5Q4470 441.0 4495 449.0Q4531 461.0 4570.0 475.5Q4609 490.0 4641.0 514.0Q4673 538.0 4694.0 573.5Q4715 609.0 4715 662.0Q4715 723.0 4692.5 767.5Q4670 812.0 4632.0 841.0Q4594 870.0 4545.0 884.0Q4496 898.0 4444 898.0Q4368 898.0 4297.0 871.5Q4226 845.0 4179 796.0L4291 682.0Q4317 714.0 4359.5 735.5Q4402 757.0 4444 757.0Q4463 757.0 4481.0 753.0Q4499 749.0 4512.5 740.0Q4526 731.0 4534.0 716.0Q4542 701.0 4542 680.0Q4542 660.0 4532.0 646.0Q4522 632.0 4503.5 620.5Q4485 609.0 4457.5 599.5Q4430 590.0 4395 579.0Q4361 568.0 4328.5 553.0Q4296 538.0 4270.5 514.5Q4245 491.0 4229.5 457.5Q4214 424.0 4214 376.0Q4214 317.0 4238.0 275.0Q4262 233.0 4301.0 206.0Q4340 179.0 4389.0 166.5Q4438 154.0 4488 154.0Q4548 154.0 4610.5 176.0Q4673 198.0 4720 241.0Z M5088 880.0V172.0H5564V317.0H5253V450.0H5547V587.0H5253V734.0H5582V880.0Z M6334 880.0 6181 599.0H6123V880.0H5955V172.0H6225Q6276 172.0 6324.5 182.5Q6373 193.0 6411.5 218.0Q6450 243.0 6473.0 284.0Q6496 325.0 6496 386.0Q6496 458.0 6457.0 507.0Q6418 556.0 6349 577.0L6534 880.0ZM6327 389.0Q6327 364.0 6316.5 348.5Q6306 333.0 6289.5 324.5Q6273 316.0 6252.5 313.0Q6232 310.0 6213 310.0H6122V475.0H6203Q6224 475.0 6246.0 471.5Q6268 468.0 6286.0 459.0Q6304 450.0 6315.5 433.0Q6327 416.0 6327 389.0Z M7478 613.0Q7478 677.0 7456.5 729.5Q7435 782.0 7395.0 819.5Q7355 857.0 7298.5 878.0Q7242 899.0 7173 899.0Q7103 899.0 7047.0 878.0Q6991 857.0 6952.0 819.5Q6913 782.0 6892.0 729.5Q6871 677.0 6871 613.0V172.0H7041V599.0Q7041 628.0 7048.5 654.0Q7056 680.0 7071.5 700.5Q7087 721.0 7112.5 733.0Q7138 745.0 7174 745.0Q7210 745.0 7235.5 733.0Q7261 721.0 7277.0 700.5Q7293 680.0 7300.0 654.0Q7307 628.0 7307 599.0V172.0H7478V613.0Z" fill="#E0662E"/></g></svg>
+<p style="font-size:32px;font-weight:700;color:#F2A46B;letter-spacing:4px;width:1100px">Instagram・Facebook広告の運用サービス</p>
+<h1 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:80px;font-weight:900;line-height:1.3;width:1160px">公式LINEで完結する、<br>お店の広告運用。</h1>
+<p style="font-size:32px;color:#C9DBD6;line-height:1.6;width:1100px">毎月の動画と広告は、しっとるが進めます。<br>ご自身でも、公式LINEから追加で作れます。</p>
+<p style="position:absolute;left:128px;bottom:64px;width:900px;font-size:24px;color:#9FBDB6">株式会社しっとる</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="2枚目">
+<section id="about-worry" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">こんなお悩みはありませんか</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:72px;font-weight:900;line-height:1.2">広告を出したいけれど、<br>続けられるか不安。</h2>
+</div>
+<div style="display:flex;gap:32px;flex:1">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:48px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:72px;font-weight:800;color:#E8630A;line-height:1">01</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:40px;font-weight:900;line-height:1.35">何から始めれば<br>いいか分からない</h3>
+<p style="font-size:28px;line-height:1.7;color:#45524E">Facebookページ、広告アカウント…。準備の段階で止まってしまう。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:48px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:72px;font-weight:800;color:#E8630A;line-height:1">02</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:40px;font-weight:900;line-height:1.35">広告を増やすほど<br>費用も増える</h3>
+<p style="font-size:28px;line-height:1.7;color:#45524E">広告費に応じて代行の料金が上がると、配信を広げにくい。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:48px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:72px;font-weight:800;color:#E8630A;line-height:1">03</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:40px;font-weight:900;line-height:1.35">動画を作る<br>時間がない</h3>
+<p style="font-size:28px;line-height:1.7;color:#45524E">撮るのはできても、文字入れや編集までは手が回らない。</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:600px">マカセル サービス紹介　02</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="3枚目">
+<section id="about-what" style="background:#15302C;color:#F7F4EE;font-family:'Noto Sans JP', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#F2A46B;letter-spacing:3px">マカセルとは</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:64px;font-weight:900;line-height:1.3">公式LINEで完結する、<br>Instagram・Facebook広告の運用サービスです。</h2>
+</div>
+<div style="display:flex;gap:28px">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#1F4540;border-radius:24px;padding:44px">
+<svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#F2A46B;width:64px;height:64px"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:38px;font-weight:900;line-height:1.35">しっとるが進める</h3>
+<p style="font-size:27px;line-height:1.7;color:#C9DBD6">毎月の動画（ライト1本・プロ3本・ビジネス5本）を、希望を伺って作り、投稿と広告まで進めます。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#1F4540;border-radius:24px;padding:44px">
+<svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#F2A46B;width:64px;height:64px"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:38px;font-weight:900;line-height:1.35">LINEで確かめる</h3>
+<p style="font-size:27px;line-height:1.7;color:#C9DBD6">届いた構成案・動画・広告の条件を見て、ボタンを押すだけ。アプリを開かなくても進みます。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#1F4540;border-radius:24px;padding:44px">
+<svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#F2A46B;width:64px;height:64px"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:38px;font-weight:900;line-height:1.35">ご自身でも作れる</h3>
+<p style="font-size:27px;line-height:1.7;color:#C9DBD6">別の切り口の動画や広告の案を、公式LINEのメニューから追加で作れます（プランの作れる数の中で）。</p>
+</div>
+</div>
+<p style="font-size:26px;color:#9FBDB6;line-height:1.6">Meta広告＝Meta社が運営するInstagramとFacebookに出す広告。広告はお店の広告アカウントで出し、広告費はお店からMeta社へ直接お支払いいただきます。</p>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7FA49C;width:600px">マカセル サービス紹介　03</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="4枚目">
+<section id="about-roles" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">役わり</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:64px;font-weight:900;line-height:1.2">しっとるが進めること、ご自身で進めること。</h2>
+</div>
+<table style="font-size:26px;color:#15302C;background:#FFFDF8;border:1px solid #E4DED2;border-radius:20px">
+<tr style="background:#15302C"><th style="width:30%;padding:16px 24px;color:#F7F4EE">やること</th><th style="width:40%;color:#F2A46B;padding:16px 24px">しっとるが進める</th><th style="width:30%;color:#F7F4EE;padding:16px 24px">ご自身で進める</th></tr>
+<tr><td style="padding:16px 24px"><b>毎月の動画</b>（ライト1本・プロ3本・ビジネス5本）</td><td style="padding:16px 24px">希望を伺い、構成案から動画・投稿まで進めます</td><td style="padding:16px 24px">ボタンで選ぶ・確かめるだけ</td></tr>
+<tr><td style="padding:16px 24px"><b>その動画の広告</b></td><td style="padding:16px 24px">条件を確かめていただいた後、しっとるが始めます</td><td style="padding:16px 24px">条件を見て「OK」を押す</td></tr>
+<tr><td style="padding:16px 24px"><b>広告の見直し・入れ替え</b></td><td style="padding:16px 24px">毎朝判定し、必要なら新しい動画をお送りします</td><td style="padding:16px 24px">「この動画に入れ替える」を押す</td></tr>
+<tr><td style="padding:16px 24px"><b>毎週のレポート・改善案</b></td><td style="padding:16px 24px">毎週月曜の朝にお送りします</td><td style="padding:16px 24px">読むだけ</td></tr>
+<tr style="background:#F0ECE3"><td style="padding:16px 24px"><b>追加の動画・広告の案・キャッチコピー・規約チェック</b></td><td style="padding:16px 24px">―</td><td style="padding:16px 24px">公式LINEのメニューから</td></tr>
+<tr style="background:#F0ECE3"><td style="padding:16px 24px"><b>追加の動画の投稿・広告</b></td><td style="padding:16px 24px">―</td><td style="padding:16px 24px">届いたカードのボタンから</td></tr>
+</table>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:1664px">マカセル サービス紹介　04　｜　しっとるが進める月の分は、ご自身で作れる数（クレジット）からは引きません。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="5枚目">
+<section id="about-monthflow" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:104px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">毎月の流れ（しっとるが進める分）</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:60px;font-weight:900;line-height:1.2">LINEに届いたら、ボタンを押すだけ。</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr;gap:20px">
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:20px;padding:24px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:40px;font-weight:800;color:#E8630A;line-height:1">01</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:28px;font-weight:900;line-height:1.35">お支払いの日の3日前に希望のお伺い</h3>
+<p style="font-size:24px;line-height:1.5;color:#45524E">先月と同じなら1回押すだけ</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:20px;padding:24px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:40px;font-weight:800;color:#E8630A;line-height:1">02</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:28px;font-weight:900;line-height:1.35">構成案が3つ届く</h3>
+<p style="font-size:24px;line-height:1.5;color:#45524E">見比べて「この案にする」</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:20px;padding:24px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:40px;font-weight:800;color:#E8630A;line-height:1">03</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:28px;font-weight:900;line-height:1.35">動画と投稿の本文が届く</h3>
+<p style="font-size:24px;line-height:1.5;color:#45524E">本文にはお店の住所・アクセスなど</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:20px;padding:24px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:40px;font-weight:800;color:#E8630A;line-height:1">04</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:28px;font-weight:900;line-height:1.35">Instagramに投稿</h3>
+<p style="font-size:24px;line-height:1.5;color:#45524E">押してから5分後。その間は取り消せます</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:20px;padding:24px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:40px;font-weight:800;color:#E8630A;line-height:1">05</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:28px;font-weight:900;line-height:1.35">広告の条件が届く</h3>
+<p style="font-size:24px;line-height:1.5;color:#45524E">予算・リンク先・配信エリア・ターゲット</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#15302C;color:#F7F4EE;border-radius:20px;padding:24px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:40px;font-weight:800;color:#F2A46B;line-height:1">06</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:28px;font-weight:900;line-height:1.35">OKで、しっとるが広告を開始</h3>
+<p style="font-size:24px;line-height:1.5;color:#C9DBD6">「広告を始めました」が届く</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#15302C;color:#F7F4EE;border-radius:20px;padding:24px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:40px;font-weight:800;color:#F2A46B;line-height:1">07</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:28px;font-weight:900;line-height:1.35">審査の承認のお知らせ</h3>
+<p style="font-size:24px;line-height:1.5;color:#C9DBD6">ここから順に表示が始まります</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#15302C;color:#F7F4EE;border-radius:20px;padding:24px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:40px;font-weight:800;color:#F2A46B;line-height:1">08</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:28px;font-weight:900;line-height:1.35">毎週月曜のレポートと改善案</h3>
+<p style="font-size:24px;line-height:1.5;color:#C9DBD6">広告ごとの数字と次にやること</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#15302C;color:#F7F4EE;border-radius:20px;padding:24px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:40px;font-weight:800;color:#F2A46B;line-height:1">09</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:28px;font-weight:900;line-height:1.35">次の広告の3日前にお伺い</h3>
+<p style="font-size:24px;line-height:1.5;color:#C9DBD6">前回と同じか、一部だけ変えるか</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:10px;background:#15302C;color:#F7F4EE;border-radius:20px;padding:24px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:40px;font-weight:800;color:#F2A46B;line-height:1">10</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:28px;font-weight:900;line-height:1.35">30日間のまとめ</h3>
+<p style="font-size:24px;line-height:1.5;color:#C9DBD6">終わった翌朝に、数字と次に変える点</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:1664px">マカセル サービス紹介　05　｜　広告は30日間ずつ。始めた日を1日目に数えます（例：11月3日に始めたら12月2日まで）。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="6枚目">
+<section id="about-compare" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">いつものInstagram広告との違い</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:64px;font-weight:900;line-height:1.2">費用は一定のまま、毎月の運用はしっとるが。</h2>
+</div>
+<div style="display:flex;flex-direction:column">
+<div style="display:flex;gap:16px">
+<div style="width:300px"></div>
+<div style="flex:1;background:#E9E4DA;border-radius:20px 20px 0 0;padding:24px 32px"><p style="font-size:28px;font-weight:700;color:#45524E">Instagram広告の運用代行</p></div>
+<div style="flex:1;background:#15302C;border-radius:20px 20px 0 0;padding:24px 32px"><p style="font-size:28px;font-weight:700;color:#F7F4EE">マカセル</p></div>
+</div>
+<div style="display:flex;gap:16px;border-bottom:1px solid #DDD6C8">
+<div style="width:300px;padding:22px 0"><p style="font-size:26px;font-weight:700">料金のしくみ</p></div>
+<div style="flex:1;background:#F0ECE3;padding:22px 32px"><p style="font-size:26px;line-height:1.5;color:#45524E">広告費の20%＋税（最低 月11,000円）</p></div>
+<div style="flex:1;background:#FFFDF8;padding:22px 32px"><p style="font-size:26px;line-height:1.5"><b>月額固定</b>。広告費を増やしても変わらない</p></div>
+</div>
+<div style="display:flex;gap:16px;border-bottom:1px solid #DDD6C8">
+<div style="width:300px;padding:22px 0"><p style="font-size:26px;font-weight:700">契約の期間</p></div>
+<div style="flex:1;background:#F0ECE3;padding:22px 32px"><p style="font-size:26px;line-height:1.5;color:#45524E">最低3か月</p></div>
+<div style="flex:1;background:#FFFDF8;padding:22px 32px"><p style="font-size:26px;line-height:1.5"><b>縛りなし</b>。いつでも解約でき、7日間の無料お試しつき</p></div>
+</div>
+<div style="display:flex;gap:16px;border-bottom:1px solid #DDD6C8">
+<div style="width:300px;padding:22px 0"><p style="font-size:26px;font-weight:700">動画・広告</p></div>
+<div style="flex:1;background:#F0ECE3;padding:22px 32px"><p style="font-size:26px;line-height:1.5;color:#45524E">しっとるが企画・編集まで担当</p></div>
+<div style="flex:1;background:#FFFDF8;padding:22px 32px"><p style="font-size:26px;line-height:1.5">毎月の動画と広告は<b>しっとるが進め</b>、ご自身でも追加で作れる</p></div>
+</div>
+<div style="display:flex;gap:16px;border-bottom:1px solid #DDD6C8">
+<div style="width:300px;padding:22px 0"><p style="font-size:26px;font-weight:700">成績のお知らせ</p></div>
+<div style="flex:1;background:#F0ECE3;padding:22px 32px"><p style="font-size:26px;line-height:1.5;color:#45524E">毎月のレポート</p></div>
+<div style="flex:1;background:#FFFDF8;padding:22px 32px"><p style="font-size:26px;line-height:1.5"><b>毎週月曜</b>にLINEでレポートと改善案、<b>30日ごと</b>にまとめ</p></div>
+</div>
+<div style="display:flex;gap:16px">
+<div style="width:300px;padding:22px 0"><p style="font-size:26px;font-weight:700">向いている方</p></div>
+<div style="flex:1;background:#F0ECE3;border-radius:0 0 20px 20px;padding:22px 32px"><p style="font-size:26px;line-height:1.5;color:#45524E">撮影から動画づくりまで、すべて任せたい方</p></div>
+<div style="flex:1;background:#FFFDF8;border-radius:0 0 20px 20px;padding:22px 32px"><p style="font-size:26px;line-height:1.5">費用を一定にしたい方・LINEで手早く進めたい方・店舗が複数ある方</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:1664px">マカセル サービス紹介　06　｜　広告費（Meta社に払う広告そのものの費用）は、どちらもお客様からMeta社へ直接お支払いいただきます。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="7枚目">
+<section id="about-can1" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:128px 128px 160px;display:flex;gap:80px;align-items:center">
+<div style="flex:1;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">できること 1　広告の文章と画像</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:72px;font-weight:900;line-height:1.25">お店の説明から、<br>広告の案が2〜3個。</h2>
+<p style="font-size:30px;line-height:1.8;color:#45524E">公式LINEの「広告をつくる」からお店を選び、画像・複数枚・動画のどれで作るかを選ぶと、地域の名前が入った広告の文章と画像の案ができます。</p>
+<div style="display:flex;gap:16px;flex-wrap:wrap">
+<p style="font-size:26px;font-weight:700;background:#15302C;color:#F7F4EE;padding:12px 24px;border-radius:999px">地域の名前入り</p>
+<p style="font-size:26px;font-weight:700;background:#15302C;color:#F7F4EE;padding:12px 24px;border-radius:999px">広告の決まりのチェックつき</p>
+<p style="font-size:26px;font-weight:700;background:#15302C;color:#F7F4EE;padding:12px 24px;border-radius:999px">使わない言葉を指定できる</p>
+</div>
+</div>
+<div style="width:600px;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;gap:24px;align-items:center;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:32px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:56px;font-weight:800;color:#E8630A;line-height:1">1</p>
+<p style="font-size:28px;line-height:1.5">「広告をつくる」でお店と形を選ぶ</p>
+</div>
+<div style="display:flex;gap:24px;align-items:center;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:32px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:56px;font-weight:800;color:#E8630A;line-height:1">2</p>
+<p style="font-size:28px;line-height:1.5">届いた案を「確認・承認」で見比べる</p>
+</div>
+<div style="display:flex;gap:24px;align-items:center;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:32px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:56px;font-weight:800;color:#E8630A;line-height:1">3</p>
+<p style="font-size:28px;line-height:1.5">気に入った案を承認する</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:1664px">マカセル サービス紹介　07　｜　1回作るごとに、作れる数を1つ使います。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="8枚目">
+<section id="about-can2" style="background:#15302C;color:#F7F4EE;font-family:'Noto Sans JP', Arial, sans-serif;padding:128px 128px 160px;display:flex;gap:96px;align-items:center">
+<div style="width:420px;height:747px;border-radius:40px;background:#0E211E;padding:14px;box-shadow:0 30px 80px rgba(0,0,0,0.45)">
+<img loading="lazy" decoding="async" src="short-video-sample.jpg" alt="プロ仕上げのショート動画の1場面。上に店名と場所の帯、中央に二重の縁取りのテロップ" style="width:392px;height:719px;object-fit:cover;border-radius:28px">
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:32px">
+<p style="font-size:28px;font-weight:700;color:#F2A46B;letter-spacing:3px">できること 2　ショート動画</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:72px;font-weight:900;line-height:1.25">スマホで撮った動画が、<br>広告用の動画に。</h2>
+<p style="font-size:30px;line-height:1.8;color:#C9DBD6">毎月の動画はしっとるが作ります。ご自身でも、公式LINEで「動画をつくる」と送り、お店の動画や写真を送るだけで、文字（テロップ）の入ったショート動画が届きます。</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="background:#1F4540;border-radius:20px;padding:28px"><h3 style="font-size:30px;font-weight:700">読みやすい文字</h3><p style="font-size:26px;line-height:1.5;color:#C9DBD6">白い文字に二重の縁取り</p></div>
+<div style="background:#1F4540;border-radius:20px;padding:28px"><h3 style="font-size:30px;font-weight:700">大事な言葉だけ色</h3><p style="font-size:26px;line-height:1.5;color:#C9DBD6">地名やメニューが目に入る</p></div>
+<div style="background:#1F4540;border-radius:20px;padding:28px"><h3 style="font-size:30px;font-weight:700">店名の下に場所</h3><p style="font-size:26px;line-height:1.5;color:#C9DBD6">エリアと駅から何分か</p></div>
+<div style="background:#1F4540;border-radius:20px;padding:28px"><h3 style="font-size:30px;font-weight:700">見た目は10種類</h3><p style="font-size:26px;line-height:1.5;color:#C9DBD6">お店の雰囲気で選べる</p></div>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7FA49C;width:600px">マカセル サービス紹介　08</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="9枚目">
+<section id="about-linemenu" style="background:#15302C;color:#F7F4EE;font-family:'Noto Sans JP', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#F2A46B;letter-spacing:3px">公式LINEでできること</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:64px;font-weight:900;line-height:1.2">ほとんどの操作は、トークの下のメニューで。</h2>
+</div>
+<div style="display:flex;gap:56px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:16px">
+<img loading="lazy" decoding="async" src="line-menu.jpg" alt="マカセルの公式LINEのメニュー「つくる」のタブ。動画をつくる・広告をつくる・確認と承認・撮り方・キャッチコピー・規約チェックのボタン" style="width:780px;height:526px;object-fit:contain;border-radius:20px">
+<p style="font-size:24px;color:#9FBDB6">実際のメニュー（「つくる」のタブ）</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:900;color:#F2A46B">「見る・管理」のタブ</h3>
+<div style="display:flex;flex-direction:column;gap:10px">
+<p style="font-size:26px;line-height:1.5"><b>成果レポート</b>　直近7日の広告ごとの判定</p>
+<p style="font-size:26px;line-height:1.5"><b>準備と状況</b>　次にやること</p>
+<p style="font-size:26px;line-height:1.5"><b>残りの本数</b>　残り・使った内訳・次に戻る日</p>
+<p style="font-size:26px;line-height:1.5"><b>店舗の設定</b>　地域・予算・Instagramなど</p>
+<p style="font-size:26px;line-height:1.5"><b>使い方</b>　使い方のページを開く</p>
+<p style="font-size:26px;line-height:1.5"><b>質問・連絡</b>　トークに送るだけで担当へ</p>
+</div>
+<p style="font-size:24px;line-height:1.6;color:#C9DBD6;background:#1F4540;border-radius:16px;padding:20px 24px">トークに「動画の希望」「撮り方」「残りの本数」「成果レポート」「確認」「使い方」と送っても使えます。</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7FA49C;width:1664px">マカセル サービス紹介　09　｜　カードの入力とMetaへのログインだけは、ブラウザの画面で行います。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="10枚目">
+<section id="about-selfmake" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:104px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">ご自身で追加の動画を作るとき（実際の画面）</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:60px;font-weight:900;line-height:1.2">動画1本につき、使うのは1本だけ。</h2>
+</div>
+<div style="display:flex;gap:28px;flex:1">
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:440px;display:flex;align-items:center;justify-content:center;background:#2B2D30;border-radius:20px;padding:20px">
+<img loading="lazy" decoding="async" src="self-01-start.jpg" alt="公式LINEで「動画をつくる」と送ったところ。素材を2〜6本送って「作る」を押す案内と、作る・前に送った素材で作る・撮り方・やめるのボタン" style="width:480px;height:400px;object-fit:contain">
+</div>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:30px;font-weight:900;line-height:1.4">1　「動画をつくる」と送り、素材を送って「作る」</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:440px;display:flex;align-items:center;justify-content:center;background:#2B2D30;border-radius:20px;padding:20px">
+<img loading="lazy" decoding="async" src="self-02-telops.jpg" alt="テロップ案のカード。案2の悩み名指し型の文と「この案で動画を作る」のボタン" style="width:480px;height:400px;object-fit:contain">
+</div>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:30px;font-weight:900;line-height:1.4">2　テロップ案が3つ届く（ここでは使いません）</h3>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px">
+<div style="height:440px;display:flex;align-items:center;justify-content:center;background:#2B2D30;border-radius:20px;padding:20px">
+<img loading="lazy" decoding="async" src="self-03-video.jpg" alt="できた動画と、承認して素材を受け取る・Instagramに投稿する・別の案で作るのボタン" style="width:480px;height:400px;object-fit:contain">
+</div>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:30px;font-weight:900;line-height:1.4">3　「この案で動画を作る」で1本。2〜3分で届く</h3>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:1664px">マカセル サービス紹介　10　｜　ムーブアクト金光店で作ったときの画面です。投稿・広告にするときは、届いたカードのボタンから。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="11枚目">
+<section id="about-can3" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:120px 128px 160px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">できること 3　レポート</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:64px;font-weight:900;line-height:1.2">数字と、次にやることが届きます。</h2>
+</div>
+<div style="display:flex;gap:28px;flex:1">
+<div style="flex:1;display:flex;flex-direction:column;gap:18px;background:#15302C;color:#F7F4EE;border-radius:24px;padding:40px">
+<div style="display:flex;align-items:center;gap:16px"><svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#F2A46B;width:52px;height:52px"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg><h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:900">毎週月曜の朝</h3></div>
+<p style="font-size:26px;line-height:1.7;color:#C9DBD6">直近7日の数字と改善案。「続ける」「替える」「止める」「予算を変える」の判定ごとに、理由と次の一手を書きます。</p>
+<p style="font-size:24px;line-height:1.6;color:#F2A46B">【マカセル】の広告は広告ごと、ご自身で出している広告は合計で分けて書きます。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:40px">
+<div style="display:flex;align-items:center;gap:16px"><svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#E8630A;width:52px;height:52px"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg><h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:900">審査の結果</h3></div>
+<p style="font-size:26px;line-height:1.7;color:#45524E">Metaの審査で承認されたら「承認されました」をお送りします。直すように言われたときは、こちらで直してからお知らせします。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:18px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:40px">
+<div style="display:flex;align-items:center;gap:16px"><svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#E8630A;width:52px;height:52px"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg><h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:900">30日間のまとめ</h3></div>
+<p style="font-size:26px;line-height:1.7;color:#45524E">広告が終わった翌朝に、使った広告費・表示回数・届いた人数・クリック数・クリック率・1クリックあたりと、良かった点・次に変える点。</p>
+</div>
+</div>
+<p style="font-size:26px;line-height:1.6;color:#45524E">見飽きられ始めた広告には新しい動画をお送りします。「この動画に入れ替える」を押すと、しっとるが入れ替えます（広告費の設定は変わりません）。</p>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:1664px">マカセル サービス紹介　11　｜　メニューの「成果レポート」でも、いつでも見られます。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="12枚目">
+<section id="about-linenotice" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">安心のしくみ</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:64px;font-weight:900;line-height:1.2">押し間違えても、取り消せます。</h2>
+</div>
+<div style="display:flex;gap:40px;align-items:start">
+<table style="width:1000px;font-size:26px;color:#15302C;background:#FFFDF8;border:1px solid #E4DED2;border-radius:20px">
+<tr style="background:#15302C"><th style="width:48%;padding:16px 24px;color:#F7F4EE">押したボタン</th><th style="width:52%;color:#F2A46B;padding:16px 24px">取り消し方</th></tr>
+<tr><td style="padding:16px 24px">この案にする（構成案）</td><td style="padding:16px 24px">返事に出る「取り消す」（30分）</td></tr>
+<tr><td style="padding:16px 24px">この動画にする</td><td style="padding:16px 24px">「取り消す」（投稿までの5分）</td></tr>
+<tr><td style="padding:16px 24px">この条件で広告を始めてOK</td><td style="padding:16px 24px">「取り消す」（30分）。広告を止めて消します</td></tr>
+<tr><td style="padding:16px 24px">直してほしい</td><td style="padding:16px 24px">「やっぱりこのままでいい」</td></tr>
+<tr><td style="padding:16px 24px">先月と同じでOK／前回と同じでOK</td><td style="padding:16px 24px">「取り消す」（30分）</td></tr>
+<tr><td style="padding:16px 24px">動画の希望の答え</td><td style="padding:16px 24px">「1つ戻る」</td></tr>
+</table>
+<div style="flex:1;display:flex;flex-direction:column;gap:22px;background:#15302C;color:#F7F4EE;border-radius:24px;padding:40px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:34px;font-weight:900;line-height:1.4;color:#F2A46B">広告の名前は<br>【マカセル】から</h3>
+<p style="font-size:26px;line-height:1.7;color:#C9DBD6">広告アカウントで「【マカセル】」から始まる名前の広告が、しっとるが運用している広告です。ご自身で出している広告には触れません。</p>
+<p style="font-size:26px;line-height:1.7;color:#C9DBD6">投稿や広告は、公式LINEや画面で承認したものだけです。</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:1664px">マカセル サービス紹介　12　｜　取り消しの時間を過ぎたときは、トークにそのまま書いて送ってください。担当が対応します。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="13枚目">
+<section id="about-can4" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">できること 4　そのほか</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:72px;font-weight:900;line-height:1.25">困ったときも、アプリとLINEで。</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;flex:1">
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:40px">
+<svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#E8630A;width:56px;height:56px"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:900">LINEで質問</h3>
+<p style="font-size:26px;line-height:1.7;color:#45524E">トークに送るだけで、担当につながります。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:40px">
+<svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#E8630A;width:56px;height:56px"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:900">広告の決まりのチェック</h3>
+<p style="font-size:26px;line-height:1.7;color:#45524E">使えない言葉が入っていないか、出す前に確かめます。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:40px">
+<svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#E8630A;width:56px;height:56px"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:900">便利な道具</h3>
+<p style="font-size:26px;line-height:1.7;color:#45524E">キャッチコピーはテーマを一言送ると10案。規約チェックは文を貼るだけ。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:40px">
+<svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#E8630A;width:56px;height:56px"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:900">複数の店舗</h3>
+<p style="font-size:26px;line-height:1.7;color:#45524E">店舗ごとに広告アカウントとInstagramを分けて管理できます。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:40px">
+<svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#E8630A;width:56px;height:56px"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:900">複数の方で受け取る</h3>
+<p style="font-size:26px;line-height:1.7;color:#45524E">確認やレポートを、ほかの方のLINEにも届けられます。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:40px">
+<svg class="xi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#E8630A;width:56px;height:56px"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:900">契約書はメールで</h3>
+<p style="font-size:26px;line-height:1.7;color:#45524E">お申し込みと同時に届き、アプリからいつでも見られます。</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:600px">マカセル サービス紹介　13</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="14枚目">
+<section id="about-omakase" style="background:#E8630A;color:#1A1410;font-family:'Noto Sans JP', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#3A1E08;letter-spacing:3px">どのプランにも入っています</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:80px;font-weight:900;line-height:1.2">しっとるが、代わりにやります。</h2>
+</div>
+<div style="display:flex;gap:28px;flex:1">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFF6EE;border-radius:24px;padding:44px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:64px;font-weight:800;color:#C2500A;line-height:1">1</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:38px;font-weight:900;line-height:1.35">はじめの設定を<br>Zoomで一緒に</h3>
+<p style="font-size:26px;line-height:1.7;color:#4A3A2E">Meta広告の準備から、最初の広告を出すまで。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFF6EE;border-radius:24px;padding:44px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:64px;font-weight:800;color:#C2500A;line-height:1">2</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:38px;font-weight:900;line-height:1.35">毎月の動画を<br>作る</h3>
+<p style="font-size:26px;line-height:1.7;color:#4A3A2E">希望を伺い、構成案から動画・投稿の本文まで（ライト1本・プロ3本・ビジネス5本）。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFF6EE;border-radius:24px;padding:44px">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:64px;font-weight:800;color:#C2500A;line-height:1">3</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:38px;font-weight:900;line-height:1.35">広告を始める・<br>入れ替える</h3>
+<p style="font-size:26px;line-height:1.7;color:#4A3A2E">条件を確かめていただいてから始め、見飽きられ始めたら新しい動画に替えます。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#15302C;border-radius:24px;padding:44px;color:#F7F4EE">
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:64px;font-weight:800;color:#F2A46B;line-height:1">4</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:38px;font-weight:900;line-height:1.35">レポートと<br>改善案</h3>
+<p style="font-size:26px;line-height:1.7;color:#C9DBD6">毎週月曜の朝と、30日間が終わった翌朝に、公式LINEへ。</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#3A1E08;width:1400px">マカセル サービス紹介　14　｜　担当者のサポートは、初回のお支払いの後から始まります。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="15枚目">
+<section id="about-price" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:44px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">料金（月額・税込）</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:64px;font-weight:900;line-height:1.2">お店の数で選ぶ、3つのプラン。</h2>
+</div>
+<p style="font-size:28px;font-weight:700;background:#15302C;color:#F7F4EE;padding:14px 28px;border-radius:999px">7日間無料でお試し</p>
+</div>
+<div style="display:flex;gap:28px;align-items:stretch">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:28px;padding:44px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:40px;font-weight:900">ライト</h3>
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:80px;font-weight:800;line-height:1">19,800<span style="color:#45524E">円</span></p>
+<hr style="border-top:1px solid #E4DED2">
+<p style="font-size:26px;line-height:1.5">広告アカウント <b>1つ</b>（お店1つ）</p>
+<p style="font-size:26px;line-height:1.5">しっとるが進める動画 <b>月1本</b></p>
+<p style="font-size:26px;line-height:1.5">ご自身で作れる数 <b>月60</b></p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#15302C;color:#F7F4EE;border-radius:28px;padding:44px;box-shadow:0 20px 60px rgba(21,48,44,0.25)">
+<div style="display:flex;justify-content:space-between;align-items:center"><h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:40px;font-weight:900">プロ</h3><p style="font-size:24px;font-weight:700;background:#E8630A;color:#1A1410;padding:6px 18px;border-radius:999px">おすすめ</p></div>
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:80px;font-weight:800;line-height:1">33,000<span style="color:#C9DBD6">円</span></p>
+<hr style="border-top:1px solid #2F5A53">
+<p style="font-size:26px;line-height:1.5">広告アカウント <b>3つ</b>まで</p>
+<p style="font-size:26px;line-height:1.5">しっとるが進める動画 <b>月3本</b></p>
+<p style="font-size:26px;line-height:1.5">ご自身で作れる数 <b>月120</b></p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:28px;padding:44px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:40px;font-weight:900">ビジネス</h3>
+<p style="font-family:'DM Sans', Arial, sans-serif;font-size:80px;font-weight:800;line-height:1">49,500<span style="color:#45524E">円</span></p>
+<hr style="border-top:1px solid #E4DED2">
+<p style="font-size:26px;line-height:1.5">広告アカウント <b>6つ</b>まで</p>
+<p style="font-size:26px;line-height:1.5">しっとるが進める動画 <b>月5本</b></p>
+<p style="font-size:26px;line-height:1.5">ご自身で作れる数 <b>月200</b></p>
+</div>
+</div>
+<p style="font-size:26px;line-height:1.6;color:#45524E">「しっとるが進める動画」は、希望のお伺いから広告までしっとるが進める毎月の本数です。<b>ご自身で作れる数（クレジット）からは引きません。</b>数え方は次のページ。</p>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:1400px">マカセル サービス紹介　15　｜　年払いは12か月分が11か月分の料金（1か月分お得）</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="16枚目">
+<section id="about-count" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:104px 128px 160px;display:flex;flex-direction:column;gap:36px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">作れる数（クレジット）の数え方</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:60px;font-weight:900;line-height:1.2">しっとるが進める分は、数えません。</h2>
+</div>
+<div style="display:flex;gap:36px;align-items:start">
+<table style="width:960px;font-size:26px;color:#15302C;background:#FFFDF8;border:1px solid #E4DED2;border-radius:20px">
+<tr style="background:#15302C"><th style="width:78%;padding:14px 24px;color:#F7F4EE">やること</th><th style="width:22%;color:#F2A46B;text-align:center;padding:14px 24px">使う数</th></tr>
+<tr><td style="padding:14px 24px">ショート動画を1本作る（作り直しも1本）</td><td style="text-align:center;padding:14px 24px"><b>1</b></td></tr>
+<tr><td style="padding:14px 24px">広告の案を作る（画像・複数枚・動画）</td><td style="text-align:center;padding:14px 24px"><b>1</b></td></tr>
+<tr><td style="padding:14px 24px">キャッチコピー・規約チェックなどの便利ツール</td><td style="text-align:center;padding:14px 24px"><b>1</b></td></tr>
+<tr><td style="padding:14px 24px">テロップ案・画像の作り直し・AIへの相談・自分の声のナレーション</td><td style="text-align:center;padding:14px 24px">別の枠</td></tr>
+<tr><td style="padding:14px 24px">ご自身で作った動画の音楽だけを替える</td><td style="text-align:center;padding:14px 24px"><b>0</b></td></tr>
+<tr style="background:#FBE3D2"><td style="padding:14px 24px">しっとるが進める月の分・自動の作り直し</td><td style="text-align:center;padding:14px 24px"><b>0</b></td></tr>
+</table>
+<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#15302C;color:#F7F4EE;border-radius:24px;padding:36px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900;color:#F2A46B">ライト（60）の使い方の例</h3>
+<p style="font-size:24px;line-height:1.7;color:#C9DBD6">別の切り口の動画を毎週2本（約8〜10）＋作り直し（約10）＋写真の広告の案を週1回（約4〜5）＋便利ツール（約10）。それでも30ほど残ります。</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900;color:#F2A46B">少なく済ませるコツ</h3>
+<p style="font-size:24px;line-height:1.7;color:#C9DBD6">文字はテロップ案の段階で決める。直したい所は1通にまとめて送る。</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:1664px">マカセル サービス紹介　16　｜　お支払いの日ごとに元に戻ります。足りないときは追加30本（3,300円・買った日から30日間）。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="17枚目">
+<section id="about-cost" style="background:#15302C;color:#F7F4EE;font-family:'Noto Sans JP', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#F2A46B;letter-spacing:3px">お金のしくみ</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:72px;font-weight:900;line-height:1.25">払うのは、2つだけ。</h2>
+</div>
+<div style="display:flex;gap:40px;align-items:stretch;flex:1">
+<div style="flex:1;display:flex;flex-direction:column;gap:24px;background:#F7F4EE;color:#15302C;border-radius:28px;padding:52px">
+<p style="font-size:26px;font-weight:700;color:#B8500A">しっとるへ</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:48px;font-weight:900">マカセルの料金</h3>
+<p style="font-size:28px;line-height:1.7;color:#45524E">毎月決まった額。カードで自動のお支払い。広告費をいくら使っても変わりません。</p>
+<ul style="font-size:26px;line-height:1.8;color:#45524E">
+<li>はじめの設定・毎月の動画と広告の運用込み</li>
+<li>契約期間の縛りなし</li>
+<li>7日間の無料お試し（カードの登録が必要）</li>
+</ul>
+</div>
+<div style="display:flex;align-items:center"><p style="font-family:'DM Sans', Arial, sans-serif;font-size:96px;font-weight:800;color:#E8630A">+</p></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:24px;background:#1F4540;border-radius:28px;padding:52px">
+<p style="font-size:26px;font-weight:700;color:#F2A46B">Meta社へ</p>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:48px;font-weight:900">広告費</h3>
+<p style="font-size:28px;line-height:1.7;color:#C9DBD6">広告そのものにかかる費用。お客様のカードからMeta社へ直接お支払いいただきます。</p>
+<ul style="font-size:26px;line-height:1.8;color:#C9DBD6">
+<li>いくら使うかは、お客様が決めます</li>
+<li>しっとるが広告費から手数料をいただくことはありません</li>
+</ul>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7FA49C;width:600px">マカセル サービス紹介　17</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="18枚目">
+<section id="about-yoyaku" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:104px 128px 160px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">広告から来られた予約の数え方</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:60px;font-weight:900;line-height:1.2">リンク先に合った数え方を、ご提案します。</h2>
+</div>
+<table style="font-size:25px;color:#15302C;background:#FFFDF8;border:1px solid #E4DED2;border-radius:20px">
+<tr style="background:#15302C"><th style="width:26%;padding:14px 24px;color:#F7F4EE">リンク先</th><th style="width:74%;color:#F2A46B;padding:14px 24px">数え方</th></tr>
+<tr><td style="padding:14px 24px"><b>ホットペッパーなど他社の予約ページ</b></td><td style="padding:14px 24px">自動では数えられないため、広告専用のクーポン・来店時の問診票で「何を見てご予約いただきましたか？」と聞く・毎週のレポートのボタンで人数を教えていただく、のどれかをおすすめします</td></tr>
+<tr><td style="padding:14px 24px"><b>お店のホームページ</b></td><td style="padding:14px 24px">お店ごとの計測のしかけ（1行）と貼り方を公式LINEでお送りします。貼ったあと「確かめる」で届いているか確かめます</td></tr>
+<tr><td style="padding:14px 24px"><b>公式LINE</b></td><td style="padding:14px 24px">公式LINE構築のオプションで、LINEからの予約・お問い合わせを数えられます</td></tr>
+<tr><td style="padding:14px 24px"><b>お電話だけ・分からない</b></td><td style="padding:14px 24px">毎週のレポートのボタンで人数を教えていただくか、下のLP制作</td></tr>
+</table>
+<div style="display:flex;gap:28px;align-items:center;background:#15302C;color:#F7F4EE;border-radius:24px;padding:32px 40px">
+<p style="font-size:26px;font-weight:700;background:#E8630A;color:#1A1410;padding:8px 20px;border-radius:999px;white-space:nowrap">オプション</p>
+<p style="flex:1;font-size:25px;line-height:1.6;color:#C9DBD6"><b>しっとるのLP制作</b>：計測のしかけを入れたLPを広告の行き先にすると、ボタンが押された数・予約が済んだ数まで自動で数えられます。月額14,300円（税込・1ページ・初期費用0円・公開後の修正は月3回まで無料・12か月契約）。</p>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:1664px">マカセル サービス紹介　18　｜　ご提案は公式LINEに届きます。「話を聞きたい」を押すと担当からご連絡し、押しただけでお申し込みにはなりません。</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="19枚目">
+<section id="about-flow" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">始めるまでの流れ</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:72px;font-weight:900;line-height:1.25">登録から広告まで、6つのステップ。</h2>
+</div>
+<div style="display:flex;gap:24px;flex:1">
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:center;gap:16px"><p style="width:120px;height:120px;border-radius:50%;background:#15302C;color:#F7F4EE;font-family:'DM Sans', Arial, sans-serif;font-size:48px;font-weight:800;text-align:center;line-height:2.5">1</p><div class="xshape" aria-hidden="true" style="background:#E8B48E;width:56px;height:28px;clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)"></div></div>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900;line-height:1.4">公式LINEから登録</h3>
+<p style="font-size:24px;line-height:1.7;color:#45524E">お名前・メール・会社名・店舗名を入れます（5分ほど）。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:center;gap:16px"><p style="width:120px;height:120px;border-radius:50%;background:#15302C;color:#F7F4EE;font-family:'DM Sans', Arial, sans-serif;font-size:48px;font-weight:800;text-align:center;line-height:2.5">2</p><div class="xshape" aria-hidden="true" style="background:#E8B48E;width:56px;height:28px;clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)"></div></div>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900;line-height:1.4">プランを選ぶ</h3>
+<p style="font-size:24px;line-height:1.7;color:#45524E">カードを登録。7日間は無料。契約書がメールで届きます。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:center;gap:16px"><p style="width:120px;height:120px;border-radius:50%;background:#15302C;color:#F7F4EE;font-family:'DM Sans', Arial, sans-serif;font-size:48px;font-weight:800;text-align:center;line-height:2.5">3</p><div class="xshape" aria-hidden="true" style="background:#E8B48E;width:56px;height:28px;clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)"></div></div>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900;line-height:1.4">事前のアンケート</h3>
+<p style="font-size:24px;line-height:1.7;color:#45524E">今の準備の状況を5分で。分からない所は「わからない」で大丈夫。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:center;gap:16px"><p style="width:120px;height:120px;border-radius:50%;background:#E8630A;color:#1A1410;font-family:'DM Sans', Arial, sans-serif;font-size:48px;font-weight:800;text-align:center;line-height:2.5">4</p><div class="xshape" aria-hidden="true" style="background:#E8B48E;width:56px;height:28px;clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)"></div></div>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900;line-height:1.4">権限を渡す（Zoomで一緒に）</h3>
+<p style="font-size:24px;line-height:1.7;color:#45524E">Facebookページ・広告アカウントの準備と、しっとるへの権限まで。お店の登録とMetaとのつなぎは、しっとるが行います。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:center;gap:16px"><p style="width:120px;height:120px;border-radius:50%;background:#15302C;color:#F7F4EE;font-family:'DM Sans', Arial, sans-serif;font-size:48px;font-weight:800;text-align:center;line-height:2.5">5</p><div class="xshape" aria-hidden="true" style="background:#E8B48E;width:56px;height:28px;clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%)"></div></div>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900;line-height:1.4">毎月の流れへ</h3>
+<p style="font-size:24px;line-height:1.7;color:#45524E">動画の希望が届き、しっとるが動画と広告を進めます。</p>
+</div>
+<div style="flex:1;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:center;gap:16px"><p style="width:120px;height:120px;border-radius:50%;background:#15302C;color:#F7F4EE;font-family:'DM Sans', Arial, sans-serif;font-size:48px;font-weight:800;text-align:center;line-height:2.5">6</p></div>
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900;line-height:1.4">レポートと改善案</h3>
+<p style="font-size:24px;line-height:1.7;color:#45524E">毎週月曜の朝と、30日ごとのまとめが届きます。</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:600px">マカセル サービス紹介　19</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="20枚目">
+<section id="about-faq" style="background:#F7F4EE;color:#15302C;font-family:'Noto Sans JP', Arial, sans-serif;padding:112px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<p style="font-size:28px;font-weight:700;color:#B8500A;letter-spacing:3px">よくあるご質問</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:64px;font-weight:900;line-height:1.2">はじめる前の、気になること。</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:36px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900"><span style="color:#E8630A">Q</span>　パソコンが苦手でも大丈夫？</h3>
+<p style="font-size:26px;line-height:1.7;color:#45524E">事前のアンケートで今の状況を確かめてから、Zoomで画面を見ながら一緒に進めます。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:36px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900"><span style="color:#E8630A">Q</span>　途中でやめられる？</h3>
+<p style="font-size:26px;line-height:1.7;color:#45524E">いつでも解約できます。お支払い済みの期間の終わりまで使えます。お試し中の解約は料金がかかりません。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:36px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900"><span style="color:#E8630A">Q</span>　InstagramやFacebookページが無い</h3>
+<p style="font-size:26px;line-height:1.7;color:#45524E">はじめの設定で一緒に用意します。Facebookの個人アカウントだけ、先にご用意ください。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFDF8;border:1px solid #E4DED2;border-radius:24px;padding:36px">
+<h3 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:32px;font-weight:900"><span style="color:#E8630A">Q</span>　広告費はいくら必要？</h3>
+<p style="font-size:26px;line-height:1.7;color:#45524E">お客様が決めます。Meta社へ直接お支払いいただき、マカセルの料金は変わりません。</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;font-size:24px;color:#7A8682;width:600px">マカセル サービス紹介　20</p>
+
+</section>
+</div>
+<div class="slide" role="group" aria-label="21枚目">
+<section id="about-close" style="background:#15302C;color:#F7F4EE;font-family:'Noto Sans JP', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:center;gap:48px">
+<div style="position:absolute;left:0;bottom:0;width:1920px;height:12px;background:#E8630A"></div>
+<div style="position:absolute;right:160px;top:220px;width:480px;height:600px;border-radius:32px;background:#F7F4EE"></div>
+<img loading="lazy" decoding="async" src="line-qr.png" alt="マカセルの公式LINEの友だち追加のQRコード" style="position:absolute;right:220px;top:270px;width:360px;height:360px;object-fit:contain">
+<p style="position:absolute;right:160px;top:660px;width:480px;font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:36px;font-weight:900;color:#15302C;text-align:center">マカセル公式LINE</p>
+<p style="position:absolute;right:160px;top:720px;width:480px;font-size:26px;color:#45524E;text-align:center">友だち追加して「アカウントを作る」</p>
+<p style="font-size:30px;font-weight:700;color:#F2A46B;letter-spacing:3px;width:1000px">まずは7日間、無料で</p>
+<h2 style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:96px;font-weight:900;line-height:1.2;width:1100px">広告づくりを、<br>マカセルに。</h2>
+<p style="font-size:32px;line-height:1.7;color:#C9DBD6;width:1000px">右のQRコードから公式LINEを友だち追加し、「アカウントを作る」から始められます。分からないことは、いつでもLINEでご相談ください。</p>
+<p style="font-family:'Zen Kaku Gothic New', Arial, sans-serif;font-size:40px;font-weight:900;width:1000px">株式会社しっとる</p>
+
+</section>
+</div>
+</main>
+<nav class="docnav" aria-label="マカセルの資料"><p class="docnav-h">マカセルの資料</p><ul><li><a href="/makaseru/about/" aria-current="page">マカセル サービス紹介</a></li><li><a href="/makaseru/junbi/">広告をはじめる準備（マカセルをお使いのお客様）</a></li><li><a href="/makaseru/junbi-ads/">広告を始める準備（マカセルを使わないお客様）</a></li><li><a href="/makaseru/tsukaikata/">マカセルの使い方</a></li></ul></nav>
+<div style="height:40px"></div>
+<script>
+(function(){
+  var body=document.body, deck=document.querySelector('.deck');
+  var mode = window.innerWidth < 900 ? 'reflow' : 'slide';
+  function narrow(){
+    // In reading mode, stack side-by-side boxes whose text gets too narrow.
+    deck.querySelectorAll('.slide section div, .slide section').forEach(function(el){
+      var cs=getComputedStyle(el);
+      if(cs.display==='grid'){
+        var n=cs.gridTemplateColumns.split(' ').length;
+        if(n>2 || (n===2 && el.clientWidth<560)) el.classList.add('gcol');
+        return;
+      }
+      if(el.tagName==='SECTION'||cs.display!=='flex'||cs.flexDirection.indexOf('row')!==0||cs.flexWrap==='wrap') return;
+      var kids=[].slice.call(el.children).filter(function(k){return k.tagName!=='svg'&&!k.classList.contains('xshape')&&getComputedStyle(k).position!=='absolute';});
+      if(kids.length<2) return;
+      var tight=kids.some(function(k){return k.offsetWidth<240 && (k.textContent||'').trim().length>8;})
+        || kids.some(function(k){return k.tagName==='IMG';});
+      if(tight) el.classList.add('rcol');
+    });
+  }
+  // A single long token (e.g. a business ID) that is wider than its box shrinks to fit instead of breaking.
+  var ones=[].slice.call(deck.querySelectorAll('.slide section p, .slide section h3')).filter(function(p){return /^[\x21-\x7e]{8,}$/.test(p.textContent.trim()) && !p.children.length;});
+  ones.forEach(function(p){p.classList.add('one'); p.dataset.fs=parseFloat(getComputedStyle(p).fontSize);});
+  function shrink(){
+    ones.forEach(function(p){
+      var fs=+p.dataset.fs; p.style.fontSize=fs+'px';
+      while(p.scrollWidth>p.clientWidth+1 && fs>+p.dataset.fs*0.5){fs=fs*0.95; p.style.fontSize=fs.toFixed(1)+'px';}
+    });
+  }
+  function fit(){
+    var first=deck.querySelector('.slide'); if(!first) return;
+    var w=first.clientWidth;
+    deck.style.setProperty('--s', (w/1920).toFixed(5));
+    deck.style.setProperty('--z', Math.min(0.55, w/600).toFixed(4));
+  }
+  function apply(m){
+    mode=m;
+    body.classList.toggle('reflow', m==='reflow');
+    document.querySelectorAll('.viewsw button').forEach(function(b){b.setAttribute('aria-pressed', String(b.dataset.mode===m));});
+    fit();
+    if(m==='reflow') narrow();
+    shrink();
+  }
+  document.querySelectorAll('.viewsw button').forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.mode);});});
+  apply(mode);
+  var lastW=window.innerWidth;
+  window.addEventListener('resize',function(){fit(); if(Math.abs(window.innerWidth-lastW)>40){lastW=window.innerWidth; if(mode==='reflow') narrow(); shrink();}});
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ if(mode==='reflow') narrow(); shrink(); });
+})();
+</script>
+</body>
+</html>

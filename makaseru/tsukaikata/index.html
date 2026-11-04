@@ -58,6 +58,14 @@ details p{margin:8px 0 0}
 .flow b{display:block}
 footer{color:var(--mut);font-size:13px;text-align:center;margin-top:28px}
 figure{margin:12px 0}figure img{width:auto;max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px;display:block}figcaption{font-size:13px;color:var(--mut);margin-top:4px}
+.docnav{max-width:820px;margin:32px auto 0;padding:16px 18px;border-top:1px solid var(--dn-line,#d9e2df);font-family:"Noto Sans JP",system-ui,sans-serif}
+.docnav-h{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--dn-mut,#4f5b56)}
+.docnav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 10px}
+.docnav li{margin:0;padding:0}
+.docnav a{display:inline-block;font-size:14px;line-height:1.5;padding:6px 12px;border:1px solid var(--dn-line,#d9e2df);border-radius:999px;color:var(--dn-ink,#1c3f3a);text-decoration:none;background:var(--dn-bg,#fffdf9)}
+.docnav a[aria-current="page"]{background:var(--dn-ink,#1c3f3a);color:var(--dn-bg,#fffdf9);border-color:var(--dn-ink,#1c3f3a)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .docnav{--dn-line:#33403b;--dn-mut:#a9b5b0;--dn-ink:#8fc7b8;--dn-bg:#1c2220}}
+:root[data-theme="dark"] .docnav{--dn-line:#33403b;--dn-mut:#a9b5b0;--dn-ink:#8fc7b8;--dn-bg:#1c2220}
 </style>
 </head>
 <body>
@@ -405,6 +413,8 @@ figure{margin:12px 0}figure img{width:auto;max-width:100%;height:auto;border:1px
   <details><summary>プランを変えたい・解約したいときは？</summary><p>マカセルの画面の「料金プラン」から変更・解約ができます。解約すると次回からのお支払いが止まり、お支払い済みの期間の終わりまでお使いいただけます。</p></details>
   <details><summary>問い合わせはどこにすればよいですか？</summary><p>公式LINEのトークに、そのまま文字や画面の写真を送ってください（お電話ではお受けしていません）。担当者の対応は、当社の営業日・営業時間内に行います。</p></details>
 </section>
+
+<nav class="docnav" aria-label="マカセルの資料"><p class="docnav-h">マカセルの資料</p><ul><li><a href="/makaseru/about/">マカセル サービス紹介</a></li><li><a href="/makaseru/junbi/">広告をはじめる準備（マカセルをお使いのお客様）</a></li><li><a href="/makaseru/junbi-ads/">広告を始める準備（マカセルを使わないお客様）</a></li><li><a href="/makaseru/tsukaikata/" aria-current="page">マカセルの使い方</a></li></ul></nav>
 
 <footer>株式会社しっとる　マカセル　<a href="../" style="color:inherit">ご利用ガイド</a>　利用規約：<a href="https://app.s-toru.com/terms" style="color:inherit">app.s-toru.com/terms</a></footer>
 </div>
