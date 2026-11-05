@@ -64,11 +64,23 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .check li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border:2px solid var(--fg);border-radius:3px}
 footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
 
-a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-break:break-all}a.ext code{color:#1a5fb4}@media (prefers-color-scheme:dark){a.ext code{color:#8ab4f8}}</style>
+a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-break:break-all}a.ext code{color:#1a5fb4}@media (prefers-color-scheme:dark){a.ext code{color:#8ab4f8}}
+/* PCでは：上の見出しは横いっぱい、左に目次（スクロールしても残る）、右に本文を広く。画面の図は2〜3枚ずつ横に並ぶ */
+.top,main.body{display:flex;flex-direction:column;gap:28px;min-width:0}
+@media (min-width:1100px){
+  .wrap{max-width:1280px;display:grid;grid-template-columns:260px minmax(0,1fr);column-gap:40px;row-gap:28px;padding-left:32px;padding-right:32px}
+  .top,footer{grid-column:1/-1}
+  .top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:end}
+  nav.toc{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;font-size:15px}
+  .step{padding:28px 32px}
+  .figs{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+}
+</style>
 </head>
 <body>
 <div class="wrap">
 
+<div class="top">
 <header>
 <p class="eyebrow">株式会社しっとる　Instagram広告運用代行</p>
 <h1>広告を始める準備（権限の渡し方）</h1>
@@ -81,6 +93,7 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <p>分からない画面があれば、その画面の写真をLINEで送ってください。Zoomで画面を見ながら一緒に進めることもできます。</p>
 </section>
 
+</div>
 <nav class="toc box info" aria-label="目次"><b class="h">目次</b><ol>
 <li><a href="#before">はじめる前に</a></li>
 <li><a href="#s1">手順1　Facebookの個人アカウント</a></li>
@@ -94,6 +107,7 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <li><a href="#done">終わったら</a></li>
 <li><a href="#trouble">うまくいかないとき</a></li>
 </ol></nav>
+<main class="body">
 
 <section id="before">
 <h2>はじめる前に</h2>
@@ -297,6 +311,7 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <p>しっとるが、お客様の代わりにログインしたり、パスワードやカード番号をお聞きしたりすることはありません。</p>
 </section>
 
+</main>
 <footer>株式会社しっとる　ご連絡はLINEでお願いします（お電話ではお受けしていません）。</footer>
 
 </div>
