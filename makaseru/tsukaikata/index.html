@@ -66,6 +66,15 @@ figure{margin:12px 0}figure img{width:auto;max-width:100%;height:auto;border:1px
 .docnav a[aria-current="page"]{background:var(--dn-ink,#1c3f3a);color:var(--dn-bg,#fffdf9);border-color:var(--dn-ink,#1c3f3a)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .docnav{--dn-line:#33403b;--dn-mut:#a9b5b0;--dn-ink:#8fc7b8;--dn-bg:#1c2220}}
 :root[data-theme="dark"] .docnav{--dn-line:#33403b;--dn-mut:#a9b5b0;--dn-ink:#8fc7b8;--dn-bg:#1c2220}
+
+/* PCでは：見出しは横いっぱい、左に目次（スクロールしても残る）、右に本文を広く（スマホは今のまま縦一列） */
+@media (min-width:1100px){
+  .wrap{max-width:1240px;display:grid;grid-template-columns:250px minmax(0,1fr);column-gap:44px;padding:36px 32px 72px}
+  .wrap>header,.wrap>footer,.wrap>.docnav{grid-column:1/-1}
+  .wrap>nav.toc{grid-column:1;position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;margin:22px 0 0}
+  .wrap>main.body{grid-column:2;min-width:0}
+  .wrap>.docnav{max-width:none;margin-left:0;margin-right:0}
+}
 </style>
 </head>
 <body>
@@ -94,6 +103,7 @@ figure{margin:12px 0}figure img{width:auto;max-width:100%;height:auto;border:1px
   <li><a href="#multi">社内の複数の方で受け取る</a></li>
   <li><a href="#faq">よくある質問</a></li>
 </ol></nav>
+<main class="body">
 
 <section id="share">
   <h2><span class="n">1</span>しっとるが進めること・ご自身で進めること</h2>
@@ -414,6 +424,7 @@ figure{margin:12px 0}figure img{width:auto;max-width:100%;height:auto;border:1px
   <details><summary>問い合わせはどこにすればよいですか？</summary><p>公式LINEのトークに、そのまま文字や画面の写真を送ってください（お電話ではお受けしていません）。担当者の対応は、当社の営業日・営業時間内に行います。</p></details>
 </section>
 
+</main>
 <nav class="docnav" aria-label="マカセルの資料"><p class="docnav-h">マカセルの資料</p><ul><li><a href="/makaseru/about/">マカセル サービス紹介</a></li><li><a href="/makaseru/junbi/">広告をはじめる準備（マカセルをお使いのお客様）</a></li><li><a href="/makaseru/junbi-ads/">広告を始める準備（マカセルを使わないお客様）</a></li><li><a href="/makaseru/tsukaikata/" aria-current="page">マカセルの使い方</a></li></ul></nav>
 
 <footer>株式会社しっとる　マカセル　<a href="../" style="color:inherit">ご利用ガイド</a>　利用規約：<a href="https://app.s-toru.com/terms" style="color:inherit">app.s-toru.com/terms</a></footer>

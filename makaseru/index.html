@@ -57,6 +57,15 @@ details p{margin:8px 0 0}
 .flow li::before{content:counter(f);position:absolute;left:12px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--pine);color:var(--paper);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
 .flow b{display:block}
 footer{color:var(--mut);font-size:13px;text-align:center;margin-top:28px}
+
+/* PCでは：見出しは横いっぱい、左に目次（スクロールしても残る）、右に本文を広く（スマホは今のまま縦一列） */
+@media (min-width:1100px){
+  .wrap{max-width:1240px;display:grid;grid-template-columns:250px minmax(0,1fr);column-gap:44px;padding:36px 32px 72px}
+  .wrap>header,.wrap>footer,.wrap>.docnav{grid-column:1/-1}
+  .wrap>nav.toc{grid-column:1;position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;margin:22px 0 0}
+  .wrap>main.body{grid-column:2;min-width:0}
+  .wrap>.docnav{max-width:none;margin-left:0;margin-right:0}
+}
 </style>
 </head>
 <body>
@@ -82,6 +91,7 @@ footer{color:var(--mut);font-size:13px;text-align:center;margin-top:28px}
     <li><a href="#faq">よくある質問</a></li>
   </ol>
 </nav>
+<main class="body">
 
 <section id="about">
   <h2><span class="n">1</span>マカセルとは</h2>
@@ -215,6 +225,7 @@ footer{color:var(--mut);font-size:13px;text-align:center;margin-top:28px}
   <details><summary>問い合わせはどこにすればよいですか？</summary><p>公式LINEのトークに、そのまま文字や画面の写真を送ってください。担当者の対応は、当社の営業日・営業時間内に行います。</p></details>
 </section>
 
+</main>
 <footer>株式会社しっとる　マカセル　利用規約：<a href="https://app.s-toru.com/terms" style="color:inherit">app.s-toru.com/terms</a></footer>
 </div>
 </body>
