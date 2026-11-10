@@ -9,259 +9,874 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <title>マカセル ビジネスプランのご案内</title>
 <meta name="description" content="マカセルのビジネスプランでできること、料金、実際の画面、始めるまでの流れ。">
+<script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f6f4ef;--paper:#fffdf9;--ink:#1f2622;--mut:#4f5b56;--pine:#1c3f3a;--or:#b4501f;--soft:#e3ece9;--line:#d9e2df;--ors:#f8e7dc}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141816;--paper:#1c2220;--ink:#e8ece9;--mut:#a9b5b0;--pine:#8fc7b8;--or:#e59a6f;--soft:#24302c;--line:#33403b;--ors:#3a2a21}}
-:root[data-theme="dark"]{--bg:#141816;--paper:#1c2220;--ink:#e8ece9;--mut:#a9b5b0;--pine:#8fc7b8;--or:#e59a6f;--soft:#24302c;--line:#33403b;--ors:#3a2a21}
+:root{
+  --bg:#f6f4ef;--paper:#fffdf9;--ink:#1f2622;--mut:#4f5b56;--pine:#1c3f3a;--or:#b4501f;
+  --soft:#e3ece9;--line:#d9e2df;--ors:#f8e7dc;
+  --deep:#143630;--deep2:#0d2622;--deep-ink:#f4f7f5;--deep-mut:#b9cdc7;--deep-line:rgba(255,255,255,.14);
+  --cta:#c2561f;--cta-h:#a94916;--glow:#e0662e;
+  --sh:0 1px 2px rgba(20,54,48,.06),0 12px 32px -12px rgba(20,54,48,.18);
+  --num:"Outfit","Noto Sans JP",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121614;--paper:#1a201e;--ink:#e8ece9;--mut:#a9b5b0;--pine:#8fc7b8;--or:#e59a6f;
+  --soft:#222d2a;--line:#323e3a;--ors:#38291f;--deep:#10302a;--deep2:#0a1f1b;
+  --sh:0 1px 2px rgba(0,0,0,.3),0 12px 32px -12px rgba(0,0,0,.5);
+}}
+:root[data-theme="dark"]{
+  --bg:#121614;--paper:#1a201e;--ink:#e8ece9;--mut:#a9b5b0;--pine:#8fc7b8;--or:#e59a6f;
+  --soft:#222d2a;--line:#323e3a;--ors:#38291f;--deep:#10302a;--deep2:#0a1f1b;
+  --sh:0 1px 2px rgba(0,0,0,.3),0 12px 32px -12px rgba(0,0,0,.5);
+}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;font-size:16px;line-height:1.8;overflow-wrap:anywhere}
-.wrap{max-width:760px;margin:0 auto;padding:24px 16px 64px}
-header{padding:28px 0 8px}
-.kicker{color:var(--or);font-weight:700;font-size:13px;letter-spacing:.06em}
-h1{font-size:26px;line-height:1.4;margin:6px 0 10px;color:var(--pine)}
-.lead{color:var(--mut);margin:0}
-nav.toc{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:22px 0}
-nav.toc b{display:block;margin-bottom:4px}
-nav.toc ol{margin:0;padding-left:1.4em}
-nav.toc a{color:var(--pine)}
-section{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 18px;margin:18px 0}
-h2{font-size:20px;line-height:1.5;margin:0 0 12px;color:var(--pine)}
-h2 .n{display:inline-block;min-width:1.8em;color:var(--or)}
-h3{font-size:16px;margin:18px 0 6px}
-p{margin:8px 0}
-ol.steps{padding-left:1.4em;margin:8px 0}
-ol.steps li{margin:6px 0}
-.note{background:var(--soft);border-radius:10px;padding:10px 14px;margin:12px 0;font-size:15px}
-.warn{background:var(--ors);border-radius:10px;padding:10px 14px;margin:12px 0;font-size:15px}
-.tblwrap{overflow-x:auto;margin:10px 0}
-table{border-collapse:collapse;width:100%;font-size:15px}
-th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
-th{color:var(--mut);font-weight:700}
-td.num{white-space:nowrap}
-.id{font-family:ui-monospace,Menlo,monospace;font-size:18px;font-weight:700;letter-spacing:.04em;background:var(--soft);padding:2px 8px;border-radius:6px}
-a.btn{display:inline-block;background:var(--pine);color:#fff;text-decoration:none;font-weight:700;padding:10px 16px;border-radius:10px;margin:6px 0}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) a.btn{color:#10201c}}
-.cmd{display:inline-block;border:1px solid var(--line);border-radius:6px;padding:0 6px;background:var(--soft);font-weight:700}
-details{border-bottom:1px solid var(--line);padding:10px 0}
-details:last-child{border-bottom:0}
-summary{cursor:pointer;font-weight:700;list-style:none;position:relative;padding-right:24px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:4px;top:0;color:var(--or);font-size:20px;line-height:1.4}
-details[open] summary::after{content:"−"}
-details p{margin:8px 0 0}
-.flow{display:grid;gap:8px;margin:10px 0;padding:0;list-style:none;counter-reset:f}
-.flow li{counter-increment:f;border:1px solid var(--line);border-radius:10px;padding:10px 12px 10px 48px;position:relative}
-.flow li::before{content:counter(f);position:absolute;left:12px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--pine);color:var(--paper);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
-.flow b{display:block}
-footer{color:var(--mut);font-size:13px;text-align:center;margin-top:28px}
-figure{margin:12px 0}figure img{width:auto;max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px;display:block}figcaption{font-size:13px;color:var(--mut);margin-top:4px}
-.docnav{max-width:820px;margin:32px auto 0;padding:16px 18px;border-top:1px solid var(--dn-line,#d9e2df);font-family:"Noto Sans JP",system-ui,sans-serif}
-.docnav-h{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--dn-mut,#4f5b56)}
-.docnav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 10px}
-.docnav li{margin:0;padding:0}
-.docnav a{display:inline-block;font-size:14px;line-height:1.5;padding:6px 12px;border:1px solid var(--dn-line,#d9e2df);border-radius:999px;color:var(--dn-ink,#1c3f3a);text-decoration:none;background:var(--dn-bg,#fffdf9)}
-.docnav a[aria-current="page"]{background:var(--dn-ink,#1c3f3a);color:var(--dn-bg,#fffdf9);border-color:var(--dn-ink,#1c3f3a)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .docnav{--dn-line:#33403b;--dn-mut:#a9b5b0;--dn-ink:#8fc7b8;--dn-bg:#1c2220}}
-:root[data-theme="dark"] .docnav{--dn-line:#33403b;--dn-mut:#a9b5b0;--dn-ink:#8fc7b8;--dn-bg:#1c2220}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;font-size:16px;line-height:1.85;overflow-wrap:anywhere;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+h1,h2,h3,.bal{word-break:auto-phrase;text-wrap:balance}
+.c{max-width:1120px;margin:0 auto;padding:0 20px}
+.num{font-family:var(--num);font-feature-settings:"tnum";letter-spacing:-.01em}
+svg.i{width:1em;height:1em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-/* PCでは：見出しは横いっぱい、左に目次（スクロールしても残る）、右に本文を広く（スマホは今のまま縦一列） */
-@media (min-width:1100px){
-  .wrap{max-width:1240px;display:grid;grid-template-columns:250px minmax(0,1fr);column-gap:44px;padding:36px 32px 72px}
-  .wrap>header,.wrap>footer,.wrap>.docnav{grid-column:1/-1}
-  .wrap>nav.toc{grid-column:1;position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;margin:22px 0 0}
-  .wrap>main.body{grid-column:2;min-width:0}
-  .wrap>.docnav{max-width:none;margin-left:0;margin-right:0}
+/* 上の帯 */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,253,249,.92);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid #e4e9e6}
+.top .c{display:flex;align-items:center;justify-content:space-between;gap:12px;height:60px}
+.top img{height:34px;width:auto}
+.top nav{display:none;gap:22px;font-size:14px;font-weight:500;color:#33423d}
+.top nav a{text-decoration:none}
+.top nav a:hover{color:#b4501f}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--cta);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:14px 26px;line-height:1.4;box-shadow:0 8px 20px -8px rgba(194,86,31,.7);transition:background .2s,transform .2s}
+.btn:hover{background:var(--cta-h);transform:translateY(-1px)}
+.btn.sm{padding:9px 16px;font-size:14px;box-shadow:none}
+.btn.ghost{background:transparent;color:var(--deep-ink);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
+.btn.ghost:hover{background:rgba(255,255,255,.08)}
+.btn.line2{background:transparent;color:var(--pine);box-shadow:inset 0 0 0 1.5px var(--pine)}
+.btn.line2:hover{background:var(--soft)}
+:focus-visible{outline:3px solid var(--glow);outline-offset:3px;border-radius:6px}
+
+/* ヒーロー */
+.hero{position:relative;overflow:hidden;color:var(--deep-ink);background:radial-gradient(900px 520px at 88% 8%,rgba(224,102,46,.26),transparent 60%),radial-gradient(700px 600px at 0% 100%,rgba(143,199,184,.16),transparent 60%),linear-gradient(160deg,var(--deep) 0%,var(--deep2) 100%)}
+.hero .deco{position:absolute;right:-8%;bottom:-18%;width:min(900px,120%);opacity:.07;pointer-events:none}
+.hero .c{position:relative;display:grid;gap:36px;padding-top:44px;padding-bottom:56px}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.06em;color:#ffd9c2;border:1px solid rgba(255,217,194,.4);border-radius:999px;padding:5px 14px}
+.tag::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--glow)}
+.hero h1{font-size:clamp(30px,8.2vw,58px);line-height:1.28;font-weight:900;letter-spacing:.01em;margin:18px 0 16px}
+.hero h1 em{font-style:normal;color:#ffb78f;background:linear-gradient(transparent 68%,rgba(224,102,46,.38) 68%)}
+.hero .lead{font-size:clamp(15px,4.1vw,18px);color:var(--deep-mut);max-width:34em}
+.hero .lead b{color:var(--deep-ink)}
+.pricepill{display:inline-flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;margin-top:22px;padding:12px 20px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid var(--deep-line)}
+.pricepill .l{font-size:13px;color:#ffd9c2;font-weight:700;width:100%}
+.pricepill .p{font-size:40px;font-weight:800;line-height:1.1}
+.pricepill .u{font-size:14px;font-weight:700}
+.pricepill s{font-size:14px;color:var(--deep-mut)}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:30px;border-top:1px solid var(--deep-line)}
+.stats li{padding:16px 10px 0 0}
+.stats li+li{padding-left:14px;border-left:1px solid var(--deep-line)}
+.stats .n{font-size:clamp(34px,10vw,52px);font-weight:800;line-height:1;color:#fff}
+.stats .n{white-space:nowrap}
+.stats .n small{font-family:"Noto Sans JP",sans-serif;font-size:.36em;font-weight:700;margin-left:3px;color:#ffd9c2}
+.stats .t{display:block;font-size:12.5px;line-height:1.5;color:var(--deep-mut);margin-top:6px}
+
+.stage{position:relative;width:min(340px,100%);margin:0 auto;padding:0 0 30px 46px}
+.phone{position:relative;width:230px;margin-left:auto;border-radius:36px;padding:9px;background:linear-gradient(145deg,#3a4a45,#0b1513);box-shadow:0 30px 60px -20px rgba(0,0,0,.65),inset 0 0 0 1.5px rgba(255,255,255,.14)}
+.phone::before{content:"";position:absolute;top:17px;left:50%;transform:translateX(-50%);width:62px;height:17px;border-radius:999px;background:#0b1513;z-index:2}
+.phone img{border-radius:28px;width:100%;aspect-ratio:9/16;object-fit:cover}
+.float{position:absolute;border-radius:14px;overflow:hidden;box-shadow:0 22px 44px -14px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.16);background:#fff}
+.float.a{left:0;top:56px;width:150px;transform:rotate(-4deg)}
+.float.b{left:6px;bottom:0;width:188px;height:192px;background:#2b2d30 url(../tsukaikata/ex_03_video.jpg) no-repeat;background-size:493px auto;background-position:-40px -296px;transform:rotate(2.5deg)}
+.cap{position:absolute;right:-4px;top:-12px;z-index:3;background:#fff;color:#1c3f3a;font-size:11.5px;font-weight:700;border-radius:999px;padding:4px 12px;box-shadow:0 8px 18px -8px rgba(0,0,0,.5)}
+
+/* 共通の見出し */
+section{padding:64px 0}
+.alt{background:var(--paper);border-block:1px solid var(--line)}
+.eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--num);font-weight:700;font-size:13px;letter-spacing:.16em;color:var(--or);text-transform:uppercase}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--or)}
+h2{font-size:clamp(25px,6.4vw,40px);line-height:1.38;font-weight:900;color:var(--pine);margin:12px 0 14px;letter-spacing:.01em}
+.sub{color:var(--mut);max-width:40em}
+.center{text-align:center}.center .eyebrow{justify-content:center}.center .sub{margin-inline:auto}
+.note{display:flex;gap:10px;align-items:flex-start;background:var(--soft);border-radius:12px;padding:14px 16px;font-size:14.5px;line-height:1.75;margin-top:22px}
+.note svg{font-size:20px;color:var(--pine);margin-top:3px}
+
+/* 悩み */
+.pains{display:grid;gap:12px;margin-top:30px}
+.pains li{display:flex;gap:14px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px}
+.pains .ic{flex:none;width:44px;height:44px;border-radius:12px;background:var(--ors);color:var(--or);display:grid;place-items:center;font-size:22px}
+.pains b{display:block;line-height:1.55;font-size:16.5px}
+.pains span{display:block;font-size:14px;color:var(--mut);line-height:1.7;margin-top:4px}
+.answer{position:relative;margin-top:44px;border-radius:24px;padding:30px 22px;color:var(--deep-ink);background:linear-gradient(150deg,var(--deep),var(--deep2));box-shadow:var(--sh)}
+.answer::before{content:"";position:absolute;left:50%;top:-22px;width:2px;height:22px;background:var(--or)}
+.answer h3{font-size:clamp(21px,5.6vw,30px);line-height:1.45;font-weight:900}
+.answer h3 em{font-style:normal;color:#ffb78f}
+.pill3{display:grid;gap:12px;margin-top:22px}
+.pill3 li{background:rgba(255,255,255,.06);border:1px solid var(--deep-line);border-radius:16px;padding:18px}
+.pill3 .k{font-family:var(--num);font-size:13px;font-weight:700;letter-spacing:.14em;color:#ffb78f}
+.pill3 b{display:block;font-size:18px;line-height:1.5;margin:4px 0 6px}
+.pill3 p{font-size:14.5px;line-height:1.75;color:var(--deep-mut)}
+
+/* 分担 */
+.split{display:grid;gap:16px;margin-top:32px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:24px 20px;box-shadow:var(--sh)}
+.alt .card{background:var(--bg)}
+.card.dark{background:linear-gradient(150deg,var(--deep),var(--deep2));color:var(--deep-ink);border-color:transparent}
+.card .who{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;border-radius:999px;padding:4px 12px;background:var(--ors);color:var(--or)}
+.card.dark .who{background:rgba(255,255,255,.12);color:#ffd9c2}
+.card h3{font-size:22px;line-height:1.45;font-weight:900;margin:12px 0 14px}
+.ck li{position:relative;padding:11px 0 11px 32px;border-top:1px solid var(--line);line-height:1.65}
+.card.dark .ck li{border-color:var(--deep-line)}
+.ck li::before{content:"";position:absolute;left:0;top:14px;width:20px;height:20px;border-radius:50%;background:var(--pine) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.4l3 3 6-6.4' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain}
+.card.dark .ck li::before{background-color:var(--glow)}
+.ck small{display:block;font-size:13.5px;color:var(--mut);line-height:1.65}
+.card.dark .ck small{color:var(--deep-mut)}
+.tap{display:inline-block;font-size:13px;font-weight:700;line-height:1.5;color:var(--pine);background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:2px 9px;margin:3px 4px 0 0;white-space:nowrap}
+
+/* 毎月の流れ */
+.flowgrid{display:grid;gap:28px;margin-top:34px}
+.side .shots{display:flex;gap:12px;align-items:flex-end;justify-content:center;margin-top:8px}
+.shot{border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--sh);background:#2b2d30}
+.shot+figcaption,.figc{font-size:12.5px;color:var(--mut);margin-top:8px;line-height:1.6}
+.phase{position:relative;border:1px solid var(--line);border-radius:22px;background:var(--bg);padding:22px 18px 8px;margin-bottom:16px}
+.phase>h3{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:900;color:var(--pine);line-height:1.4}
+.phase>h3 .pn{flex:none;font-family:var(--num);font-size:12px;letter-spacing:.12em;color:#fff;background:var(--or);border-radius:999px;padding:3px 11px}
+:root[data-theme="dark"] .phase>h3 .pn{color:#1a201e}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .phase>h3 .pn{color:#1a201e}}
+.tl{margin-top:14px}
+.tl li{position:relative;padding:0 0 20px 46px}
+.tl li::before{content:"";position:absolute;left:15px;top:32px;bottom:0;width:2px;background:var(--line)}
+.tl li:last-child::before{display:none}
+.tl .no{position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-family:var(--num);font-weight:700;font-size:15px;background:var(--paper);color:var(--pine);border:2px solid var(--pine)}
+.tl li.us .no{background:var(--pine);color:var(--paper)}
+.tl b{display:block;line-height:1.55;font-size:16.5px;padding-top:3px}
+.tl p{font-size:14.5px;line-height:1.75;color:var(--mut);margin-top:3px}
+.by{display:inline-block;font-size:11.5px;font-weight:700;border-radius:6px;padding:0 7px;margin-right:6px;vertical-align:2px;line-height:1.7}
+.by.c1{background:var(--ors);color:var(--or)}
+.by.c2{background:var(--pine);color:var(--paper)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--mut);margin-top:14px}
+
+/* 実際の画面 */
+.steps4{display:grid;gap:16px;margin-top:32px}
+.s4{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--sh)}
+.s4 .txt{padding:22px 20px 16px}
+.s4 .sn{font-family:var(--num);font-weight:800;font-size:15px;letter-spacing:.14em;color:var(--or)}
+.s4 h3{font-size:19px;line-height:1.5;font-weight:900;margin:4px 0 6px}
+.s4 p{font-size:14.5px;line-height:1.75;color:var(--mut)}
+.s4 .scr{margin-top:auto;background:#1e2022;padding:18px;display:grid;place-items:center;min-height:150px}
+.s4 .scr img{border-radius:10px;box-shadow:0 10px 26px -10px rgba(0,0,0,.7)}
+.real{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--pine);background:var(--soft);border-radius:999px;padding:2px 10px;margin-bottom:8px}
+.real::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--or)}
+.uses{display:grid;gap:10px;margin-top:22px}
+.uses li{display:flex;justify-content:space-between;align-items:center;gap:14px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 16px;line-height:1.6;font-size:15px}
+.uses .n{font-family:var(--num);font-weight:800;font-size:26px;color:var(--pine);white-space:nowrap}
+.uses .n small{font-family:"Noto Sans JP",sans-serif;font-size:12px;font-weight:700;margin-left:2px}
+.uses li.zero .n{color:var(--or)}
+
+/* メニュー */
+.menu{display:grid;gap:22px;margin-top:32px;align-items:start}
+.menu figure img{border-radius:18px;box-shadow:var(--sh);border:1px solid var(--line)}
+.tabs{display:grid;gap:16px}
+.tabcard{border:1px solid var(--line);border-radius:20px;background:var(--bg);padding:18px}
+.tabcard h3{display:inline-block;font-size:15px;font-weight:900;color:var(--paper);background:var(--pine);border-radius:999px;padding:2px 16px}
+.tabcard dl{margin:10px 0 0;display:grid;grid-template-columns:auto 1fr;gap:0 14px}
+.tabcard dt{font-weight:700;padding:9px 0;border-top:1px solid var(--line);white-space:nowrap;font-size:15px}
+.tabcard dd{margin:0;padding:9px 0;border-top:1px solid var(--line);font-size:14px;color:var(--mut);line-height:1.7}
+.tabcard dt:first-of-type,.tabcard dt:first-of-type+dd{border-top:0}
+.words{margin-top:18px;font-size:14.5px;color:var(--mut)}
+
+/* レポート */
+.judge{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+.judge li{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 14px;text-align:center;font-weight:900;font-size:17px;color:var(--pine);line-height:1.5}
+.judge svg{display:block;margin:0 auto 6px;font-size:26px;color:var(--or)}
+.cal{margin-top:26px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px 16px 14px;box-shadow:var(--sh)}
+.cal svg{width:100%;height:auto;display:block}
+.cal text{font-family:"Noto Sans JP",sans-serif;fill:var(--ink)}
+.rep{display:grid;gap:12px;margin-top:18px}
+.rep li{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.rep b{display:block;color:var(--pine);font-size:16.5px}
+.rep span{font-size:14.5px;color:var(--mut);line-height:1.75;display:block}
+
+/* 取り消し */
+.undo{display:grid;gap:10px;margin-top:30px}
+.undo li{display:grid;gap:4px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px 16px;line-height:1.7}
+.undo .tap{justify-self:start;margin:0;white-space:normal}
+.undo span.h{font-size:14.5px;color:var(--mut)}
+.safe2{display:grid;gap:12px;margin-top:16px}
+/* 3つのプラン */
+.plans{display:grid;gap:14px;margin-top:32px}
+.plan{position:relative;background:var(--paper);color:var(--ink);border-radius:22px;padding:26px 22px;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.plan.rec{outline:3px solid var(--glow)}
+.plan .rb{position:absolute;top:-13px;left:22px;font-size:12.5px;font-weight:700;color:#fff;background:var(--cta);border-radius:999px;padding:2px 14px}
+.plan h3{font-size:19px;font-weight:900;color:var(--pine)}
+.plan .yen{font-family:var(--num);font-size:48px;font-weight:800;line-height:1.15;color:var(--pine)}
+.plan .yen small{font-family:"Noto Sans JP",sans-serif;font-size:14px;font-weight:700;margin-left:4px}
+.plan ul{margin-top:10px}
+.plan li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:14.5px;line-height:1.6}
+.plan li b{white-space:nowrap;color:var(--pine);font-size:16px}
+.allin{margin-top:18px;background:var(--paper);color:var(--ink);border-radius:22px;padding:24px 22px}
+.allin h3{font-size:17px;font-weight:900;color:var(--pine);margin-bottom:4px}
+@media (min-width:720px){.undo{grid-template-columns:repeat(2,1fr)}.safe2{grid-template-columns:repeat(2,1fr)}.plans{grid-template-columns:repeat(3,1fr)}.allin .inc{display:grid;grid-template-columns:repeat(2,1fr);gap:0 32px}.allin .inc li:last-child{border-bottom:1px solid var(--line)}}
+@media (min-width:980px){.start.n8 li:last-child{grid-column:auto}}
+
+/* 複数店舗 */
+.multi{display:grid;gap:16px;margin-top:32px}
+.multi .card svg.dia{width:100%;height:auto;margin-top:16px}
+.multi .card p{font-size:15px;color:var(--mut)}
+.dia text{font-family:"Noto Sans JP",sans-serif}
+
+/* 料金 */
+.price{position:relative;overflow:hidden;color:var(--deep-ink);background:radial-gradient(800px 500px at 100% 0%,rgba(224,102,46,.22),transparent 60%),linear-gradient(160deg,var(--deep),var(--deep2))}
+.price h2{color:#fff}.price .eyebrow{color:#ffb78f}.price .eyebrow::before{background:#ffb78f}.price .sub{color:var(--deep-mut)}
+.pbox{display:grid;gap:0;margin-top:32px;border-radius:26px;overflow:hidden;background:var(--paper);color:var(--ink);box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+.pbox .l{padding:30px 22px;background:linear-gradient(180deg,var(--ors),var(--paper))}
+.pbox .badge{display:inline-block;font-size:13px;font-weight:700;color:#fff;background:var(--cta);border-radius:999px;padding:3px 14px}
+.pbox .pn{font-size:21px;font-weight:900;color:var(--pine);margin-top:14px}
+.pbox .was{font-size:15px;color:var(--mut);margin-top:10px}
+.pbox .now{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 6px;line-height:1.05;margin-top:2px;color:var(--pine)}
+.pbox .now .yen{font-size:clamp(56px,17vw,84px);font-weight:800}
+.pbox .now .u{font-size:17px;font-weight:700}
+.pbox .keep{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;line-height:1.7;margin-top:16px;font-weight:700;color:var(--or)}
+.pbox .keep svg{font-size:20px;margin-top:2px}
+.pbox .l .btn{margin-top:22px;width:100%}
+.pbox .r{padding:26px 22px 28px}
+.pbox .r h3{font-size:15px;font-weight:700;color:var(--mut);letter-spacing:.06em}
+.inc li{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;padding:13px 0;border-bottom:1px solid var(--line);line-height:1.6}
+.inc li:last-child{border-bottom:0}
+.inc svg{grid-row:span 2;font-size:22px;color:var(--or);margin-top:3px}
+.inc b{font-size:16.5px}
+.inc span{grid-column:2;font-size:14px;color:var(--mut);line-height:1.7}
+.price .note{background:rgba(255,255,255,.07);color:var(--deep-ink);border:1px solid var(--deep-line)}
+.price .note svg{color:#ffb78f}
+
+/* 始め方 */
+.start{display:grid;gap:12px;margin-top:32px;counter-reset:s}
+.start li{counter-increment:s;position:relative;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px 18px 18px 68px}
+.start li::before{content:counter(s,decimal-leading-zero);position:absolute;left:18px;top:16px;font-family:var(--num);font-weight:800;font-size:26px;line-height:1.2;color:var(--or)}
+.start b{display:block;font-size:16.5px;line-height:1.55}
+.start p{font-size:14.5px;color:var(--mut);line-height:1.75;margin-top:4px}
+.start .meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.chip{font-size:11.5px;font-weight:700;border-radius:6px;padding:0 8px;line-height:1.8}
+.chip.c1{background:var(--ors);color:var(--or)}
+.chip.c2{background:var(--pine);color:var(--paper)}
+.chip.t{background:var(--soft);color:var(--pine)}
+
+/* お試し */
+.trial{margin-top:30px;background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:24px 16px 12px}
+.trial svg{width:100%;height:auto;display:block}
+.vt{display:none;list-style:none;margin:0;padding:0}
+.vt li{position:relative;padding:0 0 16px 26px;font-size:14px;line-height:1.7;color:var(--mut)}
+.vt li:last-child{padding-bottom:2px}
+.vt li::before{content:"";position:absolute;left:0;top:6px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--pine);box-sizing:border-box}
+.vt li.o::before{background:var(--or);border-color:var(--or)}
+.vt li::after{content:"";position:absolute;left:5px;top:20px;bottom:-4px;width:2px;background:var(--line)}
+.vt li:last-child::after{display:none}
+.vt b{display:block;color:var(--ink);font-size:15px;font-weight:800}
+.swipe{display:none;font-size:12px;color:#c9ced1;margin-top:8px;text-align:center}
+@media(max-width:640px){
+  .cal>svg,.trial>svg{display:none}
+  .vt{display:block}
+  .cal,.trial{padding:22px 20px 18px}
+  .s4 .scr.wide{display:block;place-items:normal;padding:14px 14px 12px;min-height:0}
+  .s4 .scr.wide .sc{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px}
+  .s4 .scr.wide img{width:560px;max-width:none;height:auto;display:block}
+  .swipe{display:block}
+  .pbox .now .yen{font-size:50px}
+  .pbox .now .u+.yen+.u{font-size:14px}
+}
+
+.trial text{font-family:"Noto Sans JP",sans-serif;fill:var(--ink)}
+.four{display:grid;gap:12px;margin-top:16px}
+.four li{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+.four b{display:flex;align-items:center;gap:8px;color:var(--pine);font-size:16.5px}
+.four b svg{font-size:20px;color:var(--or)}
+.four span{display:block;font-size:14.5px;color:var(--mut);line-height:1.75;margin-top:4px}
+
+/* FAQ */
+.faq{max-width:820px;margin:30px auto 0}
+.faq details{background:var(--paper);border:1px solid var(--line);border-radius:16px;margin-bottom:10px;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;position:relative;font-weight:700;line-height:1.6;padding:17px 52px 17px 50px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"Q";position:absolute;left:18px;top:14px;font-family:var(--num);font-weight:800;font-size:20px;color:var(--or)}
+.faq summary::after{content:"";position:absolute;right:20px;top:24px;width:10px;height:10px;border-right:2px solid var(--pine);border-bottom:2px solid var(--pine);transform:rotate(45deg);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(-135deg);top:28px}
+.faq details p{padding:0 20px 18px 50px;font-size:15px;color:var(--mut);line-height:1.8}
+
+/* 最後 */
+.last{position:relative;overflow:hidden;color:var(--deep-ink);text-align:center;background:radial-gradient(700px 420px at 50% 0%,rgba(224,102,46,.28),transparent 65%),linear-gradient(170deg,var(--deep),var(--deep2));padding:72px 0 110px}
+.last h2{color:#fff}
+.last .sub{color:var(--deep-mut);margin-inline:auto}
+.last .box{display:grid;gap:22px;justify-items:center;margin-top:28px}
+.qr{display:none;background:#fff;border-radius:18px;padding:12px;width:176px}
+.qr span{display:block;color:#1c3f3a;font-size:12px;font-weight:700;margin-top:4px}
+.lineid{font-size:14px;color:var(--deep-mut)}
+.lineid b{font-family:var(--num);font-size:18px;color:#fff;letter-spacing:.04em;margin-left:6px}
+.links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:30px}
+.links a{font-size:14px;text-decoration:none;border:1px solid var(--deep-line);border-radius:999px;padding:7px 16px;color:var(--deep-ink)}
+.links a:hover{background:rgba(255,255,255,.08)}
+footer{background:var(--deep2);color:var(--deep-mut);font-size:12.5px;text-align:center;padding:18px 20px 96px}
+
+/* スマホの下の帯 */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(13,38,34,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transform:translateY(110%);transition:transform .3s}
+.bar.on{transform:none}
+.bar .btn{flex:1;padding:12px 10px;font-size:15px}
+.bar .btn.ghost{flex:0 0 auto;padding:12px 16px}
+
+/* 動き */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn{transition:none}}
+
+@media (min-width:720px){
+  .c{padding:0 32px}
+  section{padding:96px 0}
+  .pains{grid-template-columns:repeat(2,1fr);gap:16px}
+  .pill3{grid-template-columns:repeat(3,1fr)}
+  .answer{padding:44px 40px}
+  .split{grid-template-columns:1fr 1fr;gap:22px}
+  .card{padding:32px 30px}
+  .steps4{grid-template-columns:repeat(2,1fr);gap:22px}
+  .uses{grid-template-columns:repeat(2,1fr)}
+  .judge{grid-template-columns:repeat(4,1fr)}
+  .rep{grid-template-columns:repeat(3,1fr)}
+  .multi{grid-template-columns:1fr 1fr;gap:22px}
+  .pbox{grid-template-columns:5fr 6fr}
+  .pbox .l{padding:44px 40px}.pbox .r{padding:40px}
+  .start{grid-template-columns:repeat(2,1fr);gap:16px}
+  .four{grid-template-columns:repeat(2,1fr)}
+  .trial{padding:32px 32px 18px}
+  .cal{padding:30px 30px 18px}
+  .qr{display:block}
+  .phase{padding:28px 28px 10px}
+}
+@media (min-width:980px){
+  .top nav{display:flex}
+  .hero .c{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:40px;padding-top:76px;padding-bottom:88px}
+  .stage{width:420px;padding:0 0 40px 70px}
+  .phone{width:270px}
+  .float.a{width:180px;top:70px}
+  .float.b{width:214px;height:218px;background-size:561px auto;background-position:-46px -337px}
+  .pains{grid-template-columns:repeat(4,1fr)}
+  .pains li{flex-direction:column}
+  .flowgrid{grid-template-columns:330px minmax(0,1fr);gap:56px}
+  .side{position:sticky;top:96px;align-self:start}
+  .menu{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px}
+  .tabs{grid-template-columns:1fr}
+  .start{grid-template-columns:repeat(3,1fr)}
+  .start li:last-child{grid-column:span 3}
+  .four{grid-template-columns:repeat(4,1fr)}
+  .bar{display:none}
+  footer{padding-bottom:22px}
+  .last{padding-bottom:88px}
 }
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-  <img src="../makaseru-logo.svg" alt="マカセル" width="210" height="60" style="display:block;height:44px;width:auto;margin-bottom:10px">
-  <div class="kicker">株式会社しっとる　Meta広告（Instagram・Facebook）</div>
-  <h1>マカセル ビジネスプランのご案内</h1>
-  <p class="lead">ビジネスプランでできること・料金・実際の画面・始めるまでの流れを、この1ページにまとめました。ほとんどの操作は、公式LINE「マカセル通知」のボタンで済みます。</p>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2.5"/><path d="M16 10.5l5-3v9l-5-3z"/></symbol>
+  <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 10v9h16v-9"/><path d="M3 10l1.6-5h14.8L21 10a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M10 19v-5h4v5"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4"/><path d="M4 20h16"/><path d="M8 16l4-5 3 3 5-7"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.700 6 6"/><path d="M16 5.2a3.200 3.200 0 0 1 0 5.800"/><path d="M17.500 14.300c2.100.800 3.500 2.900 3.500 5.700"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.500h8M8 12.500h5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.300l2.800 2.800L16.200 9.500"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.500v.1"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.500l5.500 3.500-5.500 3.500z"/></symbol>
+  <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h14l-3.500-3.500M20 16H6l3.500 3.500"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><rect x="9" y="9" width="6" height="6" rx="1"/></symbol>
+  <symbol id="i-yen" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.500 7.500L12 12l3.500-4.500M12 12v5M9 12.500h6M9 15h6"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-zoom" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.500 2"/></symbol>
+  <symbol id="i-door" viewBox="0 0 24 24"><path d="M14 4h5v16h-5"/><path d="M10 8l4 4-4 4M14 12H4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</svg>
+
+<div class="top"><div class="c">
+  <a href="#top" aria-label="マカセル"><img src="../makaseru-logo.svg" alt="マカセル" width="119" height="34"></a>
+  <nav aria-label="ページ内">
+    <a href="#share">分担</a><a href="#month">毎月の流れ</a><a href="#screens">実際の画面</a><a href="#safe">安心のしくみ</a><a href="#price">料金</a><a href="#start">始め方</a><a href="#faq">よくあるご質問</a>
+  </nav>
+  <a class="btn sm" href="https://line.me/R/ti/p/@073phbtx">公式LINEを友だち追加</a>
+</div></div>
+
+<main id="top">
+
+<!-- 1 ヒーロー -->
+<header class="hero">
+  <svg class="deco" viewBox="0 0 100 60" aria-hidden="true"><path d="M4 56 L32 10 L50 38" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 38 L70 4 L96 46" fill="none" stroke="#e0662e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="c">
+    <div>
+      <span class="tag">ビジネスプランのご案内</span>
+      <h1>6店舗分の動画と広告。<br>お店の方は、LINEで<em>選んで押すだけ</em>。</h1>
+      <p class="lead">Instagram・Facebookのショート動画づくりから、投稿、広告の運用、毎週の見直しまで。<b>毎月6本を、しっとるが進めます。</b>お店の方にお願いするのは、公式LINEに届いた案を選んで、ボタンを押すことです。</p>
+      <div class="pricepill">
+        <span class="l">貴社への特別料金（ご契約のあいだ、ずっと変わりません）</span>
+        <span><span class="u">月額</span> <span class="p num">38,500</span><span class="u">円（税込）</span></span>
+        <s>通常 月額49,500円</s>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#start">始めるまでの流れを見る <svg class="i"><use href="#i-arrow"/></svg></a>
+        <a class="btn ghost" href="#price">料金と内容を見る</a>
+      </div>
+      <ul class="stats">
+        <li><span class="n num">6<small>つ</small></span><span class="t">広告アカウント<br>（6店舗分）</span></li>
+        <li><span class="n num">6<small>本／月</small></span><span class="t">しっとるが進める<br>動画・広告</span></li>
+        <li><span class="n num">200<small>／月</small></span><span class="t">ご自身でも<br>作れる数</span></li>
+      </ul>
+    </div>
+    <div class="stage" aria-label="実際の画面">
+      <span class="cap">実際の画面です</span>
+      <div class="phone"><img src="../about/short-video-sample.jpg" alt="マカセルで作ったショート動画の例。お店の名前と場所、テロップが入っています" width="540" height="960"></div>
+      <div class="float a"><img src="../tsukaikata/ex_02_telops.jpg" alt="公式LINEに届くテロップ案のカード。「この案で動画を作る」のボタン" width="312" height="360"></div>
+      <div class="float b" role="img" aria-label="公式LINEに届く「動画ができました」のお知らせ。承認して素材を受け取る・Instagramに投稿する・別の案で作るのボタン"></div>
+    </div>
+  </div>
 </header>
 
-<nav class="toc"><b>目次</b><ol>
-  <li><a href="#price">料金と、プランに入っているもの</a></li>
-  <li><a href="#share">しっとるが進めること・ご自身で進めること</a></li>
-  <li><a href="#month">毎月の流れ（しっとるが進める月6本）</a></li>
-  <li><a href="#menu">公式LINEのメニュー（実際の画面）</a></li>
-  <li><a href="#self">ご自身で作るとき（月200・実際の画面）</a></li>
-  <li><a href="#report">毎週のレポートと改善案</a></li>
-  <li><a href="#multi">複数のお店・複数の方で使う</a></li>
-  <li><a href="#start">始めるまでの流れ</a></li>
-  <li><a href="#contract">お試し・お支払い・解約</a></li>
-</ol></nav>
-<main class="body">
-
-<section id="price">
-  <h2><span class="n">1</span>料金と、プランに入っているもの</h2>
-  <div class="tblwrap"><table>
-    <tr><th style="width:38%">項目</th><th>ビジネスプラン</th></tr>
-    <tr><td>料金</td><td><b>月額38,500円（税込・貴社への特別料金）</b><br>通常は月額49,500円（税込）です。特別料金は、ご契約のあいだずっと変わりません。</td></tr>
-    <tr><td>広告アカウント</td><td>6つまで（6店舗分）</td></tr>
-    <tr><td>しっとるが進める本数</td><td>月6本（ショート動画・広告をあわせた数）<br>ご希望を伺い、動画づくりから投稿・広告まで、しっとるが進めます。</td></tr>
-    <tr><td>ご自身で作れる数</td><td>月200（広告の案・ショート動画・キャッチコピーや規約チェックなどの便利ツール）</td></tr>
-    <tr><td>公式LINEで受け取れる人数</td><td>何人でも</td></tr>
-    <tr><td>はじめの設定</td><td>Zoomで一緒に（Meta広告の準備から、最初の広告を出すまで）</td></tr>
-    <tr><td>レポート</td><td>毎週月曜の朝、広告の成績レポートと改善案を公式LINEへ</td></tr>
-    <tr><td>契約期間</td><td>縛りなし。いつでも解約できます。7日間の無料お試しつき（カードのご登録が必要です）</td></tr>
-  </table></div>
-  <div class="note">広告費は、お店のカードからMetaへ直接のお支払いです。広告費を増やしても、マカセルの料金は変わりません。</div>
+<!-- 2 悩み → 答え -->
+<section id="pain">
+  <div class="c">
+    <div class="center rv">
+      <div class="eyebrow">Before</div>
+      <h2>お店が増えるほど、<br>広告は手が回らなくなります。</h2>
+      <p class="sub">複数のお店でInstagramの広告を続けようとすると、こんなところで止まりがちです。</p>
+    </div>
+    <ul class="pains">
+      <li class="rv"><span class="ic"><svg class="i"><use href="#i-video"/></svg></span><div><b>動画を作る時間がない</b><span>撮って、文字を入れて、音を付けて。施術や接客の合間には続きません。</span></div></li>
+      <li class="rv"><span class="ic"><svg class="i"><use href="#i-store"/></svg></span><div><b>お店ごとにばらばら</b><span>投稿の内容も、広告の出し方も、お店や担当の方によって差が出ます。</span></div></li>
+      <li class="rv"><span class="ic"><svg class="i"><use href="#i-chart"/></svg></span><div><b>出したあと、見直せていない</b><span>数字を見て、続けるか替えるかを決める。ここまで手が届きません。</span></div></li>
+      <li class="rv"><span class="ic"><svg class="i"><use href="#i-users"/></svg></span><div><b>確認が一人に集まる</b><span>本部の方、店長、担当の方。誰が見て誰が決めるかで、止まります。</span></div></li>
+    </ul>
+    <div class="answer rv">
+      <h3>ビジネスプランは、<em>「作る・出す・見直す」をしっとるが進めて</em>、<br>お店には確認だけをお願いする形です。</h3>
+      <ul class="pill3">
+        <li><span class="k">POINT 01</span><b>毎月6本、しっとるが進める</b><p>ご希望を伺って、構成案・動画・投稿・広告まで。本数は、ショート動画と広告をあわせた数です。</p></li>
+        <li><span class="k">POINT 02</span><b>やりとりは公式LINEだけ</b><p>案もレポートも公式LINE「マカセル通知」に届きます。届いたら、ボタンで選ぶだけです。</p></li>
+        <li><span class="k">POINT 03</span><b>6店舗・何人でも、1つの契約で</b><p>広告アカウントは6つまで。確認のお願いやレポートは、何人のLINEにでも届けられます。</p></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<section id="share">
-  <h2><span class="n">2</span>しっとるが進めること・ご自身で進めること</h2>
-  <p>プランに入っているのは、<b>毎月6本の動画づくりから広告の運用まで</b>を、しっとるが進める分です。それとは別に、ご自身でも月200まで作れます。</p>
-  <div class="tblwrap"><table>
-    <tr><th>やること</th><th>しっとるが進める</th><th>ご自身で進める</th></tr>
-    <tr><td>毎月の動画（月6本）</td><td>希望を伺い、構成案から動画・投稿・広告まで進めます</td><td>ボタンで選ぶ・確かめるだけ</td></tr>
-    <tr><td>その動画の広告</td><td>条件を確かめていただいた後、こちらで始めます</td><td>条件を確かめて「OK」を押す</td></tr>
-    <tr><td>広告の見直し・入れ替え</td><td>毎朝判定し、必要なら新しい動画をお送りします</td><td>「この動画に入れ替える」を押す</td></tr>
-    <tr><td>毎週のレポート・改善案</td><td>毎週月曜の朝にお送りします</td><td>読むだけ</td></tr>
-    <tr><td>追加の動画・広告の案・キャッチコピー・規約チェック</td><td>―</td><td>公式LINEのメニューから（<a href="#self">5章</a>）</td></tr>
-  </table></div>
-  <div class="note">しっとるが進める月6本は、ご自身で作れる数（月200）からは引きません。</div>
-  <figure><img src="../about/short-video-sample.jpg" alt="マカセルで作ったショート動画の例" width="540" height="960" loading="lazy" style="max-width:260px"><figcaption>できあがるショート動画の例</figcaption></figure>
+<!-- 3 分担 -->
+<section id="share" class="alt">
+  <div class="c">
+    <div class="rv">
+      <div class="eyebrow">Who does what</div>
+      <h2>しっとるが進めること。<br>お店にお願いすること。</h2>
+      <p class="sub">お店の方の作業は、「選ぶ」「確かめる」「押す」の3つです。</p>
+    </div>
+    <div class="split">
+      <div class="card dark rv">
+        <span class="who">しっとるが進める</span>
+        <h3>作る・出す・見直す</h3>
+        <ul class="ck">
+          <li>毎月の動画づくり（月6本）<small>ご希望を伺い、構成案から動画、Instagramへの投稿まで進めます。</small></li>
+          <li>その動画の広告<small>条件を確かめていただいた後、こちらで始めます。</small></li>
+          <li>広告の見直し・入れ替え<small>毎朝判定し、必要なら新しい動画をお送りします。</small></li>
+          <li>毎週のレポートと改善案<small>毎週月曜の朝、公式LINEにお送りします。</small></li>
+          <li>はじめの設定<small>Meta広告の準備から最初の広告を出すまで、Zoomで一緒に進めます。</small></li>
+        </ul>
+      </div>
+      <div class="card rv">
+        <span class="who">お店にお願いする</span>
+        <h3>選ぶ・確かめる・押す</h3>
+        <ul class="ck">
+          <li>お店の動画・写真を、公式LINEに送る<small>撮れたものから、トークにそのまま送ってください。</small></li>
+          <li>構成案を選ぶ<small><span class="tap">この案にする</span><span class="tap">直してほしい</span></small></li>
+          <li>できた動画を確かめる<small><span class="tap">この動画にする</span></small></li>
+          <li>広告の条件を確かめる<small><span class="tap">この条件で広告を始めてOK</span></small></li>
+          <li>レポートを読む<small>入れ替えるときは <span class="tap">この動画に入れ替える</span></small></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note rv"><svg class="i"><use href="#i-info"/></svg><span>広告を出す・止める・予算を決めるのは、いつもお客様のご判断です。予算を上げるのは、お客様にご了解をいただいたときだけです。</span></p>
+  </div>
 </section>
 
+<!-- 4 毎月の流れ -->
 <section id="month">
-  <h2><span class="n">3</span>毎月の流れ（しっとるが進める月6本）</h2>
-
-  <p>毎月、お支払いの日の3日前から、次の順に公式LINEに届きます。届いたらボタンを押すだけで進みます。</p>
-  <ol class="flow">
-    <li><b>お支払いの日の3日前：「今月の動画の希望」が届く</b>先月と同じでよければボタンを1回押すだけです。</li>
-    <li><b>構成案が3つ届く</b>見比べて「この案にする」を押します。合わなければ「直してほしい」。</li>
-    <li><b>動画と投稿の本文が届く</b>動画と、Instagramに載せる本文（お店の住所・アクセスなど入り）を確かめて「この動画にする」を押します。</li>
-    <li><b>Instagramに投稿</b>押してから5分後に投稿します。その間は「取り消す」で止められます。</li>
-    <li><b>広告の条件が届く</b>投稿のURL・予算・リンク先・配信エリア（どこを中心に半径何km）・ターゲットを確かめて「この条件で広告を始めてOK」を押します。</li>
-    <li><b>しっとるが広告を始める</b>OKをいただいたら、すぐに広告を始めて「広告を始めました」をお送りします。広告アカウントでは「【マカセル】」から始まる名前の広告が、しっとるが運用している広告です。</li>
-    <li><b>審査の結果のお知らせ</b>Metaの審査で承認されたら「承認されました」をお送りします。ここから順に表示が始まります。審査で一部直すように言われたときは、こちらで直してからあらためてお知らせします。</li>
-    <li><b>毎週月曜の朝：レポートと改善案</b>広告ごとの数字と、次にやることが届きます（<a href="#report">6章</a>）。</li>
-    <li><b>次の広告の3日前：条件のお伺い</b>「前回と同じでOK」か「一部を変える」を選びます。</li>
-    <li><b>30日間が終わった翌朝：まとめ</b>30日間の数字と、良かった点・次に変える点が届きます。</li>
-  </ol>
-  <div class="note">広告を出す・止める・予算を決めるのは、いつもお客様のご判断です。予算を上げるのは、お客様にご了解をいただいたときだけです。</div>
-
+  <div class="c">
+    <div class="flowgrid">
+      <div class="side rv">
+        <div class="eyebrow">Monthly flow</div>
+        <h2>毎月の流れ</h2>
+        <p class="sub">毎月、お支払いの日の3日前から、次の順に公式LINEに届きます。届いたらボタンを押すだけで進みます。</p>
+        <div class="legend"><span><span class="by c1">お店</span>ボタンを押す</span><span><span class="by c2">しっとる</span>進める・お送りする</span></div>
+        <figure style="margin-top:22px">
+          <div class="shot"><img src="../tsukaikata/ex_03_video.jpg" alt="公式LINEに動画が届いたところ。承認して素材を受け取る・Instagramに投稿する・別の案で作るのボタン" width="674" height="700" loading="lazy"></div>
+          <figcaption class="figc">公式LINEに動画が届いたところ（実際の画面・ムーブアクト金光店）</figcaption>
+        </figure>
+      </div>
+      <div>
+        <div class="phase rv">
+          <h3><span class="pn">STEP 1</span>動画をつくる</h3>
+          <ol class="tl">
+            <li class="us"><span class="no">1</span><b>「今月の動画の希望」が届く</b><p><span class="by c1">お店</span>お支払いの日の3日前に届きます。先月と同じでよければ、ボタンを1回押すだけです。</p></li>
+            <li class="us"><span class="no">2</span><b>構成案が3つ届く</b><p><span class="by c1">お店</span>見比べて選びます。合わなければ直しを頼めます。<br><span class="tap">この案にする</span><span class="tap">直してほしい</span></p></li>
+            <li class="us"><span class="no">3</span><b>動画と、投稿の本文が届く</b><p><span class="by c1">お店</span>動画と、Instagramに載せる本文（お店の住所・アクセスなど入り）を確かめます。<br><span class="tap">この動画にする</span></p></li>
+            <li class="us"><span class="no">4</span><b>Instagramに投稿</b><p><span class="by c2">しっとる</span>押してから5分後に投稿します。その間は <span class="tap">取り消す</span> で止められます。</p></li>
+          </ol>
+        </div>
+        <div class="phase rv">
+          <h3><span class="pn">STEP 2</span>広告を出す</h3>
+          <ol class="tl">
+            <li class="us"><span class="no">5</span><b>広告の条件が届く</b><p><span class="by c1">お店</span>投稿のURL・予算・リンク先・配信エリア（どこを中心に半径何km）・ターゲットを確かめます。<br><span class="tap">この条件で広告を始めてOK</span></p></li>
+            <li class="us"><span class="no">6</span><b>しっとるが広告を始める</b><p><span class="by c2">しっとる</span>OKをいただいたら、すぐに始めて「広告を始めました」をお送りします。広告アカウントでは「【マカセル】」から始まる名前の広告が、しっとるが運用している広告です。</p></li>
+            <li class="us"><span class="no">7</span><b>審査の結果のお知らせ</b><p><span class="by c2">しっとる</span>Metaの審査で承認されたら「承認されました」をお送りします。直すように言われたときは、こちらで直してからあらためてお知らせします。</p></li>
+          </ol>
+        </div>
+        <div class="phase rv">
+          <h3><span class="pn">STEP 3</span>見直して、次へつなぐ</h3>
+          <ol class="tl">
+            <li class="us"><span class="no">8</span><b>毎週月曜の朝：レポートと改善案</b><p><span class="by c2">しっとる</span>広告ごとの数字と、次にやることが届きます。</p></li>
+            <li class="us"><span class="no">9</span><b>次の広告の3日前：条件のお伺い</b><p><span class="by c1">お店</span>どちらかを選びます。<br><span class="tap">前回と同じでOK</span><span class="tap">一部を変える</span></p></li>
+            <li class="us"><span class="no">10</span><b>30日間が終わった翌朝：まとめ</b><p><span class="by c2">しっとる</span>30日間の数字と、良かった点・次に変える点が届きます。</p></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- 5 実際の画面（ご自身で作る） -->
+<section id="screens" class="alt">
+  <div class="c">
+    <div class="rv">
+      <div class="eyebrow">Real screens</div>
+      <h2>ご自身でも、月200まで作れます。</h2>
+      <p class="sub">しっとるが進める月6本とは別の枠です。ムーブアクト金光店で動画を1本作ったときの、実際の画面でご覧ください。</p>
+    </div>
+    <div class="steps4">
+      <div class="s4 rv"><div class="txt"><span class="sn">STEP 01</span><h3>お店の動画・写真を送って、「動画をつくる」</h3><p>見せたい場面を縦向き・カメラ固定・1本10秒ほどで撮り、公式LINEのトークに送ります。「動画をつくる」と送って「作る」を押します。</p></div><div class="scr wide"><div class="sc"><img src="../tsukaikata/ex_01_start.jpg" alt="「動画をつくる」を送ったあとの案内と、作る・前に送った素材で作る・撮り方・やめるのボタン" width="674" height="200" loading="lazy"></div><p class="swipe">横に動かして見られます</p></div></div>
+      <div class="s4 rv"><div class="txt"><span class="sn">STEP 02</span><h3>1分ほどで、テロップ案が3つ届く</h3><p>横に動かして見比べ、作りたい案の「この案で動画を作る」を押します。テロップ案は別の枠で数えるので、作れる数は減りません。</p></div><div class="scr"><img src="../tsukaikata/ex_02_telops.jpg" alt="テロップ案のカード。案2：悩み名指し型と、この案で動画を作るのボタン" width="312" height="360" loading="lazy" style="max-width:230px"></div></div>
+      <div class="s4 rv"><div class="txt"><span class="sn">STEP 03</span><h3>2〜3分で、動画が届く</h3><p>「承認して素材を受け取る」「Instagramに投稿する」「別の案で作る」から選びます。投稿したあと「広告にする」を押すと、条件を選んで広告も出せます。</p></div><div class="scr"><img src="../tsukaikata/ex_03_video.jpg" alt="できあがった動画と、承認して素材を受け取る・Instagramに投稿する・別の案で作るのボタン" width="674" height="700" loading="lazy" style="max-width:300px"></div></div>
+      <div class="s4 rv"><div class="txt"><span class="sn">STEP 04</span><h3>「残りの本数」で、残りを確かめる</h3><p>残り・使った内訳・次に戻る日が届きます。</p><p style="font-size:13px;margin-top:6px">※この画面はプロプランの例です。ビジネスプランは月200です。</p></div><div class="scr wide"><div class="sc"><img src="../tsukaikata/ex_04_usage.jpg" alt="残りの本数の返事。作れる数・画像の作り直し・AIへの相談・テロップ案・自分の声の残りと次に戻る日" width="674" height="315" loading="lazy"></div><p class="swipe">横に動かして見られます</p></div></div>
+    </div>
+    <div class="rv" style="margin-top:44px">
+      <h3 style="font-size:20px;font-weight:900;color:var(--pine)">1回で使う数</h3>
+      <ul class="uses">
+        <li><span>ショート動画を1本作る（作り直しも1本）</span><span class="n">1</span></li>
+        <li><span>広告の案を作る（画像・複数枚・動画）</span><span class="n">1</span></li>
+        <li><span>キャッチコピー・規約チェックなどの便利ツール</span><span class="n">1</span></li>
+        <li class="zero"><span>しっとるが進める月6本・自動の作り直し・音楽だけ替える</span><span class="n">0</span></li>
+      </ul>
+      <p class="note"><svg class="i"><use href="#i-info"/></svg><span>ご自身で出す広告の広告費は、しっとるが運用する月の分とは別にかかります。</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 メニュー -->
 <section id="menu">
-  <h2><span class="n">4</span>公式LINEのメニュー（実際の画面）</h2>
-
-  <p>トークの下のメニューは、上のタブで「つくる」と「見る・管理」を切り替えます。</p>
-  <figure><img src="../tsukaikata/line_menu.jpg" alt="公式LINEのメニュー「つくる」のタブ" width="1400" height="944" loading="lazy"><figcaption>実際のメニュー（「つくる」のタブ）</figcaption></figure>
-  <h3>「つくる」のタブ</h3>
-  <div class="tblwrap"><table>
-    <tr><th>ボタン</th><th>できること</th></tr>
-    <tr><td>動画をつくる</td><td>お店の動画・写真を送って、ショート動画を作る</td></tr>
-    <tr><td>広告をつくる</td><td>画像・複数枚・動画の広告の案を作る</td></tr>
-    <tr><td>確認・承認</td><td>できた案を見て、承認する</td></tr>
-    <tr><td>撮り方</td><td>広告に使う動画の撮り方を見る</td></tr>
-    <tr><td>キャッチコピー</td><td>テーマを一言送ると、キャッチコピーが10案届く</td></tr>
-    <tr><td>規約チェック</td><td>広告の文を貼ると、使えない言葉がないか確かめる</td></tr>
-  </table></div>
-  <h3>「見る・管理」のタブ</h3>
-  <div class="tblwrap"><table>
-    <tr><th>ボタン</th><th>できること</th></tr>
-    <tr><td>成果レポート</td><td>直近7日の広告ごとの判定（続ける・止める・替える）を見る</td></tr>
-    <tr><td>準備と状況</td><td>次にやることを見る</td></tr>
-    <tr><td>残りの本数</td><td>この期間に作れる残り・使った内訳・次に戻る日を見る</td></tr>
-    <tr><td>店舗の設定</td><td>お店の地域・予算・Instagramなどを見る・変える</td></tr>
-    <tr><td>使い方</td><td>使い方のページを開く</td></tr>
-    <tr><td>質問・連絡</td><td>このトークに送るだけで、担当につながる</td></tr>
-  </table></div>
-  <p>メニューのほかに、トークに次の言葉を送っても使えます：<span class="cmd">動画の希望</span> <span class="cmd">撮り方</span> <span class="cmd">残りの本数</span> <span class="cmd">成果レポート</span> <span class="cmd">確認</span> <span class="cmd">使い方</span></p>
-
+  <div class="c">
+    <div class="rv">
+      <div class="eyebrow">LINE menu</div>
+      <h2>使うのは、公式LINEのメニューだけ。</h2>
+      <p class="sub">トークの下のメニューは、上のタブで「つくる」と「見る・管理」を切り替えます。新しいアプリを入れる必要はありません。</p>
+    </div>
+    <div class="menu">
+      <figure class="rv">
+        <span class="real">実際のメニュー（「つくる」のタブ）</span>
+        <img src="../tsukaikata/line_menu.jpg" alt="公式LINEのメニュー「つくる」のタブ。動画をつくる・広告をつくる・確認承認・撮り方・キャッチコピー・規約チェック" width="1400" height="944" loading="lazy">
+        <p class="words">トークに言葉を送っても使えます：<span class="tap">動画の希望</span><span class="tap">撮り方</span><span class="tap">残りの本数</span><span class="tap">成果レポート</span><span class="tap">確認</span><span class="tap">使い方</span></p>
+      </figure>
+      <div class="tabs">
+        <div class="tabcard rv"><h3>つくる</h3><dl>
+          <dt>動画をつくる</dt><dd>お店の動画・写真を送って、ショート動画を作る</dd>
+          <dt>広告をつくる</dt><dd>画像・複数枚・動画の広告の案を作る</dd>
+          <dt>確認・承認</dt><dd>できた案を見て、承認する</dd>
+          <dt>撮り方</dt><dd>広告に使う動画の撮り方を見る</dd>
+          <dt>キャッチコピー</dt><dd>テーマを一言送ると、10案届く</dd>
+          <dt>規約チェック</dt><dd>広告の文に、使えない言葉がないか確かめる</dd>
+        </dl></div>
+        <div class="tabcard rv"><h3>見る・管理</h3><dl>
+          <dt>成果レポート</dt><dd>直近7日の広告ごとの判定を見る</dd>
+          <dt>準備と状況</dt><dd>次にやることを見る</dd>
+          <dt>残りの本数</dt><dd>残り・使った内訳・次に戻る日を見る</dd>
+          <dt>店舗の設定</dt><dd>お店の地域・予算・Instagramなどを見る・変える</dd>
+          <dt>使い方</dt><dd>使い方のページを開く</dd>
+          <dt>質問・連絡</dt><dd>トークに送るだけで、担当につながる</dd>
+        </dl></div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="self">
-  <h2><span class="n">5</span>ご自身で作るとき（月200・実際の画面）</h2>
-  <p>しっとるが進める月6本とは別に、ご自身でも作れます。ムーブアクト金光店で動画を1本作ったときの、実際の画面です。</p>
-  <ol class="steps">
-    <li><b>お店の動画・写真を送っておく</b>
-      <p>施術の手元など、見せたい場面を縦向き・カメラ固定・1本10秒ほどで撮り、公式LINEのトークに送ります。</p></li>
-    <li><b>「動画をつくる」と送り、「作る」を押す</b>
-      <figure><img src="../tsukaikata/ex_01_start.jpg" alt="「動画をつくる」を送ったあとの案内と、作る・前に送った素材で作る・撮り方・やめるのボタン" width="674" height="200" loading="lazy"><figcaption>「動画をつくる」を送ったところ</figcaption></figure></li>
-    <li><b>テロップ案が3つ届く（1分ほど）</b>
-      <p>横に動かして見比べ、作りたい案の「この案で動画を作る」を押します。テロップ案は別の枠で数えるので、作れる数は減りません。</p>
-      <figure><img src="../tsukaikata/ex_02_telops.jpg" alt="テロップ案のカード。案2：悩み名指し型と、この案で動画を作るのボタン" width="312" height="360" loading="lazy" style="max-width:320px"><figcaption>テロップ案のカード（3つのうちの1つ）</figcaption></figure></li>
-    <li><b>2〜3分で動画が届く（ここで1本使います）</b>
-      <p>「承認して素材を受け取る」「Instagramに投稿する」「別の案で作る」から選びます。投稿したあと「広告にする」を押すと、条件を選んで広告も出せます。</p>
-      <figure><img src="../tsukaikata/ex_03_video.jpg" alt="できあがった動画と、承認して素材を受け取る・Instagramに投稿する・別の案で作るのボタン" width="674" height="700" loading="lazy" style="max-width:420px"><figcaption>動画が届いたところ</figcaption></figure></li>
-    <li><b>残りを確かめる</b>
-      <p>「残りの本数」と送ると、残り・使った内訳・次に戻る日が届きます。</p>
-      <figure><img src="../tsukaikata/ex_04_usage.jpg" alt="残りの本数の返事。作れる数・画像の作り直し・AIへの相談・テロップ案・自分の声の残りと次に戻る日" width="674" height="315" loading="lazy"><figcaption>「残りの本数」の返事（この例はプロプランの画面です。ビジネスは月200です）</figcaption></figure></li>
-  </ol>
-  <h3>1回で使う数</h3>
-  <div class="tblwrap"><table>
-    <tr><th>やること</th><th>使う数</th></tr>
-    <tr><td>ショート動画を1本作る（作り直しも1本）</td><td class="num">1</td></tr>
-    <tr><td>広告の案を作る（画像・複数枚・動画）</td><td class="num">1</td></tr>
-    <tr><td>キャッチコピー・規約チェックなどの便利ツール</td><td class="num">1</td></tr>
-    <tr><td>しっとるが進める月6本・自動の作り直し</td><td class="num">0</td></tr>
-  </table></div>
-  <h3>ほかにできること</h3>
-  <ul>
-    <li><b>広告をつくる：</b>画像・複数枚・動画の広告の案を作れます。</li>
-    <li><b>キャッチコピー：</b>テーマを一言送ると、10案届きます。</li>
-    <li><b>規約チェック：</b>広告の文を貼って送ると、使えない言葉がないか確かめます。</li>
-    <li><b>音楽を変える：</b>同じ映像・同じ文字のまま、音楽だけ替えられます（本数は使いません）。</li>
-  </ul>
-  <div class="note">ご自身で出す広告の広告費は、しっとるが運用する月の分とは別にかかります。</div>
+<!-- 7 レポート -->
+<section id="report" class="alt">
+  <div class="c">
+    <div class="center rv">
+      <div class="eyebrow">Weekly report</div>
+      <h2>出して終わりにしない。<br>毎週、数字で見直します。</h2>
+      <p class="sub">毎週月曜の朝、直近7日の数字と次にやること（改善案）が公式LINEに届きます。広告ごとに、理由と次の一手を4つの判定でお伝えします。</p>
+    </div>
+    <ul class="judge rv">
+      <li><svg class="i"><use href="#i-play"/></svg>続ける</li>
+      <li><svg class="i"><use href="#i-swap"/></svg>替える</li>
+      <li><svg class="i"><use href="#i-stop"/></svg>止める</li>
+      <li><svg class="i"><use href="#i-yen"/></svg>予算を変える</li>
+    </ul>
+    <div class="cal rv">
+      <svg viewBox="0 0 720 150" role="img" aria-label="広告の30日間の図。広告の開始、毎週月曜のレポート、次の広告の3日前の条件のお伺い、30日間が終わった翌朝のまとめ">
+        <line x1="30" y1="62" x2="690" y2="62" stroke="var(--line)" stroke-width="10" stroke-linecap="round"/>
+        <line x1="30" y1="62" x2="640" y2="62" stroke="var(--pine)" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="30" cy="62" r="11" fill="var(--or)"/>
+        <g fill="var(--paper)" stroke="var(--pine)" stroke-width="3"><circle cx="150" cy="62" r="9"/><circle cx="290" cy="62" r="9"/><circle cx="430" cy="62" r="9"/><circle cx="560" cy="62" r="9"/></g>
+        <circle cx="605" cy="62" r="9" fill="var(--paper)" stroke="var(--or)" stroke-width="3"/>
+        <circle cx="690" cy="62" r="11" fill="var(--or)"/>
+        <g font-size="15" font-weight="700" text-anchor="middle">
+          <text x="150" y="30">月曜</text><text x="290" y="30">月曜</text><text x="430" y="30">月曜</text><text x="560" y="30">月曜</text>
+        </g>
+        <g font-size="14" text-anchor="middle">
+          <text x="38" y="102" text-anchor="start" font-weight="700">広告の開始</text>
+          <text x="360" y="102">毎週、レポートと改善案</text>
+          <text x="590" y="126" style="fill:var(--or)" font-weight="700">次の3日前：条件のお伺い</text>
+          <text x="690" y="102" text-anchor="end" font-weight="700">翌朝：まとめ</text>
+        </g>
+        <path d="M150 78v8h410v-8" fill="none" stroke="var(--line)" stroke-width="2"/>
+        <path d="M605 74v36" stroke="var(--or)" stroke-width="2" stroke-dasharray="3 4"/>
+      </svg>
+      <ol class="vt">
+        <li class="o"><b>広告の開始</b>ここから30日間、広告が出ます。</li>
+        <li><b>毎週月曜の朝</b>レポートと改善案が届きます。</li>
+        <li class="o"><b>次の広告の3日前</b>条件のお伺いが届きます。</li>
+        <li class="o"><b>30日間が終わった翌朝</b>30日間のまとめが届きます。</li>
+      </ol>
+    </div>
+    <ul class="rep">
+      <li class="rv"><b>改善案</b><span>「続ける」「替える」「止める」「予算を変える」の判定ごとに、理由と次の一手を書きます。</span></li>
+      <li class="rv"><b>入れ替え</b><span>見飽きられ始めた広告には、新しい動画をお送りします。「この動画に入れ替える」を押すと、しっとるが入れ替えます。広告費の設定は変わりません。</span></li>
+      <li class="rv"><b>30日間のまとめ</b><span>広告が終わった翌朝に、30日間の数字と、良かった点・次に変える点が届きます。</span></li>
+    </ul>
+  </div>
 </section>
 
-<section id="report">
-  <h2><span class="n">6</span>毎週のレポートと改善案</h2>
-  <ul>
-    <li><b>毎週月曜の朝：</b>直近7日の数字と、次にやること（改善案）が公式LINEに届きます。</li>
-    <li><b>改善案：</b>「続ける」「替える」「止める」「予算を変える」の判定ごとに、理由と次の一手を書きます。</li>
-    <li><b>入れ替え：</b>見飽きられ始めた広告には、新しい動画をお送りします。「この動画に入れ替える」を押すと、しっとるが入れ替えます。広告費の設定は変わりません。</li>
-    <li><b>30日間のまとめ：</b>広告が終わった翌朝に、30日間の数字と、良かった点・次に変える点が届きます。</li>
-  </ul>
-  <div class="note">広告を出す・止める・予算を決めるのは、いつもお客様のご判断です。予算を上げるのは、お客様にご了解をいただいたときだけです。</div>
+<!-- 7.5 安心のしくみ -->
+<section id="safe">
+  <div class="c">
+    <div class="rv">
+      <div class="eyebrow">Safety</div>
+      <h2>押し間違えても、取り消せます。</h2>
+      <p class="sub">ボタンを押したあとの返事に、取り消しのボタンが出ます。取り消しの時間を過ぎたときは、トークにそのまま書いて送ってください。担当が対応します。</p>
+    </div>
+    <ul class="undo">
+      <li class="rv"><span class="tap">この案にする（構成案）</span><span class="h">返事に出る「取り消す」で戻せます（30分）。</span></li>
+      <li class="rv"><span class="tap">この動画にする</span><span class="h">「取り消す」で止められます（投稿までの5分）。</span></li>
+      <li class="rv"><span class="tap">この条件で広告を始めてOK</span><span class="h">「取り消す」で、広告を止めて消します（30分）。</span></li>
+      <li class="rv"><span class="tap">直してほしい</span><span class="h">「やっぱりこのままでいい」で戻せます。</span></li>
+      <li class="rv"><span class="tap">先月と同じでOK／前回と同じでOK</span><span class="h">「取り消す」で戻せます（30分）。</span></li>
+      <li class="rv"><span class="tap">動画の希望の答え</span><span class="h">「1つ戻る」で答え直せます。</span></li>
+    </ul>
+    <ul class="rep safe2">
+      <li class="rv"><b>しっとるの広告は「【マカセル】」から</b><span>広告アカウントで「【マカセル】」から始まる名前の広告が、しっとるが運用している広告です。ご自身で出している広告には触れません。</span></li>
+      <li class="rv"><b>出るのは、承認したものだけ</b><span>投稿や広告になるのは、公式LINEや画面で承認していただいたものだけです。</span></li>
+    </ul>
+  </div>
 </section>
 
-<section id="multi">
-  <h2><span class="n">7</span>複数のお店・複数の方で使う</h2>
-  <ul>
-    <li><b>お店：</b>1つのご契約で、広告アカウントを6つまで（6店舗分）使えます。動画の希望や広告の条件は、お店ごとにお伺いします。</li>
-    <li><b>受け取る方：</b>確認のお願い・構成案・レポートを、何人のLINEにでも届けられます。つなぎ方は<a href="../tsukaikata/#multi" style="color:var(--pine)">使い方のページ</a>にあります。</li>
-  </ul>
+<!-- 8 複数店舗・複数人 -->
+<section id="multi" class="alt">
+  <div class="c">
+    <div class="rv">
+      <div class="eyebrow">Multi-store</div>
+      <h2>複数のお店も、複数の方も、<br>1つの契約で。</h2>
+    </div>
+    <div class="multi">
+      <div class="card rv">
+        <span class="who"><svg class="i"><use href="#i-store"/></svg>お店</span>
+        <h3>広告アカウントは6つまで（6店舗分）</h3>
+        <p>動画の希望や広告の条件は、お店ごとにお伺いします。</p>
+        <svg class="dia" viewBox="0 0 420 150" role="img" aria-label="1つのご契約から、6つのお店の広告アカウントにつながる図">
+          <rect x="140" y="6" width="140" height="40" rx="20" fill="var(--pine)"/>
+          <text x="210" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="var(--paper)">1つのご契約</text>
+          <g stroke="var(--line)" stroke-width="2" fill="none"><path d="M210 46v22M38 90V68h344v22M107 68v22M176 68v22M245 68v22M314 68v22"/></g>
+          <g fill="var(--ors)" stroke="var(--or)" stroke-width="1.5"><rect x="12" y="92" width="52" height="46" rx="12"/><rect x="81" y="92" width="52" height="46" rx="12"/><rect x="150" y="92" width="52" height="46" rx="12"/><rect x="219" y="92" width="52" height="46" rx="12"/><rect x="288" y="92" width="52" height="46" rx="12"/><rect x="357" y="92" width="52" height="46" rx="12"/></g>
+          <g font-size="14" font-weight="700" text-anchor="middle" fill="var(--or)"><text x="38" y="120">1店</text><text x="107" y="120">2店</text><text x="176" y="120">3店</text><text x="245" y="120">4店</text><text x="314" y="120">5店</text><text x="383" y="120">6店</text></g>
+        </svg>
+      </div>
+      <div class="card rv">
+        <span class="who"><svg class="i"><use href="#i-users"/></svg>受け取る方</span>
+        <h3>公式LINEで受け取れるのは、何人でも</h3>
+        <p>確認のお願い・構成案・レポートを、本部の方にも店長の方にも届けられます。</p>
+        <svg class="dia" viewBox="0 0 420 150" role="img" aria-label="公式LINEマカセル通知から、本部・店長・担当の方のLINEに届く図">
+          <rect x="120" y="6" width="180" height="40" rx="20" fill="var(--pine)"/>
+          <text x="210" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="var(--paper)">公式LINE「マカセル通知」</text>
+          <g stroke="var(--line)" stroke-width="2" fill="none"><path d="M210 46v22M75 90V68h270v22M210 68v22"/></g>
+          <g fill="var(--soft)" stroke="var(--pine)" stroke-width="1.5"><rect x="20" y="92" width="110" height="46" rx="12"/><rect x="155" y="92" width="110" height="46" rx="12"/><rect x="290" y="92" width="110" height="46" rx="12"/></g>
+          <g font-size="14" font-weight="700" text-anchor="middle" fill="var(--pine)"><text x="75" y="120">本部の方</text><text x="210" y="120">店長の方</text><text x="345" y="120">担当の方</text></g>
+        </svg>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- 9 料金 -->
+<section id="price" class="price">
+  <div class="c">
+    <div class="rv">
+      <div class="eyebrow">Price</div>
+      <h2>料金と、プランに入っているもの</h2>
+      <p class="sub">下の内容がすべて入って、この料金です。</p>
+    </div>
+    <div class="pbox rv">
+      <div class="l">
+        <span class="badge">貴社への特別料金</span>
+        <p class="pn">マカセル ビジネスプラン</p>
+        <p class="was">通常 <s>月額49,500円（税込）</s></p>
+        <p class="now"><span class="u">月額</span><span class="yen num">38,500</span><span class="u">円（税込）</span></p>
+        <p class="keep"><svg class="i"><use href="#i-lock"/></svg><span>特別料金は、ご契約のあいだずっと変わりません。</span></p>
+        <a class="btn" href="#start">始めるまでの流れを見る</a>
+      </div>
+      <div class="r">
+        <h3>プランに入っているもの</h3>
+        <ul class="inc">
+          <li><svg class="i"><use href="#i-store"/></svg><b>広告アカウント 6つまで（6店舗分）</b></li>
+          <li><svg class="i"><use href="#i-video"/></svg><b>しっとるが進める本数 月6本</b><span>ショート動画・広告をあわせた数。動画づくりから投稿・広告まで進めます。</span></li>
+          <li><svg class="i"><use href="#i-check"/></svg><b>ご自身で作れる数 月200</b><span>広告の案・ショート動画・キャッチコピーや規約チェックなどの便利ツール。</span></li>
+          <li><svg class="i"><use href="#i-chat"/></svg><b>公式LINEで受け取れる人数 何人でも</b></li>
+          <li><svg class="i"><use href="#i-zoom"/></svg><b>はじめの設定をZoomで一緒に</b><span>Meta広告の準備から、最初の広告を出すまで。</span></li>
+          <li><svg class="i"><use href="#i-chart"/></svg><b>毎週月曜のレポートと改善案</b></li>
+          <li><svg class="i"><use href="#i-door"/></svg><b>契約期間の縛りなし・7日間の無料お試し</b><span>いつでも解約できます。お試しにはカードのご登録が必要です。</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note rv"><svg class="i"><use href="#i-info"/></svg><span>広告費は、お店のカードからMetaへ直接のお支払いです。広告費を増やしても、マカセルの料金は変わりません。</span></p>
+  </div>
+</section>
+
+<!-- 10 始めるまで -->
 <section id="start">
-  <h2><span class="n">8</span>始めるまでの流れ</h2>
-  <ol class="flow">
-    <li><b>公式LINE「マカセル通知」を友だち追加</b>トークの下のメニュー「アカウントを作る」から、お名前・メールアドレス・パスワードを入れて登録します（スマホで5分ほど）。</li>
-    <li><b>利用規約に同意し、特別料金のお申し込み画面から申し込む</b>しっとるからお送りする専用のURLを開き、カードを登録すると申し込み完了です。必ず専用のURLからお申し込みください（通常のプランを先に選ぶと、特別料金ではお申し込みいただけなくなります）。</li>
-    <li><b>契約書がメールで届く</b>「ご契約内容のお知らせ（契約書）」が、ご登録のメールアドレスに自動で届きます。</li>
-    <li><b>しっとるへ権限を渡す</b>Metaの画面で、お店ごとの広告アカウント・Facebookページ・Instagramの権限をしっとるに渡します（パソコンで15〜30分ほど）。画面の写真つきの手順書があります。Zoomで一緒に進めることもできます。</li>
-    <li><b>お店の登録・Metaとのつなぎ</b>しっとるが行います。</li>
-    <li><b>お店の動画・写真を公式LINEに送る</b>撮れたものから、トークにそのまま送ってください。</li>
-    <li><b>「今月の動画の希望」に答える</b>ここから、3章の毎月の流れが始まります。</li>
-  </ol>
-  <div class="note">パスワードやカードの番号を、しっとるがお聞きすることはありません。</div>
-  <p><a class="btn" href="../">お申し込み・権限の渡し方（ご利用ガイド）</a></p>
+  <div class="c">
+    <div class="rv">
+      <div class="eyebrow">How to start</div>
+      <h2>始めるまでの流れ</h2>
+      <p class="sub">お店にお願いするのは5つ。そのうち4つはスマホで済みます。</p>
+    </div>
+    <ol class="start">
+      <li class="rv"><div class="meta"><span class="chip c1">お店</span><span class="chip t">スマホで5分ほど</span></div><b>公式LINE「マカセル通知」を友だち追加</b><p>トークの下のメニュー「アカウントを作る」から、お名前・メールアドレス・パスワードを入れて登録します。</p></li>
+      <li class="rv"><div class="meta"><span class="chip c1">お店</span><span class="chip t">専用のURLから</span></div><b>特別料金のお申し込み画面から申し込む</b><p>利用規約に同意し、しっとるからお送りする専用のURLを開いて、カードを登録します。通常のプランを先に選ぶと、特別料金ではお申し込みいただけなくなります。</p></li>
+      <li class="rv"><div class="meta"><span class="chip c2">自動</span></div><b>契約書がメールで届く</b><p>「ご契約内容のお知らせ（契約書）」が、ご登録のメールアドレスに届きます。</p></li>
+      <li class="rv"><div class="meta"><span class="chip c1">お店</span><span class="chip t">パソコンで15〜30分ほど</span></div><b>しっとるへ権限を渡す</b><p>Metaの画面で、お店ごとの広告アカウント・Facebookページ・Instagramの権限を渡します。画面の写真つきの手順書があり、Zoomで一緒に進めることもできます。</p></li>
+      <li class="rv"><div class="meta"><span class="chip c2">しっとる</span></div><b>お店の登録・Metaとのつなぎ</b><p>しっとるが行います。</p></li>
+      <li class="rv"><div class="meta"><span class="chip c1">お店</span></div><b>お店の動画・写真を公式LINEに送る</b><p>撮れたものから、トークにそのまま送ってください。</p></li>
+      <li class="rv"><div class="meta"><span class="chip c1">お店</span></div><b>「今月の動画の希望」に答える</b><p>ここから、毎月の流れが始まります。</p></li>
+    </ol>
+    <p class="note rv"><svg class="i"><use href="#i-lock"/></svg><span>パスワードやカードの番号を、しっとるがお聞きすることはありません。</span></p>
+    <p class="rv" style="margin-top:24px"><a class="btn line2" href="../">お申し込み・権限の渡し方をくわしく見る（ご利用ガイド）</a></p>
+  </div>
 </section>
 
-<section id="contract">
-  <h2><span class="n">9</span>お試し・お支払い・解約</h2>
-  <ul>
-    <li><b>7日間の無料お試し：</b>カードをご登録いただくと、7日間は無料です。お試し中に解約された場合、料金はかかりません。</li>
-    <li><b>お支払い：</b>8日目に初回の決済を行い、以降は毎月同じ日に自動で決済します（クレジットカード）。</li>
-    <li><b>しっとるが進める分：</b>初回のお支払いの後から始まります。</li>
-    <li><b>解約：</b>料金プランの画面の「解約する」から、いつでも解約できます。お支払い済みの期間の終わりまで使えます。</li>
-  </ul>
-  <p>くわしい使い方は<a href="../tsukaikata/" style="color:var(--pine)">マカセルの使い方</a>、ほかのプランとの違いは<a href="../about/" style="color:var(--pine)">マカセルのご紹介</a>をご覧ください。</p>
+<!-- 11 お試し・支払い・解約 -->
+<section id="contract" class="alt">
+  <div class="c">
+    <div class="rv">
+      <div class="eyebrow">Trial &amp; billing</div>
+      <h2>まず7日間、無料でお試しください。</h2>
+      <p class="sub">契約期間の縛りはありません。お試し中に解約された場合、料金はかかりません。</p>
+    </div>
+    <div class="trial rv">
+      <svg viewBox="0 0 720 132" role="img" aria-label="お申し込みから7日間は無料、8日目に初回のお支払い、その後しっとるが進める分が始まり、以降は毎月同じ日にお支払いという図">
+        <rect x="24" y="46" width="250" height="26" rx="13" fill="var(--ors)" stroke="var(--or)" stroke-width="1.5"/>
+        <rect x="274" y="46" width="422" height="26" rx="13" fill="var(--pine)"/>
+        <circle cx="24" cy="59" r="12" fill="var(--or)"/>
+        <circle cx="274" cy="59" r="12" fill="var(--paper)" stroke="var(--pine)" stroke-width="4"/>
+        <g font-size="14" font-weight="700">
+          <text x="149" y="64" text-anchor="middle" style="fill:var(--or)">7日間 無料</text>
+          <text x="485" y="64" text-anchor="middle" style="fill:var(--paper)">しっとるが進める分が始まる</text>
+          <text x="12" y="28">お申し込み</text>
+          <text x="274" y="28" text-anchor="middle">8日目：初回のお支払い</text>
+        </g>
+        <g font-size="13"><text x="12" y="102">カードをご登録</text><text x="274" y="102" text-anchor="middle">以降は毎月同じ日に自動で決済</text><text x="708" y="102" text-anchor="end">いつでも解約できます</text></g>
+      </svg>
+      <ol class="vt">
+        <li class="o"><b>お申し込み</b>カードをご登録いただきます。ここから7日間は無料です。</li>
+        <li><b>8日目：初回のお支払い</b>しっとるが進める分が、ここから始まります。</li>
+        <li><b>以降</b>毎月同じ日に自動で決済します。いつでも解約できます。</li>
+      </ol>
+    </div>
+    <ul class="four">
+      <li class="rv"><b><svg class="i"><use href="#i-clock"/></svg>7日間の無料お試し</b><span>カードをご登録いただくと、7日間は無料です。お試し中に解約された場合、料金はかかりません。</span></li>
+      <li class="rv"><b><svg class="i"><use href="#i-cal"/></svg>お支払い</b><span>8日目に初回の決済を行い、以降は毎月同じ日に自動で決済します（クレジットカード）。</span></li>
+      <li class="rv"><b><svg class="i"><use href="#i-video"/></svg>しっとるが進める分</b><span>初回のお支払いの後から始まります。</span></li>
+      <li class="rv"><b><svg class="i"><use href="#i-door"/></svg>解約</b><span>料金プランの画面の「解約する」から、いつでも解約できます。お支払い済みの期間の終わりまで使えます。</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- 12 FAQ -->
+<section id="faq">
+  <div class="c">
+    <div class="center rv">
+      <div class="eyebrow">FAQ</div>
+      <h2>よくあるご質問</h2>
+    </div>
+    <div class="faq rv">
+      <details><summary>広告費は、料金に入っていますか。</summary><p>入っていません。広告費は、お店のカードからMetaへ直接のお支払いです。広告費を増やしても、マカセルの料金は変わりません。</p></details>
+      <details><summary>月6本は、お店ごとの本数ですか。</summary><p>1つのご契約で月6本です（ショート動画・広告をあわせた数）。動画の希望や広告の条件は、お店ごとにお伺いします。これとは別に、ご自身でも月200まで作れます。</p></details>
+      <details><summary>しっとるが進める月6本は、ご自身で作れる数（月200）から引かれますか。</summary><p>引きません。別の枠です。</p></details>
+      <details><summary>知らないうちに広告が出たり、予算が上がったりしませんか。</summary><p>ありません。広告を出す・止める・予算を決めるのは、いつもお客様のご判断です。広告は、条件を確かめて「この条件で広告を始めてOK」を押していただいてから始めます。予算を上げるのは、ご了解をいただいたときだけです。</p></details>
+      <details><summary>パソコンが苦手でも使えますか。</summary><p>毎月のやりとりは、公式LINEのボタンで済みます。はじめに1回だけ、Metaの画面で権限を渡す作業があります（パソコンで15〜30分ほど）。画面の写真つきの手順書があり、Zoomで一緒に進めることもできます。</p></details>
+      <details><summary>お店が6つより少なくても申し込めますか。</summary><p>お申し込みいただけます。広告アカウントは6つまで使えます。</p></details>
+      <details><summary>本部と店長など、何人かで確認できますか。</summary><p>できます。確認のお願い・構成案・レポートは、何人のLINEにでも届けられます。</p></details>
+      <details><summary>InstagramやFacebookページが、まだありません。</summary><p>はじめの設定で一緒に用意します。Facebookの個人アカウントだけ、先にご用意ください。</p></details>
+      <details><summary>広告費は、いくら必要ですか。</summary><p>お客様が決めます。Meta社へ直接お支払いいただき、マカセルの料金は変わりません。しっとるが広告費から手数料をいただくことはありません。</p></details>
+      <details><summary>広告は、どのくらいの期間出ますか。</summary><p>30日間ずつです。始めた日を1日目に数えます（例：11月3日に始めたら12月2日まで）。次の広告の3日前に、条件をお伺いします。</p></details>
+      <details><summary>どんな動画や写真を送ればいいですか。</summary><p>見せたい場面を、スマホを縦向き・カメラ固定で、1本10秒ほど撮ってください。公式LINEのメニュー「撮り方」で、撮り方をいつでも見られます。</p></details>
+      <details><summary>ボタンを押し間違えたら、どうなりますか。</summary><p>返事に出る「取り消す」で戻せます（投稿は5分、構成案・広告の開始は30分）。時間を過ぎたときは、トークにそのまま書いて送ってください。担当が対応します。</p></details>
+      <details><summary>自分で出している広告は、どうなりますか。</summary><p>そのままです。しっとるが運用するのは「【マカセル】」から始まる名前の広告だけで、ご自身で出している広告には触れません。</p></details>
+      <details><summary>広告から来た予約の数は、分かりますか。</summary><p>リンク先に合った数え方をご提案します。お店のホームページなら、計測のしかけ（1行）と貼り方を公式LINEでお送りします。ホットペッパーなど他社の予約ページは自動では数えられないため、広告専用のクーポンや、来店時に「何を見てご予約いただきましたか」と伺う方法をおすすめしています。</p></details>
+      <details><summary>ご自身で作れる数が足りなくなったら。</summary><p>お支払いの日ごとに元に戻ります。足りないときは、追加30本（3,300円・買った日から30日間）をご利用いただけます。</p></details>
+      <details><summary>全部、LINEだけで済みますか。</summary><p>毎月のやりとりは公式LINEで済みます。カードの入力と、Metaの画面での操作だけは、ブラウザで行います。</p></details>
+      <details><summary>分からないことは、どこに聞けばいいですか。</summary><p>公式LINE「マカセル通知」のトークに、そのまま送ってください。担当につながります。担当者のサポートは、初回のお支払いの後から始まります。</p></details>
+      <details><summary>契約期間の決まりはありますか。</summary><p>ありません。料金プランの画面の「解約する」から、いつでも解約できます。お支払い済みの期間の終わりまで使えます。</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 13 最後 -->
+<section id="go" class="last">
+  <div class="c">
+    <h2 class="rv">はじめの一歩は、<br>公式LINEの友だち追加です。</h2>
+    <p class="sub rv">友だち追加のあと、特別料金のお申し込み画面（専用のURL）を、しっとるからお送りします。ご質問も、このLINEにそのまま送ってください。</p>
+    <div class="box rv">
+      <div class="qr"><img src="../about/line-qr.png" alt="公式LINE「マカセル通知」の友だち追加のQRコード" width="600" height="600" loading="lazy"><span>スマホで読み取る</span></div>
+      <a class="btn" href="https://line.me/R/ti/p/@073phbtx">公式LINE「マカセル通知」を友だち追加 <svg class="i"><use href="#i-arrow"/></svg></a>
+      <p class="lineid">LINEのID<b>@073phbtx</b></p>
+    </div>
+    <div class="links rv">
+      <a href="../tsukaikata/">マカセルの使い方（くわしい版）</a>
+      <a href="../">ご利用ガイド（お申し込み・権限の渡し方）</a>
+      <a href="../about/">マカセルのご紹介（ほかのプラン）</a>
+    </div>
+  </div>
 </section>
 </main>
 
-<footer>株式会社しっとる　マカセル　利用規約：<a href="https://app.s-toru.com/terms" style="color:inherit">app.s-toru.com/terms</a></footer>
+<footer>株式会社しっとる　マカセル　利用規約：<a href="https://app.s-toru.com/terms">app.s-toru.com/terms</a></footer>
+
+<div class="bar" id="bar">
+  <a class="btn ghost" href="#price">料金</a>
+  <a class="btn" href="https://line.me/R/ti/p/@073phbtx">公式LINEを友だち追加</a>
 </div>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.05});
+    els.forEach(function(e){io.observe(e)});
+  }
+  var bar=document.getElementById('bar'),hero=document.querySelector('.hero'),last=document.getElementById('go');
+  function on(){var y=window.scrollY||0;var end=last.getBoundingClientRect().top<window.innerHeight*.6;bar.classList.toggle('on',y>hero.offsetHeight*.7&&!end)}
+  window.addEventListener('scroll',on,{passive:true});on();
+  window.addEventListener('beforeprint',function(){els.forEach(function(e){e.classList.add('in')})});
+})();
+</script>
 </body>
 </html>
