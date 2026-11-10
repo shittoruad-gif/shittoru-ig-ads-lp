@@ -25,7 +25,7 @@ def gl(*items): return '<div class="gl">' + "".join(f'<p><b>{a}</b>：{b}</p>' f
 FOOT = "Meta広告 運用サービス「マカセル」のご案内 ｜ 株式会社しっとる"
 # ビジネスは5店舗まで（2026-11-02 三上様。コードは maxStores 6 のまま＝要修正）
 # 料金・機能の一次資料：makaseru/shared/const.ts（PLANS・DONE_FOR_YOU・HUMAN_SUPPORT・ADDON_PACKS・ANNUAL_PAID_MONTHS）と特商法（client/src/pages/Legal.tsx）
-PLANS = [("ライト", 19800, 1, 1, 60, "1人"), ("プロ", 33000, 3, 3, 120, "3人"), ("ビジネス", 49500, 5, 5, 200, "何人でも")]
+PLANS = [("ライト", 19800, 1, 1, 60, "1人"), ("プロ", 33000, 3, 3, 120, "3人"), ("ビジネス", 49500, 6, 6, 200, "何人でも")]
 yen = lambda n: f"{n:,}円"
 
 pages.append(f"""<section class="pg cover"><div class="cv">
