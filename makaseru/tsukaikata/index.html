@@ -57,6 +57,16 @@ details p{margin:8px 0 0}
 .flow li::before{content:counter(f);position:absolute;left:12px;top:10px;width:26px;height:26px;border-radius:50%;background:var(--pine);color:var(--paper);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
 .flow b{display:block}
 footer{color:var(--mut);font-size:13px;text-align:center;margin-top:28px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin:14px 0}
+.vcard{min-width:0}
+.vplay{position:relative;display:block;width:100%;aspect-ratio:16/9;padding:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#111;cursor:pointer}
+.vplay img{width:100%;height:100%;object-fit:cover;display:block;border:0;border-radius:0}
+.vbtn{position:absolute;left:50%;top:50%;width:58px;height:40px;margin:-20px 0 0 -29px;border-radius:10px;background:rgba(20,20,20,.78)}
+.vbtn::after{content:"";position:absolute;left:23px;top:11px;border-style:solid;border-width:9px 0 9px 15px;border-color:transparent transparent transparent #fff}
+.vplay:focus-visible{outline:3px solid var(--pine);outline-offset:2px}
+.vcard iframe{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:10px}
+.vt{margin:8px 0 0;font-size:15px;line-height:1.6}.vm{color:var(--mut);font-size:13px}
+.vl{margin:2px 0 0;font-size:13px}.vl a{color:var(--pine)}
 figure{margin:12px 0}figure img{width:auto;max-width:100%;height:auto;border:1px solid var(--line);border-radius:10px;display:block}figcaption{font-size:13px;color:var(--mut);margin-top:4px}
 .docnav{max-width:820px;margin:32px auto 0;padding:16px 18px;border-top:1px solid var(--dn-line,#d9e2df);font-family:"Noto Sans JP",system-ui,sans-serif}
 .docnav-h{margin:0 0 8px;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--dn-mut,#4f5b56)}
@@ -87,6 +97,7 @@ figure{margin:12px 0}figure img{width:auto;max-width:100%;height:auto;border:1px
   <p class="lead">お申し込みと権限の渡し方は<a href="../" style="color:var(--pine)">ご利用ガイド</a>をご覧ください。</p>
 </header>
 
+<p class="lead" style="margin:0 0 10px"><a href="#douga" style="color:var(--pine);font-weight:700">動画で見る（全9章）</a>　文章より動画のほうが早い方は、こちらからどうぞ。</p>
 <nav class="toc"><b>目次</b><ol>
   <li><a href="#share">しっとるが進めること・ご自身で進めること</a></li>
   <li><a href="#month">毎月の流れ（しっとるが進める分）</a></li>
@@ -104,6 +115,31 @@ figure{margin:12px 0}figure img{width:auto;max-width:100%;height:auto;border:1px
   <li><a href="#faq">よくある質問</a></li>
 </ol></nav>
 <main class="body">
+
+<section id="douga">
+  <h2>動画で見る（全9章・約42分）</h2>
+  <p>実際の画面を操作しながら、はじめから順にご説明しています。見たい章だけでも大丈夫です。画面は見本のデータです（架空のお店・金額は伏せています）。</p>
+  <div class="vgrid">
+    <div class="vcard"><button class="vplay" type="button" data-v="eSW7mhFX5SE" aria-label="第1章 登録とログイン、画面の見方 の動画を再生"><img src="https://i.ytimg.com/vi/eSW7mhFX5SE/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="vbtn" aria-hidden="true"></span></button>
+      <p class="vt"><b>第1章</b>　登録とログイン、画面の見方<span class="vm">（約5分）</span></p><p class="vl"><a href="https://youtu.be/eSW7mhFX5SE" target="_blank" rel="noopener">YouTubeで開く</a></p></div>
+    <div class="vcard"><button class="vplay" type="button" data-v="oEepBUSL9rE" aria-label="第2章 お店を登録する の動画を再生"><img src="https://i.ytimg.com/vi/oEepBUSL9rE/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="vbtn" aria-hidden="true"></span></button>
+      <p class="vt"><b>第2章</b>　お店を登録する<span class="vm">（約5分）</span></p><p class="vl"><a href="https://youtu.be/oEepBUSL9rE" target="_blank" rel="noopener">YouTubeで開く</a></p></div>
+    <div class="vcard"><button class="vplay" type="button" data-v="apX4PFKhtPo" aria-label="第3章 Meta広告の準備 の動画を再生"><img src="https://i.ytimg.com/vi/apX4PFKhtPo/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="vbtn" aria-hidden="true"></span></button>
+      <p class="vt"><b>第3章</b>　Meta広告の準備<span class="vm">（約5分）</span></p><p class="vl"><a href="https://youtu.be/apX4PFKhtPo" target="_blank" rel="noopener">YouTubeで開く</a></p></div>
+    <div class="vcard"><button class="vplay" type="button" data-v="EiS6W4dJKZs" aria-label="第4章 マカセルとMetaをつなぐ の動画を再生"><img src="https://i.ytimg.com/vi/EiS6W4dJKZs/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="vbtn" aria-hidden="true"></span></button>
+      <p class="vt"><b>第4章</b>　マカセルとMetaをつなぐ<span class="vm">（約4分）</span></p><p class="vl"><a href="https://youtu.be/EiS6W4dJKZs" target="_blank" rel="noopener">YouTubeで開く</a></p></div>
+    <div class="vcard"><button class="vplay" type="button" data-v="y3iTWvad--w" aria-label="第5章 LINEで広告をつくる の動画を再生"><img src="https://i.ytimg.com/vi/y3iTWvad--w/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="vbtn" aria-hidden="true"></span></button>
+      <p class="vt"><b>第5章</b>　LINEで広告をつくる<span class="vm">（約4分）</span></p><p class="vl"><a href="https://youtu.be/y3iTWvad--w" target="_blank" rel="noopener">YouTubeで開く</a></p></div>
+    <div class="vcard"><button class="vplay" type="button" data-v="iko2wDoEmfo" aria-label="第6章 承認して素材を受け取る の動画を再生"><img src="https://i.ytimg.com/vi/iko2wDoEmfo/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="vbtn" aria-hidden="true"></span></button>
+      <p class="vt"><b>第6章</b>　承認して素材を受け取る<span class="vm">（約4分）</span></p><p class="vl"><a href="https://youtu.be/iko2wDoEmfo" target="_blank" rel="noopener">YouTubeで開く</a></p></div>
+    <div class="vcard"><button class="vplay" type="button" data-v="wdULXm-YvS4" aria-label="第7章 広告マネージャで公開する の動画を再生"><img src="https://i.ytimg.com/vi/wdULXm-YvS4/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="vbtn" aria-hidden="true"></span></button>
+      <p class="vt"><b>第7章</b>　広告マネージャで公開する<span class="vm">（約5分）</span></p><p class="vl"><a href="https://youtu.be/wdULXm-YvS4" target="_blank" rel="noopener">YouTubeで開く</a></p></div>
+    <div class="vcard"><button class="vplay" type="button" data-v="r_1L3tD0x28" aria-label="第8章 ショート動画をつくる の動画を再生"><img src="https://i.ytimg.com/vi/r_1L3tD0x28/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="vbtn" aria-hidden="true"></span></button>
+      <p class="vt"><b>第8章</b>　ショート動画をつくる<span class="vm">（約5分）</span></p><p class="vl"><a href="https://youtu.be/r_1L3tD0x28" target="_blank" rel="noopener">YouTubeで開く</a></p></div>
+    <div class="vcard"><button class="vplay" type="button" data-v="bPBLykH09M8" aria-label="第9章 毎朝の判定と困ったとき の動画を再生"><img src="https://i.ytimg.com/vi/bPBLykH09M8/hqdefault.jpg" alt="" width="480" height="360" loading="lazy"><span class="vbtn" aria-hidden="true"></span></button>
+      <p class="vt"><b>第9章</b>　毎朝の判定と困ったとき<span class="vm">（約4分）</span></p><p class="vl"><a href="https://youtu.be/bPBLykH09M8" target="_blank" rel="noopener">YouTubeで開く</a></p></div>
+  </div>
+</section>
 
 <section id="share">
   <h2><span class="n">1</span>しっとるが進めること・ご自身で進めること</h2>
@@ -482,5 +518,13 @@ figure{margin:12px 0}figure img{width:auto;max-width:100%;height:auto;border:1px
 
 <footer>株式会社しっとる　マカセル　<a href="../" style="color:inherit">ご利用ガイド</a>　利用規約：<a href="https://app.s-toru.com/terms" style="color:inherit">app.s-toru.com/terms</a></footer>
 </div>
+
+<script>
+document.querySelectorAll('.vplay').forEach(function(b){b.addEventListener('click',function(){
+  var f=document.createElement('iframe');
+  f.src='https://www.youtube-nocookie.com/embed/'+b.getAttribute('data-v')+'?autoplay=1&rel=0';
+  f.title=b.getAttribute('aria-label');f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;
+  b.replaceWith(f);});});
+</script>
 </body>
 </html>
