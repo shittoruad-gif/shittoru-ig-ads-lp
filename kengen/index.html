@@ -62,6 +62,10 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .check{list-style:none;padding-left:0}
 .check li{position:relative;padding-left:28px}
 .check li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border:2px solid var(--fg);border-radius:3px}
+figure.map svg{display:block;width:100%;max-width:440px;height:auto;margin:0 auto;color:var(--fg);font-family:var(--f-body)}
+.word{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.word .wn{font-size:17px;color:var(--brand)}.word .wn span{font-size:13px;color:var(--muted);font-weight:400}
+.word .wm{font-size:15px;color:var(--muted)}
 footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
 
 a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-break:break-all}a.ext code{color:#1a5fb4}@media (prefers-color-scheme:dark){a.ext code{color:#8ab4f8}}
@@ -96,6 +100,7 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 </div>
 <nav class="toc box info" aria-label="目次"><b class="h">目次</b><ol>
 <li><a href="#before">はじめる前に</a></li>
+<li><a href="#words">出てくる名前の違い</a></li>
 <li><a href="#s1">手順1　Facebookの個人アカウント</a></li>
 <li><a href="#s2">手順2　ビジネスポートフォリオを用意する</a></li>
 <li><a href="#s3">手順3　Facebookページ</a></li>
@@ -136,6 +141,56 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 </ol>
 <p>前の会社の管理画面の中で作られた広告アカウントは、お店の側に移せません。そのときは手順5で新しく作ります。前の会社と連絡が取れないときは、LINEでご相談ください。</p>
 </div>
+</section>
+
+<section class="step" id="words">
+<h2>出てくる名前の違い（先にここだけ読めば迷いません）</h2>
+<p>Metaの画面には、似た名前の「アカウント」や「ページ」がいくつも出てきます。中身は次の6つだけです。<b>人が1人、お店の箱が1つ、箱の中に持ち物が3つ、箱を使わせてもらう会社が1つ</b>、と覚えてください。</p>
+<figure class="map">
+<svg viewBox="0 0 340 444" role="img" aria-label="Facebookアカウントの人がビジネスポートフォリオという箱を管理し、箱の中にFacebookページ・Instagram・広告アカウントが入り、株式会社しっとるはパートナーとして箱の中身を使う許可をもらう図" xmlns="http://www.w3.org/2000/svg">
+<g font-family="inherit" fill="currentColor" text-anchor="middle">
+<rect x="20" y="8" width="300" height="54" rx="10" fill="var(--info-soft)" stroke="var(--brand)" stroke-width="1.5"/>
+<text x="170" y="31" font-size="15" font-weight="700">① Facebookアカウント（個人）</text>
+<text x="170" y="51" font-size="12.5">ログインする「人」。1人1つ</text>
+<path d="M170 62v22m-6-8l6 8 6-8" fill="none" stroke="var(--brand)" stroke-width="2"/>
+<text x="232" y="79" font-size="12">入って管理する</text>
+<rect x="8" y="88" width="324" height="236" rx="12" fill="none" stroke="var(--brand)" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="170" y="112" font-size="15" font-weight="700">② ビジネスポートフォリオ</text>
+<text x="170" y="131" font-size="12.5">お店の持ち物を入れる「箱」</text>
+<rect x="22" y="144" width="140" height="62" rx="8" fill="var(--surface)" stroke="var(--line)" stroke-width="1.5"/>
+<text x="92" y="170" font-size="13.5" font-weight="700">③ Facebookページ</text>
+<text x="92" y="190" font-size="12">お店の看板</text>
+<rect x="178" y="144" width="140" height="62" rx="8" fill="var(--surface)" stroke="var(--line)" stroke-width="1.5"/>
+<text x="248" y="170" font-size="13.5" font-weight="700">④ Instagram</text>
+<text x="248" y="190" font-size="12">お店のアカウント</text>
+<path d="M162 175h16" stroke="var(--accent)" stroke-width="3"/>
+<text x="170" y="224" font-size="12" fill="var(--accent)" font-weight="700">③と④は1対1でつなぐ（手順4）</text>
+<rect x="22" y="238" width="296" height="70" rx="8" fill="var(--surface)" stroke="var(--line)" stroke-width="1.5"/>
+<text x="170" y="264" font-size="13.5" font-weight="700">⑤ 広告アカウント</text>
+<text x="170" y="284" font-size="12">広告そのものと、広告費の支払い（カード）</text>
+<text x="170" y="300" font-size="12">が入る帳簿</text>
+<path d="M170 380v-52m-6 8l6-8 6 8" fill="none" stroke="var(--accent)" stroke-width="2"/>
+<text x="240" y="358" font-size="12">使う許可（手順7）</text>
+<rect x="20" y="382" width="300" height="54" rx="10" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.5"/>
+<text x="170" y="405" font-size="15" font-weight="700">⑥ パートナー（株式会社しっとる）</text>
+<text x="170" y="425" font-size="12.5">箱の中身を使わせてもらう会社</text>
+</g>
+</svg>
+<figcaption>持ち主は、いつもお店（②の箱）です。しっとるは⑥として、③④⑤を使う許可をもらうだけです。</figcaption>
+</figure>
+<div class="cols words">
+<div class="word"><p class="wn"><b>① Facebookアカウント</b> <span>（個人アカウント・プロフィール）</span></p><p>ご本人のもの。ログインに使います。広告には出ません。</p><p class="wm"><b>間違えやすい点：</b>お店の名前では作れません。1人1つです。これが無いと、ほかは何も作れません。</p></div>
+<div class="word"><p class="wn"><b>② ビジネスポートフォリオ</b> <span>（前の名前：ビジネスマネージャ、ビジネスアカウント）</span></p><p>お店の③④⑤をまとめて入れる箱です。誰に使わせるかも、ここで決めます。</p><p class="wm"><b>間違えやすい点：</b>ログインするアカウントではありません。①の人が、中に入って操作します。1人が2つ以上の箱に入っていることがあるので、左上の名前で「いまどの箱か」を確かめます。</p></div>
+<div class="word"><p class="wn"><b>③ Facebookページ</b></p><p>お店の看板です。広告は、このページの名前で出ます。</p><p class="wm"><b>間違えやすい点：</b>①の個人アカウントとは別物です。ページ自体にはログインできません（①でログインして、ページに「切り替える」）。投稿はしなくて大丈夫です。</p></div>
+<div class="word"><p class="wn"><b>④ Instagramアカウント</b> <span>（画面では「Instagramプロフィール」とも出ます）</span></p><p>お店のInstagramです。プロアカウントにして、③のページにつなぎます。</p><p class="wm"><b>間違えやすい点：</b>ログインは、Instagramのユーザーネームとパスワード（①とは別）です。②の箱に入れただけでは、③につながりません。</p></div>
+<div class="word"><p class="wn"><b>⑤ 広告アカウント</b></p><p>広告と広告費が入る帳簿です。カードはここに登録します。</p><p class="wm"><b>間違えやすい点：</b>ログインするアカウントではありません。Instagramアプリの「投稿を宣伝」で自動でできた広告アカウントは、②の箱の外（個人のもの）にあることがあります。</p></div>
+<div class="word"><p class="wn"><b>⑥ パートナー</b></p><p>②の箱の中身を使ってよい、ほかの会社です（今回は株式会社しっとる）。</p><p class="wm"><b>間違えやすい点：</b>持ち主は変わりません。いつでも外せます。</p></div>
+</div>
+<div class="box info"><b class="h">アカウントではないもの（画面や場所の名前）</b><ul>
+<li><b>ビジネス設定</b>（<code>business.facebook.com/settings</code>）：②の箱の中を見る画面です。左のメニューの<b>「アカウント」</b>は、箱に入っている持ち物の一覧（「ページ」＝③、「Instagramアカウント」＝④、「広告アカウント」＝⑤）、<b>「ユーザー」</b>は、箱を使える人と会社の一覧（「メンバー」＝人、「パートナー」＝⑥）です。たとえば「アカウント → ページ」は、「箱の中に、お店のFacebookページが入っているかを見る場所」という意味です。</li>
+<li><b>Metaビジネススイート・広告マネージャ</b>：投稿や広告を作るための画面（道具）の名前です。新しいアカウントではありません。</li>
+<li><b>アカウントセンター</b>：ご本人のFacebookとInstagramのログインをまとめる場所です。ここで「アカウントを追加」しても、③のページと④のInstagramはつながりません。今回の手順では使いません。</li>
+</ul></div>
 </section>
 
 <section class="step" id="s1">
