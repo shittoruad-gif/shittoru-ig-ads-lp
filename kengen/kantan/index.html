@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="../../assets/shittoru_logo.png">
+<title>Facebookページの権限の渡し方（かんたん版）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&family=BIZ+UDPMincho:wght@700&display=swap">
+<style>body{margin:0}
+/* 手順書：縦一列。番号つきの手順カードを上から順に読む */
+:root{
+  --bg:#f7f6f2; --surface:#ffffff; --fg:#1f2622; --muted:#56615b; --line:#dcd8cf;
+  --brand:#1c3f3a; --accent:#b4501f; --accent-soft:#f8e7dc; --ok-soft:#e2efe3; --ok:#2f6b3a; --info-soft:#e3ece9;
+  --f-display:'BIZ UDPMincho', 'Hiragino Mincho ProN', serif;
+  --f-body:'BIZ UDPGothic', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141917; --surface:#1d2421; --fg:#e8ece9; --muted:#a4b0aa; --line:#33403b;
+  --brand:#9fd0c4; --accent:#f0a074; --accent-soft:#3a2a20; --ok-soft:#1f3324; --ok:#9fd3a8; --info-soft:#22302c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141917; --surface:#1d2421; --fg:#e8ece9; --muted:#a4b0aa; --line:#33403b;
+  --brand:#9fd0c4; --accent:#f0a074; --accent-soft:#3a2a20; --ok-soft:#1f3324; --ok:#9fd3a8; --info-soft:#22302c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.8;-webkit-text-size-adjust:100%}
+.wrap{max-width:820px;margin:0 auto;padding-block:32px 72px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));display:flex;flex-direction:column;gap:28px}
+header{display:flex;flex-direction:column;gap:8px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--accent)}
+h1{font-family:var(--f-display);font-size:clamp(24px,5.4vw,34px);line-height:1.35;margin:0;color:var(--brand);text-wrap:balance}
+.lead{margin:0;color:var(--muted)}
+h2{font-family:var(--f-display);font-size:22px;line-height:1.45;margin:0;color:var(--brand);text-wrap:balance}
+h3{font-size:17px;margin:0}
+p{margin:0}
+section{display:flex;flex-direction:column;gap:14px;min-width:0}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.step h2{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.no{font-family:var(--f-body);font-size:13px;font-weight:700;color:var(--surface);background:var(--brand);border-radius:6px;padding:2px 10px;letter-spacing:.06em;flex:none}
+.who{display:inline-block;font-size:13px;font-weight:700;border-radius:999px;padding:2px 12px;background:var(--accent-soft);color:var(--accent);align-self:flex-start}
+.who.us{background:var(--ok-soft);color:var(--ok)}
+ol,ul{margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:6px}
+.box{border-radius:10px;padding:14px 16px;display:flex;flex-direction:column;gap:6px}
+.box b.h{display:block}
+.warn{background:var(--accent-soft)}
+.info{background:var(--info-soft)}
+.ok{background:var(--ok-soft)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.cols>*{min-width:0}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--info-soft)}
+.id{font-size:clamp(20px,5.4vw,30px);font-weight:700;letter-spacing:.04em;white-space:nowrap;color:var(--brand);background:var(--surface);border:2px solid var(--brand);border-radius:10px;padding:8px 16px;align-self:flex-start;font-variant-numeric:tabular-nums;user-select:all;word-break:break-all}
+code{font-family:var(--f-body);background:var(--info-soft);border-radius:4px;padding:0 5px;word-break:break-all}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+figure{margin:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+figure img{display:block;width:auto;max-width:100%;height:auto;border:1px solid var(--line);border-radius:8px;background:#fff}
+figcaption{font-size:14px;line-height:1.6;color:var(--muted)}
+.toc ol{gap:2px}
+a{color:var(--brand)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.check{list-style:none;padding-left:0}
+.check li{position:relative;padding-left:28px}
+.check li::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border:2px solid var(--fg);border-radius:3px}
+figure.map svg{display:block;width:100%;max-width:440px;height:auto;margin:0 auto;color:var(--fg);font-family:var(--f-body)}
+.word{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
+.word .wn{font-size:17px;color:var(--brand)}.word .wn span{font-size:13px;color:var(--muted);font-weight:400}
+.word .wm{font-size:15px;color:var(--muted)}
+footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+
+a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-break:break-all}a.ext code{color:#1a5fb4}@media (prefers-color-scheme:dark){a.ext code{color:#8ab4f8}}
+/* PCでは：上の見出しは横いっぱい、左に目次（スクロールしても残る）、右に本文を広く。画面の図は2〜3枚ずつ横に並ぶ */
+.top,main.body{display:flex;flex-direction:column;gap:28px;min-width:0}
+@media (min-width:1100px){
+  .wrap{max-width:1280px;display:grid;grid-template-columns:260px minmax(0,1fr);column-gap:40px;row-gap:28px;padding-left:32px;padding-right:32px}
+  .top,footer{grid-column:1/-1}
+  .top{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:end}
+  nav.toc{position:sticky;top:20px;align-self:start;max-height:calc(100vh - 40px);overflow:auto;font-size:15px}
+  .step{padding:28px 32px}
+  .figs{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+}
+</style>
+<style>.one figure img{max-width:min(100%,560px)}</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top">
+<header>
+<p class="eyebrow">株式会社しっとる</p>
+<h1>Facebookページの権限の渡し方（かんたん版）</h1>
+<p class="lead">お店のFacebookページに、株式会社しっとるの担当を追加していただく手順です。追加していただいたあとの設定は、しっとるで進めます。</p>
+</header>
+<section class="box info">
+<b class="h">していただくこと</b>
+<p>パソコンで、下の「はじめに」と手順1〜5を上から順に進めてください。操作は1回だけです。</p>
+<p>画像は、しっとるの画面で撮った見本です。お手元の画面と並びが違うときは、そこで止めて、その画面の写真をLINEで送ってください。</p>
+</section>
+</div>
+<nav class="toc box info" aria-label="目次"><b class="h">目次</b><ol>
+<li><a href="#before">ご用意いただくもの</a></li>
+<li><a href="#s0">はじめに　お店のページに切り替える</a></li>
+<li><a href="#s1">手順1　「ページアクセス」を開く</a></li>
+<li><a href="#s2">手順2　「追加」を押す</a></li>
+<li><a href="#s3">手順3　「次へ」を押す</a></li>
+<li><a href="#s4">手順4　メールアドレスで検索する</a></li>
+<li><a href="#s5">手順5　全権限をオンにして許可する</a></li>
+<li><a href="#done">終わったら</a></li>
+<li><a href="#trouble">うまくいかないとき</a></li>
+</ol></nav>
+<main class="body">
+<section id="before">
+<h2>ご用意いただくもの</h2>
+<div class="cols">
+<div class="box info"><b class="h">必要なもの</b><ul>
+<li>パソコン</li>
+<li>お店のFacebookページを管理しているFacebookアカウント（ログインできる状態）</li>
+<li>しっとるからLINEでお伝えしたメールアドレス（手順4で使います）</li>
+</ul></div>
+<div class="box warn"><b class="h">しっとるにお伝えいただかないもの</b><ul>
+<li>Facebookのパスワード</li>
+<li>スマホやメールに届く確認の番号（認証コード）</li>
+</ul></div>
+</div>
+</section>
+
+<section class="step one" id="s0">
+<h2><span class="no">はじめに</span>お店のページに切り替える</h2>
+<ol>
+<li>パソコンで <a class="ext" href="https://www.facebook.com/" target="_blank" rel="noopener"><code>https://www.facebook.com/</code></a> を開きます。</li>
+<li>右上の丸いアイコンを押します。</li>
+<li>お店のFacebookページの名前を押します。</li>
+</ol>
+<div class="box info"><p>この切り替えをしないと、次の手順の画面が出ません。右上のアイコンがお店のページのものに変われば、切り替わっています。</p></div>
+<figure><img src="k0.jpg" alt="右上の丸いアイコンを押し、お店のページの名前を押す画面" width="1100" height="1190" loading="lazy"><figcaption>右上の丸いアイコン → お店のページの名前。見本では「手順確認用サンプル」がページの名前です</figcaption></figure>
+</section>
+
+<section class="step" id="s1">
+<h2><span class="no">手順1</span>「ページアクセス」を開く</h2>
+<p>こちらを開きます。</p>
+<p><a class="ext" href="https://www.facebook.com/settings/?tab=profile_access" target="_blank" rel="noopener"><code>https://www.facebook.com/settings/?tab=profile_access</code></a></p>
+<p>「Facebookへのアクセスを許可された人」と書かれた画面が開けば、手順2へ進みます。</p>
+<div class="box info"><b class="h">開かないとき</b><p>画面の左の一覧から「ページ設定」を押し、次に「ページアクセス」を押します。</p></div>
+<figure><img src="k1.jpg" alt="左の一覧のページ設定を押し、ページアクセスを押す画面" width="1200" height="915" loading="lazy"><figcaption>URLで開かないときの道順：1「ページ設定」→ 2「ページアクセス」</figcaption></figure>
+</section>
+
+<section class="step" id="s2">
+<h2><span class="no">手順2</span>「追加」を押す</h2>
+<p>「Facebookへのアクセスを許可された人」の右にある「追加」を押します。</p>
+<div class="box info"><p>「追加」は2つあります。<b>上の「追加」</b>を押してください。</p></div>
+<figure><img src="k2.jpg" alt="Facebookへのアクセスを許可された人の右にある追加のボタン" width="1170" height="555" loading="lazy"><figcaption>赤枠の「追加」を押します。見本では名前が1人出ていますが、お手元の画面にはご自身のお名前が出ます</figcaption></figure>
+</section>
+
+<section class="step one" id="s3">
+<h2><span class="no">手順3</span>「次へ」を押す</h2>
+<p>「新しく追加」という説明の画面が出ます。右下の「次へ」を押します。</p>
+<figure><img src="k3.jpg" alt="新しく追加の説明の画面と、右下の次へのボタン" width="1100" height="1063" loading="lazy"><figcaption>説明の画面は、読んで「次へ」を押すだけです</figcaption></figure>
+</section>
+
+<section class="step one" id="s4">
+<h2><span class="no">手順4</span>メールアドレスで検索する</h2>
+<ol>
+<li>検索の欄に、<b>しっとるからLINEでお伝えしたメールアドレス</b>を入れます。</li>
+<li>「三上尚志」と出たら、それを押します。</li>
+</ol>
+<div class="box warn"><b class="h">お名前では検索しないでください</b><p>お名前で検索すると、似たお名前の別の方が何人も出てきます。まちがえて別の方に権限を渡さないよう、必ずメールアドレスで検索してください。</p></div>
+<figure><img src="k4.jpg" alt="名前またはメールアドレスで検索する欄" width="1100" height="860" loading="lazy"><figcaption>赤枠の欄に、LINEでお伝えしたメールアドレスを入れます</figcaption></figure>
+</section>
+
+<section class="step one" id="s5">
+<h2><span class="no">手順5</span>全権限をオンにして許可する</h2>
+<ol>
+<li>「このユーザーに全権限を付与する」の右のスイッチを押して、オンにします。</li>
+<li>右下の「アクセスを許可」を押します。</li>
+<li>パスワードを聞かれたら、ご自身のFacebookのパスワードを入れます。</li>
+</ol>
+<figure><img src="k5.jpg" alt="このユーザーに全権限を付与するのスイッチと、アクセスを許可のボタン" width="1100" height="1500" loading="lazy"><figcaption>1 のスイッチをオンにしてから、2「アクセスを許可」</figcaption></figure>
+<div class="box info"><b class="h">なぜ個人の名前を追加するのか</b><p>Facebookページの権限は、会社ではなく個人のアカウントに付ける仕組みです。そのため、株式会社しっとる代表の三上を追加していただきます。ご契約が終わったら、同じ画面から外せます。</p></div>
+</section>
+
+<section id="done">
+<h2>終わったら</h2>
+<div class="box ok"><p>LINEで「追加しました」とお知らせください。しっとるで確認して、続きの設定を進めます。</p></div>
+</section>
+
+<section id="trouble">
+<h2>うまくいかないとき</h2>
+<div class="tbl"><table>
+<tr><th>起きたこと</th><th>していただくこと</th></tr>
+<tr><td>手順1の画面に「追加」が無く、「全権限を持っている人」「管理」と出ている</td><td>そこで止めて、その画面の写真をLINEで送ってください。別の方法をご案内します</td></tr>
+<tr><td>手順4で「三上尚志」が出てこない</td><td>そこで止めて、LINEでお知らせください</td></tr>
+<tr><td>右上のアイコンを押しても、お店のページの名前が出ない</td><td>「すべてのプロフィールを見る」を押して探してください。それでも無ければ、その画面の写真を送ってください</td></tr>
+<tr><td>画面が見本と違う</td><td>そこで止めて、その画面の写真を送ってください</td></tr>
+</table></div>
+</section>
+</main>
+<footer>株式会社しっとる　／　この手順書の画面は 2026年11月 時点のものです</footer>
+</div>
+</body>
+</html>
