@@ -114,7 +114,7 @@ page("ご利用の流れ", "ご相談から、毎週の見直しまで", """<div
 page("広告の準備", "準備は、URLの手順どおりに進めるだけ", f"""<div class="prep">
 <figure><img src="{img('guide_where.png')}" class="phone"><figcaption>今の状態に合わせて、始める場所を選べます</figcaption></figure>
 <figure><img src="{img('perm.jpg')}" class="pc"><figcaption>しっとるに3つの許可を渡します（実際のMetaの画面）</figcaption></figure>
-<div class="pq"><table><tr><th>渡すもの</th><th>オンにするもの</th></tr><tr><td>広告アカウント</td><td>フルアクセス</td></tr><tr><td>Facebookページ</td><td>広告・コンテンツ・インサイト</td></tr><tr><td>Instagram</td><td>広告・コンテンツ・インサイト</td></tr></table>
+<div class="pq"><table><tr><th>渡すもの</th><th>オンにするもの</th></tr><tr><td>広告アカウント</td><td>フルアクセス</td></tr><tr><td>Facebookページ</td><td>フルアクセス</td></tr><tr><td>Instagram</td><td>フルアクセス</td></tr></table>
 <p class="small">手順のページ（スマホでもパソコンでも）</p><img src="{img('qr_guide.png')}" class="qr"><p class="url">ig-ads.s-toru.com/start/</p><p class="small">マカセルのアカウント作成は、公式LINEからご案内します</p></div></div>""" + gl(("Facebookページ", "お店の名前で作るFacebookのページです。広告の名義に使います。投稿しなくて大丈夫です")))
 
 page("よくあるご質問", "お客様からよく伺うこと", """<div class="faq">
