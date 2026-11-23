@@ -66,6 +66,9 @@ figure.map svg{display:block;width:100%;max-width:440px;height:auto;margin:0 aut
 .word{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:6px}
 .word .wn{font-size:17px;color:var(--brand)}.word .wn span{font-size:13px;color:var(--muted);font-weight:400}
 .word .wm{font-size:15px;color:var(--muted)}
+button.copy{font:inherit;font-size:15px;font-weight:700;color:var(--surface);background:var(--brand);border:0;border-radius:8px;padding:10px 18px;align-self:flex-start;cursor:pointer}
+figure a{display:block}
+@media (max-width:599px){#trouble table,#trouble tbody,#trouble tr,#trouble td{display:block;width:100%}#trouble tr:first-child{display:none}#trouble tr{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;padding:8px 0}#trouble td{border:0;padding:4px 12px}#trouble td:nth-child(1){font-weight:700}#trouble td:nth-child(2)::before{content:"考えられること：";font-weight:700}#trouble td:nth-child(3)::before{content:"すること：";font-weight:700}#trouble .tbl{overflow:visible}}
 footer{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
 
 a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-break:break-all}a.ext code{color:#1a5fb4}@media (prefers-color-scheme:dark){a.ext code{color:#8ab4f8}}
@@ -93,22 +96,27 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 
 <section class="box info">
 <b class="h">この手順書でやること</b>
-<p>お店のFacebookページ・Instagram・広告アカウントをそろえ、広告費のカードをご自身で登録し、最後に株式会社しっとるを<b>パートナー</b>に追加します。全部で<b>パソコンで30分〜1時間</b>ほどです。途中でやめても、続きから再開できます。</p>
+<p>お店のFacebookページ・Instagram・広告アカウントをそろえ、株式会社しっとるが広告を作れるようにします。進め方は2つあります。どちらかを選んでください。</p>
+<ul>
+<li><b>A　しっとるの担当を招待する（おすすめ・10分ほど）</b>：手順1・2のあと、<a href="#easy">担当を招待</a>します。ページ・広告アカウントの用意と、しっとるへの許可の設定は、しっとるで行います。お客様には、ご本人のログインが要る手順4・4-2と、手順6のカードの登録をお願いします。</li>
+<li><b>B　ご自身で全部進める（パソコンで30分〜1時間ほど）</b>：手順1から7まで順に進めます。途中でやめても、続きから再開できます。</li>
+</ul>
 <p>分からない画面があれば、その画面の写真をLINEで送ってください。Zoomで画面を見ながら一緒に進めることもできます。</p>
 </section>
 
 </div>
 <nav class="toc box info" aria-label="目次"><b class="h">目次</b><ol>
 <li><a href="#before">はじめる前に</a></li>
+<li><a href="#easy">担当を招待して進める（A）</a></li>
 <li><a href="#words">出てくる名前の違い</a></li>
-<li><a href="#s1">手順1　Facebookの個人アカウント</a></li>
+<li><a href="#s1">手順1　Facebookの個人アカウントを用意する</a></li>
 <li><a href="#s2">手順2　ビジネスポートフォリオを用意する</a></li>
-<li><a href="#s3">手順3　Facebookページ</a></li>
+<li><a href="#s3">手順3　Facebookページを確かめる（無ければ作る）</a></li>
 <li><a href="#s4">手順4　InstagramをFacebookページにつなぐ</a></li>
 <li><a href="#s4b">手順4-2　Threadsのプロフィールを用意する</a></li>
-<li><a href="#s5">手順5　広告アカウント</a></li>
-<li><a href="#s6">手順6　広告費のお支払い方法</a></li>
-<li><a href="#s7">手順7　株式会社しっとるをパートナーに追加</a></li>
+<li><a href="#s5">手順5　広告アカウントを確かめる（無ければ作る）</a></li>
+<li><a href="#s6">手順6　広告費のお支払い方法を登録する</a></li>
+<li><a href="#s7">手順7　株式会社しっとるをパートナーに追加する</a></li>
 <li><a href="#multi">お店が2つ以上あるとき</a></li>
 <li><a href="#done">終わったら</a></li>
 <li><a href="#trouble">うまくいかないとき</a></li>
@@ -129,20 +137,21 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <li>スマホに届く確認の番号（認証コード）</li>
 </ul></div>
 </div>
-<div class="box ok" id="easy"><b class="h">むずかしいと感じたら：しっとるの担当を招待するだけでも進められます</b>
+<div class="box ok" id="easy"><b class="h">A　しっとるの担当を招待して進める（おすすめ）</b>
 <p>下の手順を全部ご自身でしなくても大丈夫です。お店のビジネスポートフォリオに<b>しっとるの担当を「フルアクセス許可」で招待</b>していただければ、ページ・広告アカウントの用意や、しっとるへの許可の設定は、こちらで進めます。</p>
 <ol>
 <li>パソコンで <a class="ext" href="https://business.facebook.com/settings" target="_blank" rel="noopener"><code>business.facebook.com/settings</code></a> を開きます（ビジネスポートフォリオが無い方は、手順2で作ってから）。</li>
 <li>左のメニューの「ユーザー」→「ユーザー」→ 右上の「ユーザーを招待」を押します。</li>
 <li>LINEでお送りするメールアドレスを入れて「次へ」。</li>
 <li>「フルアクセス許可」の「すべて」にある<b>「管理する」のスイッチをオン</b>にして「次へ」。</li>
-<li>「ビジネスアセットを割り当てる」の画面は、お店のページなどが出てきたらチェックを入れてフルアクセスをオンに、何も出てこなければ（作ったばかりの方）そのまま「次へ」。</li>
+<li>「ビジネスアセットを割り当てる」の画面になります（アセット＝お店のページ・Instagram・広告アカウントのことです）。何も出てこない方（作ったばかりの方）は、そのまま「次へ」。お店のページなどが出てきた方は、お店のものにチェックを入れ、右の欄のいちばん下のフルアクセスをオンにしてから「次へ」。</li>
 <li>確認の画面で、右下の「招待」のボタン（「アセット0件で招待」のように件数が入ります）を押せば完了です。</li>
 </ol>
-<div class="figs"><figure><img src="iv01.jpg" alt="① 左のメニューの「ユーザー」の中の「ユーザー」" loading="lazy"><figcaption>① 左のメニューの「ユーザー」の中の「ユーザー」</figcaption></figure><figure><img src="iv01b.jpg" alt="② 右上の「ユーザーを招待」" loading="lazy"><figcaption>② 右上の「ユーザーを招待」</figcaption></figure><figure><img src="iv02.jpg" alt="① お送りするメールアドレスを入れる　②「次へ」" loading="lazy"><figcaption>① お送りするメールアドレスを入れる　②「次へ」</figcaption></figure><figure><img src="iv03.jpg" alt="①「フルアクセス許可」の「管理する」をオン　②「次へ」" loading="lazy"><figcaption>①「フルアクセス許可」の「管理する」をオン　②「次へ」</figcaption></figure><figure><img src="iv04.jpg" alt="作ったばかりで何も無ければ、そのまま①「次へ」" loading="lazy"><figcaption>作ったばかりで何も無ければ、そのまま①「次へ」</figcaption></figure><figure><img src="iv05.jpg" alt="① 確認の画面で「招待」のボタンを押して完了" loading="lazy"><figcaption>① 確認の画面で「招待」のボタンを押して完了</figcaption></figure></div>
-<p>そのあとお客様にお願いするのは、<b>Instagramのログイン</b>と<b>広告費のカードの登録</b>だけです。契約が終わったら、同じ画面から担当を外せます。</p>
+<p class="lead">写真を押すと、大きく表示できます。</p>
+<div class="figs"><figure><a href="iv01.jpg" target="_blank" rel="noopener"><img src="iv01.jpg" alt="① 左のメニューの「ユーザー」の中の「ユーザー」" loading="lazy"></a><figcaption>① 左のメニューの「ユーザー」の中の「ユーザー」</figcaption></figure><figure><a href="iv01b.jpg" target="_blank" rel="noopener"><img src="iv01b.jpg" alt="② 右上の「ユーザーを招待」" loading="lazy"></a><figcaption>② 右上の「ユーザーを招待」</figcaption></figure><figure><a href="iv02.jpg" target="_blank" rel="noopener"><img src="iv02.jpg" alt="① お送りするメールアドレスを入れる　②「次へ」" loading="lazy"></a><figcaption>① お送りするメールアドレスを入れる　②「次へ」</figcaption></figure><figure><a href="iv03.jpg" target="_blank" rel="noopener"><img src="iv03.jpg" alt="①「フルアクセス許可」の「管理する」をオン　②「次へ」" loading="lazy"></a><figcaption>①「フルアクセス許可」の「管理する」をオン　②「次へ」</figcaption></figure><figure><a href="iv04.jpg" target="_blank" rel="noopener"><img src="iv04.jpg" alt="作ったばかりで何も無ければ、そのまま①「次へ」" loading="lazy"></a><figcaption>お店のページなどが出ていれば、チェックを入れて右のフルアクセスをオン。何も出ていなければ、そのまま①「次へ」</figcaption></figure><figure><a href="iv05.jpg" target="_blank" rel="noopener"><img src="iv05.jpg" alt="① 確認の画面で「招待」のボタンを押して完了" loading="lazy"></a><figcaption>① 確認の画面で「招待」のボタンを押して完了</figcaption></figure></div>
+<p>招待したら、グループLINEで<b>「担当を招待しました」</b>と一言お送りください。そのあとお客様にお願いするのは、ご本人のログインが要る操作（<a href="#s4">手順4</a>　InstagramをFacebookページにつなぐ、<a href="#s4b">手順4-2</a>　Threadsのプロフィールを追加する）と、<a href="#s6">手順6</a>　広告費のカードの登録です。どれが必要かは、しっとるで確かめてから、1回にまとめてLINEでお伝えします。契約が終わったら、同じ画面から担当を外せます。</p>
 </div>
-<div class="box warn" id="zoom-before"><b class="h">Zoomで一緒に進める方へ（前の日までに、この4つだけ）</b>
+<div class="box warn" id="zoom-before"><b class="h">Zoomで一緒に進める方へ（当日までに、この4つだけ。1つ目は数日前に）</b>
 <ol>
 <li><b>Facebookに久しぶりに入る方は、数日前に一度ログインしておいてください。</b>何年も使っていないアカウントで、いきなり設定を続けて行うと、Facebookの安全確認で一時的に止められることがあります。</li>
 <li><b>Instagramアプリの「プロフィールを編集」の画面の写真を、LINEで送ってください。</b>お店のInstagramが今どこにつながっているかを、先に確かめます（同じものを二重に作らないためです）。</li>
@@ -153,7 +162,7 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <div class="box info"><b class="h">Facebookページもビジネスポートフォリオも、まだ何も無い方へ</b>
 <p>そのままで大丈夫です。手順の順に進めると、無いものはその場で新しく作れます（手順2でビジネスポートフォリオ、手順3でFacebookページ、手順5で広告アカウント）。先に何かを用意しておく必要はありません。</p>
 </div>
-<div class="box info"><b class="h">以前ほかの会社に広告や運用を頼んでいた方へ</b>
+<div class="box info" id="prev-agency"><b class="h">以前ほかの会社に広告や運用を頼んでいた方へ</b>
 <p>前の会社の管理画面にお店のInstagramや広告アカウントが入ったままだと、手順7で「アセットが割り当てられませんでした」「Instagramアカウントの既存の所有権を削除できませんでした」と出て止まります。先に次をご確認ください。</p>
 <ol>
 <li>Instagram・Facebookの広告や運用を、外部の会社に頼んだことがあるか（会社名と、今も契約中か）</li>
@@ -209,7 +218,8 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <div class="word"><p class="wn"><b>⑥ パートナー</b></p><p>②の箱の中身を使ってよい、ほかの会社です（今回は株式会社しっとる）。</p><p class="wm"><b>間違えやすい点：</b>持ち主は変わりません。いつでも外せます。</p></div>
 </div>
 <div class="box info"><b class="h">アカウントではないもの（画面や場所の名前）</b><ul>
-<li><b>ビジネス設定</b>（<code>business.facebook.com/settings</code>）：②の箱の中を見る画面です。左のメニューの<b>「アカウント」</b>は、箱に入っている持ち物の一覧（「ページ」＝③、「Instagramアカウント」＝④、「広告アカウント」＝⑤）、<b>「ユーザー」</b>は、箱を使える人と会社の一覧（「メンバー」＝人、「パートナー」＝⑥）です。たとえば「アカウント → ページ」は、「箱の中に、お店のFacebookページが入っているかを見る場所」という意味です。</li>
+<li><b>アセット</b>：②の箱に入っている持ち物のことです。③Facebookページ・④Instagram・⑤広告アカウントなどを、Metaの画面ではまとめて「アセット」と呼びます。「アセットを割り当てる」は「この持ち物を使ってよいと決める」という意味です。</li>
+<li><b>ビジネス設定</b>（<code>business.facebook.com/settings</code>）：②の箱の中を見る画面です。左のメニューの<b>「アカウント」</b>は、箱に入っている持ち物の一覧（「ページ」＝③、「Instagramプロフィール」＝④、「広告アカウント」＝⑤）、<b>「ユーザー」</b>は、箱を使える人と会社の一覧（「ユーザー」＝人、「パートナー」＝⑥）です。たとえば「アカウント → ページ」は、「箱の中に、お店のFacebookページが入っているかを見る場所」という意味です。</li>
 <li><b>Metaビジネススイート・広告マネージャ</b>：投稿や広告を作るための画面（道具）の名前です。新しいアカウントではありません。</li>
 <li><b>アカウントセンター</b>：ご本人のFacebookとInstagramのログインをまとめる場所です。ここで「アカウントを追加」しても、③のページと④のInstagramはつながりません。今回の手順では使いません。</li>
 </ul></div>
@@ -237,14 +247,20 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <span class="who">お客様にお願いします（Zoomで一緒に進められます）</span>
 <ol>
 <li>パソコンで <a class="ext" href="https://business.facebook.com/settings" target="_blank" rel="noopener"><code>business.facebook.com/settings</code></a> を開き、手順1のアカウントでログインします。</li>
-<li>左上の名前を押すと、入っているビジネスポートフォリオの一覧が出ます。お店のものがあれば、それを使います。</li>
-<li>一覧が出ない・「ビジネスポートフォリオを作成」の画面になる方は、まだ1つも無い状態です。そのまま作成に進みます。一覧が出る方は、いちばん下の「ビジネスポートフォリオを作成」から作れます。</li>
-<li>作成の画面では、ビジネスポートフォリオ名（会社名か屋号。記号は使えません）、お名前、メールアドレスを入れて「作成」を押します。</li>
+<li>左上の名前を押します。次のどちらかになります。<ul>
+<li><b>一覧が出た</b>：お店の名前のものがあれば、それを選びます（新しく作りません）。お店のものが無いときは、下の「ほかのものはあるが、お店のものが無いとき」を読んでから、一覧のいちばん下の「ビジネスポートフォリオを作成」で作ります。</li>
+<li><b>一覧が出ない、または「ビジネスポートフォリオを作成」の画面になった</b>：まだ1つも無い状態です。そのまま作成に進みます。</li>
+</ul></li>
+<li>作成の画面で、次の3つを入れて「作成」を押します。<ul>
+<li>ビジネスポートフォリオ名：会社名か屋号（記号は使えません）</li>
+<li>名前：<b>左の欄が「名」（下の名前）、右の欄が「姓」（名字）</b>です</li>
+<li>ビジネスのメールアドレス：ふだん見ているメールアドレス</li>
+</ul></li>
 <li>以降の手順はすべて、左上がお店の名前になっている状態で進めます。</li>
 </ol>
-<div class="figs"><figure><img src="bp01.jpg" alt="① 左上の名前　② いちばん下の「ビジネスポートフォリオを作成」" loading="lazy"><figcaption>① 左上の名前　② いちばん下の「ビジネスポートフォリオを作成」</figcaption></figure><figure><img src="bp02.jpg" alt="① 会社名か屋号　② お名前　③ メールアドレス　④「作成」（見本の名前は例です）" loading="lazy"><figcaption>① 会社名か屋号　② お名前　③ メールアドレス　④「作成」（見本の名前は例です）</figcaption></figure></div>
+<div class="figs"><figure><a href="bp01.jpg" target="_blank" rel="noopener"><img src="bp01.jpg" alt="① 左上の名前　② いちばん下の「ビジネスポートフォリオを作成」" loading="lazy"></a><figcaption>① 左上の名前　② いちばん下の「ビジネスポートフォリオを作成」</figcaption></figure><figure><a href="bp02.jpg" target="_blank" rel="noopener"><img src="bp02.jpg" alt="① 会社名か屋号　② 左が名（下の名前）・右が姓（名字）　③ ビジネスのメールアドレス　④「作成」（見本の名前は例です）" loading="lazy"></a><figcaption>① 会社名か屋号　② 左が名（下の名前）・右が姓（名字）　③ ビジネスのメールアドレス　④「作成」（見本の名前は例です）</figcaption></figure></div>
 <div class="box warn"><b class="h">ほかのものはあるが、お店のものが無いとき</b><ul>
-<li>すぐに新しく作りません。<b>1人が作れるのは2つまで</b>です。</li>
+<li>すぐに新しく作りません。1人が作れるビジネスポートフォリオの数には<b>上限</b>があり、上限に達すると新しく作れなくなります。</li>
 <li>ページ・Instagram・広告アカウントが何もつながっていない空のものがあれば、それを使い、「ビジネス情報」で名前をお店の名前に変えます。</li>
 <li>覚えのないものは、Instagramをプロアカウントにしたときに自動でできていることがあります。</li>
 <li>本当に無いときは「ビジネスポートフォリオを作成」で作ります。名前は会社名か屋号にします（記号は使えません）。</li>
@@ -259,35 +275,37 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <li>地名や説明を足して長くしない</li>
 </ul>
 <p>それでも通らないときは、「株式会社」を付ける・外す、カタカナと英字を入れ替える、を試します。3回続けてだめなら、少し時間をあけてから、入れた名前をLINEで送ってください。</p>
-<figure><img src="er01.jpg" alt="「ビジネスポートフォリオ用に別の名前を選択してください」の表示" loading="lazy"><figcaption>この表示が出たら、名前を変えて入れ直します</figcaption></figure>
+<figure><a href="er01.jpg" target="_blank" rel="noopener"><img src="er01.jpg" alt="「ビジネスポートフォリオ用に別の名前を選択してください」の表示" loading="lazy"></a><figcaption>この表示が出たら、名前を変えて入れ直します</figcaption></figure>
 </div>
+<div class="box ok"><b class="h">ここまでできたら</b><p>Aの方（しっとるの担当を招待する方）は、<a href="#easy">「A　しっとるの担当を招待して進める」</a>に戻って招待します。Bの方は、そのまま手順3へ進みます。</p></div>
 </section>
 
 <section class="step" id="s3">
 <h2><span class="no">手順3</span>Facebookページを確かめる（無ければ作る）</h2>
-<span class="who">お客様にお願いします（Zoomで一緒に進められます）</span>
+<span class="who">お客様にお願いします（Aで担当を招待した方は、しっとるで行います）</span>
 <p>広告はFacebookページを名義にして作ります。ページが無いと、作れる広告が限られます。ページへの投稿は要りません。</p>
 <ol>
 <li>左のメニューの「アカウント」→<b>「ページ」</b>に、お店のページが出ていれば、そのままで大丈夫です。</li>
 <li>無いときは、右上の「＋追加」→<b>「新しいFacebookページを作成」</b>で作ります（下の画面の番号の順）。ページ名はお店の名前、カテゴリは業種です。写真や紹介文はあとからで大丈夫です。</li>
 </ol>
-<div class="box info"><b class="h">Facebookの右上のメニューから「ページを作成」で作るとき</b><ul>
+<div class="figs"><figure><a href="zm01.jpg" target="_blank" rel="noopener"><img src="zm01.jpg" alt="「ページ」にお店のページが出ていればOK" loading="lazy"></a><figcaption>「ページ」にお店のページが出ていればOK</figcaption></figure></div>
+<div class="figs"><figure><a href="pc01.jpg" target="_blank" rel="noopener"><img src="pc01.jpg" alt="① 設定の「ページ」　② 右上の「＋追加」" loading="lazy"></a><figcaption>① 設定の「ページ」　② 右上の「＋追加」</figcaption></figure><figure><a href="pc02.jpg" target="_blank" rel="noopener"><img src="pc02.jpg" alt="①「新しいFacebookページを作成」" loading="lazy"></a><figcaption>①「新しいFacebookページを作成」</figcaption></figure><figure><a href="pc03.jpg" target="_blank" rel="noopener"><img src="pc03.jpg" alt="① ページ名　② カテゴリ　③「Next」（自己紹介は空欄でよい）" loading="lazy"></a><figcaption>① ページ名　② カテゴリ　③「Next」（自己紹介は空欄でよい）</figcaption></figure><figure><a href="pc04.jpg" target="_blank" rel="noopener"><img src="pc04.jpg" alt="① 同意のチェック　②「ページを作成」" loading="lazy"></a><figcaption>① 同意のチェック　②「ページを作成」</figcaption></figure></div>
+<div class="box info"><b class="h">すでにFacebookのほうからページを作った方・作っている途中の方へ</b><ul>
+<li>新しく作る方は、この箱は読まずに、上の写真の順（ビジネス設定の「＋追加」から）で作ってください。</li>
 <li>「最適なオプションを選択してください」と出たら、上の<b>「公開ページ」</b>を選びます（「既存のプロフィールをアップグレード」は選びません）。</li>
 <li>カテゴリは、「エンターテイメント」「レクリエーション」のように短い言葉を入れて、出てきた中で近いものを選べば大丈夫です。あとから変えられます。</li>
 <li>電話番号・メールアドレス・営業時間・写真は、空欄や「スキップ」で進めて大丈夫です。</li>
 <li>この作り方では、ページがビジネスポートフォリオの外にできることがあります。作ったあと、ビジネス設定の「アカウント」→「ページ」→「＋追加」で入れます（しっとるの担当を招待済みなら、こちらで行います）。</li>
 </ul></div>
-<div class="figs"><figure><img src="zm01.jpg" alt="「ページ」にお店のページが出ていればOK" loading="lazy"><figcaption>「ページ」にお店のページが出ていればOK</figcaption></figure></div>
-<div class="figs"><figure><img src="pc01.jpg" alt="① 設定の「ページ」　② 右上の「＋追加」" loading="lazy"><figcaption>① 設定の「ページ」　② 右上の「＋追加」</figcaption></figure><figure><img src="pc02.jpg" alt="①「新しいFacebookページを作成」" loading="lazy"><figcaption>①「新しいFacebookページを作成」</figcaption></figure><figure><img src="pc03.jpg" alt="① ページ名　② カテゴリ　③「Next」（自己紹介は空欄でよい）" loading="lazy"><figcaption>① ページ名　② カテゴリ　③「Next」（自己紹介は空欄でよい）</figcaption></figure><figure><img src="pc04.jpg" alt="① 同意のチェック　②「ページを作成」" loading="lazy"><figcaption>① 同意のチェック　②「ページを作成」</figcaption></figure></div>
-<p class="lead">画面は実際のものです（他のお店の名前・金額はぼかしています）。</p>
+<p class="lead">画面は実際のものです（お名前・ほかのお店の名前・金額はぼかしています）。</p>
 </section>
 
 <section class="step" id="s4">
 <h2><span class="no">手順4</span>InstagramをFacebookページにつなぐ</h2>
-<span class="who">お客様にお願いします（Zoomで一緒に進められます）</span>
+<span class="who">お客様にお願いします（Aの方も、ここはご本人のログインが要ります。Zoomで一緒に進められます）</span>
 <ol>
 <li>スマホのInstagramアプリで、お店のアカウントを<b>プロアカウント</b>にします（設定 →「アカウントの種類とツール」→「プロアカウントに切り替える」。無料で、投稿やフォロワーはそのままです）。すでにプロアカウントなら何もしません。</li>
-<li>パソコンのFacebookで、お店のページを開いて<b>「切り替える」</b>を押します。</li>
+<li>パソコンでFacebookを開き、お店のページを開きます（上の検索欄にページの名前を入れると出てきます）。ページの画面で<b>「切り替える」</b>を押すと、お店のページとして操作できる状態になります（下の写真①）。</li>
 <li>「設定とプライバシー」→「設定」→<b>「Instagram」</b>→<b>「アカウントをリンク」</b>を押し、画面の案内どおり進めます。</li>
 <li>Instagramのユーザーネームとパスワードは、<b>ご本人が</b>入れます。</li>
 </ol>
@@ -296,31 +314,37 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <li>Facebookの「アカウントセンター」の「アカウントを追加」は、個人のアカウント同士をまとめる別の場所です。ここで追加しても、ページにはつながりません。</li>
 <li>ビジネス設定の「Instagramプロフィール」に追加しただけでも、ページにはつながりません。</li>
 </ul></div>
-<div class="figs"><figure><img src="il01.jpg" alt="① 作ったページを開いて「切り替える」" loading="lazy"><figcaption>① 作ったページを開いて「切り替える」</figcaption></figure><figure><img src="il02.jpg" alt="②「新しいページにようこそ」は「ページを使用」で閉じる" loading="lazy"><figcaption>②「新しいページにようこそ」は「ページを使用」で閉じる</figcaption></figure><figure><img src="il03.jpg" alt="③ 設定 →「Instagram」→「アカウントをリンク」" loading="lazy"><figcaption>③ 設定 →「Instagram」→「アカウントをリンク」</figcaption></figure><figure><img src="il04.jpg" alt="④ 説明を読んで「リンクする」" loading="lazy"><figcaption>④ 説明を読んで「リンクする」</figcaption></figure><figure><img src="il06.jpg" alt="⑥「別のプロフィールを使用」→ お店のInstagramでログイン（⑤のメッセージの設定はオンのまま「次へ」）" loading="lazy"><figcaption>⑥「別のプロフィールを使用」→ お店のInstagramでログイン（⑤のメッセージの設定はオンのまま「次へ」）</figcaption></figure><figure><img src="il07.jpg" alt="⑦ お店のビジネスポートフォリオに「追加」" loading="lazy"><figcaption>⑦ お店のビジネスポートフォリオに「追加」</figcaption></figure><figure><img src="il08.jpg" alt="⑧ リンクできたら「完了」" loading="lazy"><figcaption>⑧ リンクできたら「完了」</figcaption></figure><figure><img src="il09.jpg" alt="⑨ ここにお店のInstagramが出ていれば完了" loading="lazy"><figcaption>⑨ ここにお店のInstagramが出ていれば完了</figcaption></figure></div>
+<div class="figs"><figure><a href="il01.jpg" target="_blank" rel="noopener"><img src="il01.jpg" alt="① 作ったページを開いて「切り替える」" loading="lazy"></a><figcaption>① 作ったページを開いて「切り替える」</figcaption></figure><figure><a href="il02.jpg" target="_blank" rel="noopener"><img src="il02.jpg" alt="②「新しいページにようこそ」は「ページを使用」で閉じる" loading="lazy"></a><figcaption>②「新しいページにようこそ」は「ページを使用」で閉じる</figcaption></figure><figure><a href="il03.jpg" target="_blank" rel="noopener"><img src="il03.jpg" alt="③ 設定 →「Instagram」→「アカウントをリンク」" loading="lazy"></a><figcaption>③ 設定 →「Instagram」→「アカウントをリンク」</figcaption></figure><figure><a href="il04.jpg" target="_blank" rel="noopener"><img src="il04.jpg" alt="④ 説明を読んで「リンクする」" loading="lazy"></a><figcaption>④ 説明を読んで「リンクする」</figcaption></figure><figure><a href="il06.jpg" target="_blank" rel="noopener"><img src="il06.jpg" alt="⑥「別のプロフィールを使用」→ お店のInstagramでログイン（⑤のメッセージの設定はオンのまま「次へ」）" loading="lazy"></a><figcaption>⑤ メッセージへのアクセスを聞かれたら、オンのまま「次へ」　⑥「別のプロフィールを使用」→ お店のInstagramでログイン</figcaption></figure><figure><a href="il07.jpg" target="_blank" rel="noopener"><img src="il07.jpg" alt="⑦ お店のビジネスポートフォリオに「追加」" loading="lazy"></a><figcaption>⑦ お店のビジネスポートフォリオに「追加」</figcaption></figure><figure><a href="il08.jpg" target="_blank" rel="noopener"><img src="il08.jpg" alt="⑧ リンクできたら「完了」" loading="lazy"></a><figcaption>⑧ リンクできたら「完了」</figcaption></figure><figure><a href="il09.jpg" target="_blank" rel="noopener"><img src="il09.jpg" alt="⑨ ここにお店のInstagramが出ていれば完了" loading="lazy"></a><figcaption>⑨ ここにお店のInstagramが出ていれば完了</figcaption></figure></div>
 <div class="box ok"><b class="h">つながったかの確かめ</b><p>スマホのInstagramアプリで「プロフィールを編集」を開き、<b>お店のページの名前</b>が出ていれば、つながっています。ビジネス設定の「Instagramプロフィール」にも、お店のInstagramが出ます。</p></div>
-<div class="figs"><figure><img src="zm02.jpg" alt="ビジネス設定の「Instagramプロフィール」にお店のInstagramが出ていればOK" loading="lazy"><figcaption>ビジネス設定の「Instagramプロフィール」にお店のInstagramが出ていればOK</figcaption></figure></div>
-<div class="box info"><b class="h">Instagramが別のページやポートフォリオにつながっていたとき</b><p>決まった順で外してから、つなぎ直します。①今つながっているページとのリンクを解除する（Instagramアプリの「プロフィールを編集」→「ページ」）　②入っているポートフォリオからInstagramを削除する　③上の手順でお店のページにつなぐ。外しても投稿やフォロワーは消えません。前の会社の管理画面に入っている場合は、外す前にLINEでご相談ください。</p></div>
-<p class="lead">画面は実際のものです（他のお店の名前・金額はぼかしています）。</p>
+<div class="figs"><figure><a href="zm02.jpg" target="_blank" rel="noopener"><img src="zm02.jpg" alt="ビジネス設定の「Instagramプロフィール」にお店のInstagramが出ていればOK" loading="lazy"></a><figcaption>ビジネス設定の「Instagramプロフィール」にお店のInstagramが出ていればOK</figcaption></figure></div>
+<div class="box info" id="relink"><b class="h">Instagramが別のページやポートフォリオにつながっていたとき</b><p>先にLINEでご相談ください。とくに、前の会社の管理画面に入っている場合は、ご自身で外さないでください。外してよいと分かったら、次の順で進めます。</p><ol>
+<li>Instagramアプリの「プロフィールを編集」→「ページ」で、今つながっているページとのリンクを解除します。</li>
+<li>入っているビジネスポートフォリオから、Instagramを外します（外し方は、しっとるからご案内します）。</li>
+<li>上の手順で、お店のページにつなぎます。</li>
+</ol><p>外しても、Instagramの投稿やフォロワーは消えません。</p></div>
+<p class="lead">画面は実際のものです（お名前・ほかのお店の名前・金額はぼかしています）。</p>
 </section>
 
 <section class="step" id="s4b">
 <h2><span class="no">手順4-2</span>Threadsのプロフィールを用意する</h2>
-<span class="who">お客様にお願いします（5分ほど）</span>
+<span class="who">お客様にお願いします（Aの方も、ここはご本人のログインが要ります。5分ほど）</span>
 <p>広告は、Facebook・Instagramに加えてThreadsにも出します。Threadsに広告を出すには、お店のInstagramのThreadsのプロフィールと、それをビジネスポートフォリオに入れておくことが必要です。どちらもご本人のログインが要るため、お客様にお願いしています。</p>
 <ol>
 <li>スマホに<b>Threadsアプリ</b>を入れ、<b>お店のInstagram</b>でログインして、プロフィールを作成します（すでにお店のThreadsがある方は、そのまま使います）。</li>
 <li>パソコンで <a class="ext" href="https://business.facebook.com/settings" target="_blank" rel="noopener"><code>business.facebook.com/settings</code></a> を開き、左上がお店の名前になっているか確かめます。</li>
-<li>左のメニューの「アカウント」→<b>「Threadsプロフィール」</b>→ 右上の<b>「＋追加」</b>→<b>「Threadsプロフィールを追加」</b>を押し、お店のThreadsでログインします。</li>
+<li>左のメニューの「アカウント」→<b>「Threadsプロフィール」</b>→ 右上の<b>「＋追加」</b>を押し、出てきた画面の<b>「Threadsプロフィールを追加」</b>を押して、お店のThreadsでログインします。</li>
 <li>「Threadsプロフィール」の一覧に、お店のThreadsが出ていれば完了です。</li>
 </ol>
+<div class="figs"><figure><a href="th01.jpg" target="_blank" rel="noopener"><img src="th01.jpg" alt="① 左のメニューの「Threadsプロフィール」" loading="lazy"></a><figcaption>① 左のメニューの「Threadsプロフィール」</figcaption></figure><figure><a href="th01b.jpg" target="_blank" rel="noopener"><img src="th01b.jpg" alt="② 右上の「＋追加」" loading="lazy"></a><figcaption>② 右上の「＋追加」</figcaption></figure><figure><a href="th02.jpg" target="_blank" rel="noopener"><img src="th02.jpg" alt="③「Threadsプロフィールを追加」を押して、お店のThreadsでログイン" loading="lazy"></a><figcaption>③「Threadsプロフィールを追加」を押して、お店のThreadsでログイン</figcaption></figure></div>
+<div class="box info"><b class="h">先にInstagramがビジネスポートフォリオに入っている必要があります</b><p>Threadsは、同じユーザーネームのInstagramがビジネスポートフォリオに入っていないと追加できません（上の写真③の画面にも出ます）。手順4でInstagramをつないだあとに行ってください。</p></div>
 <div class="box warn"><b class="h">1だけでは、広告はThreadsに出ません</b><p>Threadsのプロフィールを作っただけでは、広告の画面で「使用できるThreadsプロフィールがありません」と出て、Threadsには表示されません。3の「Threadsプロフィール」への追加まで行ってください。</p></div>
 </section>
 
 <section class="step" id="s5">
 <h2><span class="no">手順5</span>広告アカウントを確かめる（無ければ作る）</h2>
-<span class="who">お客様にお願いします（Zoomで一緒に進められます）</span>
+<span class="who">お客様にお願いします（Aで担当を招待した方は、しっとるで行います）</span>
 <ol>
-<li>左のメニューの「広告アカウント」に、お店の広告アカウントがあるか見ます。あれば手順6へ。</li>
+<li>左のメニューの「アカウント」→<b>「広告アカウント」</b>に、お店の広告アカウントがあるか見ます。あれば手順6へ進みます。</li>
 <li>無いときは「＋追加」→<b>「新しい広告アカウントを作成」</b>。次のとおりに入れます。</li>
 </ol>
 <div class="tbl"><table>
@@ -329,43 +353,49 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <tr><td>時間帯</td><td><b>Asia/Tokyo</b>（最初はロサンゼルスになっています。欄を押して「T」と打つと出ます）</td></tr>
 <tr><td>通貨</td><td><b>JPY（日本円）</b>（最初は米ドルになっています。欄を押して「J」と打つと出ます）</td></tr>
 </table></div>
-<div class="box warn"><b class="h">時間帯と通貨は、あとから変えられません</b><p>変えると新しい広告アカウントになり、元のアカウントは閉じられます。新しいポートフォリオでは、広告アカウントは最初1つしか作れません。「広告アカウントを作成」を押す前に、名前・時間帯・通貨をもう一度確かめてください。</p></div>
-<p>「次へ」→ 使う人は「自分のビジネス」→「次へ」→ 確認の画面でチェックを入れて「広告アカウントを作成」。</p>
-<div class="figs"><figure><img src="zm03.jpg" alt="いちばん上の「新しい広告アカウントを作成」" loading="lazy"><figcaption>いちばん上の「新しい広告アカウントを作成」</figcaption></figure><figure><img src="zm04.jpg" alt="時間帯は最初ロサンゼルス。「T」で Asia/Tokyo を出す" loading="lazy"><figcaption>時間帯は最初ロサンゼルス。「T」で Asia/Tokyo を出す</figcaption></figure><figure><img src="zm05.jpg" alt="時間帯は Asia/Tokyo、通貨は米ドルのままなので「J」で JPY（日本円）に変える" loading="lazy"><figcaption>時間帯は Asia/Tokyo、通貨は米ドルのままなので「J」で JPY（日本円）に変える</figcaption></figure><figure><img src="zm06.jpg" alt="最後の確認。チェックを入れて「広告アカウントを作成」" loading="lazy"><figcaption>最後の確認。チェックを入れて「広告アカウントを作成」</figcaption></figure></div>
+<div class="box warn"><b class="h">時間帯と通貨は、作ったあとに直せません</b><p>あとから直したいときは、広告アカウントを作り直すことになります。新しいポートフォリオでは、すぐには広告アカウントをいくつも作れません。「広告アカウントを作成」を押す前に、名前・時間帯・通貨をもう一度確かめてください。</p></div>
+<ol start="3">
+<li>「次へ」→ 使う人は「自分のビジネス」→「次へ」と進みます。</li>
+<li>確認の画面でチェックを入れて「広告アカウントを作成」を押します。</li>
+</ol>
+<div class="figs"><figure><a href="zm03.jpg" target="_blank" rel="noopener"><img src="zm03.jpg" alt="いちばん上の「新しい広告アカウントを作成」" loading="lazy"></a><figcaption>いちばん上の「新しい広告アカウントを作成」</figcaption></figure><figure><a href="zm04.jpg" target="_blank" rel="noopener"><img src="zm04.jpg" alt="時間帯は最初ロサンゼルス。「T」で Asia/Tokyo を出す" loading="lazy"></a><figcaption>時間帯は最初ロサンゼルス。「T」で Asia/Tokyo を出す</figcaption></figure><figure><a href="zm05.jpg" target="_blank" rel="noopener"><img src="zm05.jpg" alt="時間帯は Asia/Tokyo、通貨は米ドルのままなので「J」で JPY（日本円）に変える" loading="lazy"></a><figcaption>時間帯は Asia/Tokyo、通貨は米ドルのままなので「J」で JPY（日本円）に変える</figcaption></figure><figure><a href="zm06.jpg" target="_blank" rel="noopener"><img src="zm06.jpg" alt="最後の確認。チェックを入れて「広告アカウントを作成」" loading="lazy"></a><figcaption>最後の確認。チェックを入れて「広告アカウントを作成」</figcaption></figure></div>
 </section>
 
 <section class="step" id="s6">
 <h2><span class="no">手順6</span>広告費のお支払い方法を登録する</h2>
-<span class="who">お客様にお願いします</span>
+<span class="who">お客様にお願いします（Aの方も、カードの登録はご本人にお願いします）</span>
 <ol>
 <li>左のメニューの下のほうの<b>「請求と支払い」</b>を押し、お店の広告アカウントを選びます。</li>
 <li><b>「支払い方法を追加」</b>→ カードを登録します。カード会社の本人確認が出たら、最後まで進めます。</li>
 <li>「支払い方法」にカードが出て、広告アカウントが「有効」になれば完了です。</li>
 </ol>
 <div class="box warn"><b class="h">カードの番号は、必ずご自身で入れてください</b><p>しっとるがお聞きしたり、代わりに入れたりすることはありません。Zoomで画面を共有しているときは、<b>番号を入れる間だけ共有を止めて</b>、入れ終わってから再開してください。広告費はこのカードからMetaへ直接お支払いいただきます。</p></div>
-<div class="figs"><figure><img src="zm07.jpg" alt="請求と支払いの画面。右下の「支払い方法を追加」" loading="lazy"><figcaption>請求と支払いの画面。右下の「支払い方法を追加」</figcaption></figure></div>
-<p class="lead">画面は実際のものです（他のお店の名前・金額はぼかしています）。</p>
+<div class="figs"><figure><a href="zm07.jpg" target="_blank" rel="noopener"><img src="zm07.jpg" alt="請求と支払いの画面。右下の「支払い方法を追加」" loading="lazy"></a><figcaption>請求と支払いの画面。右下の「支払い方法を追加」</figcaption></figure></div>
+<p class="lead">画面は実際のものです（お名前・ほかのお店の名前・金額はぼかしています）。</p>
 </section>
 
 <section class="step" id="s7">
 <h2><span class="no">手順7</span>株式会社しっとるをパートナーに追加する</h2>
-<span class="who">お客様にお願いします</span>
+<span class="who">お客様にお願いします（Aで担当を招待した方は、しっとるで行います）</span>
 <p>お店のページ・Instagram・広告アカウントの持ち主は、お店のままです。契約が終わったら、同じ画面からいつでも外せます。</p>
+<p class="lead">画面は実際のものです（見本の店名は、しっとるの関係店のものです）。</p>
 <ol>
 <li><a class="ext" href="https://business.facebook.com/settings" target="_blank" rel="noopener"><code>business.facebook.com/settings</code></a> に戻り、左上がお店の名前になっているか確かめます。</li>
-<li>左のメニューの「ユーザー」→<b>「パートナー」</b>→ 右上の<b>「＋追加」</b>→<b>「パートナーにアセットへのアクセスを許可」</b>を選びます（「…アクセスをリクエスト」は選びません）。</li>
-<li>「パートナーのビジネスIDを入力」に、次の番号を貼り付けて「次へ」。</li>
+<li>左のメニューの「ユーザー」→<b>「パートナー」</b>→ 右上の<b>「＋追加する」</b>→<b>「パートナーにあなたのアセットへのアクセスを許可」</b>を選びます（下の「アセットをあなたに割り当てるようパートナーに依頼」は選びません）。</li>
+<li>下の「番号をコピーする」を押してから、「パートナーのビジネスIDを入力」の欄を押して貼り付け（Windowsは Ctrl＋V、Macは ⌘＋V）、「次へ」を押します。</li>
 </ol>
 <p class="id">3286784271457726</p>
+<button type="button" class="copy" data-copy="3286784271457726">番号をコピーする</button>
 <p class="lead">株式会社しっとるのビジネスIDです（どのお店でも同じ番号です）。</p>
+<div class="figs"><figure><a href="pt00.jpg" target="_blank" rel="noopener"><img src="pt00.jpg" alt="① 左のメニューの「パートナー」" loading="lazy"></a><figcaption>① 左のメニューの「パートナー」</figcaption></figure><figure><a href="pt01.jpg" target="_blank" rel="noopener"><img src="pt01.jpg" alt="②「＋追加する」　③「パートナーにあなたのアセットへのアクセスを許可」" loading="lazy"></a><figcaption>②「＋追加する」　③「パートナーにあなたのアセットへのアクセスを許可」</figcaption></figure><figure><a href="pt02.jpg" target="_blank" rel="noopener"><img src="pt02.jpg" alt="① しっとるのビジネスIDを貼り付け　②「次へ」" loading="lazy"></a><figcaption>① しっとるのビジネスIDを貼り付け　②「次へ」</figcaption></figure></div>
 <ol start="4">
-<li>左の「アセットタイプを選択」で次の3つを順に選び、お店のものにチェックを入れて、右のスイッチをオンにします。</li>
+<li>左の「アセットタイプを選択」で、下の表の順に選び、お店のものにチェックを入れて、右のスイッチをオンにします。上の3つ（広告アカウント・Facebookページ・Instagramアカウント）は必ず行います。下の2つは、一覧に出たとき・お持ちのときだけで大丈夫です。</li>
 </ol>
 <div class="tbl"><table>
 <tr><th>選ぶもの</th><th>オンにするもの</th></tr>
 <tr><td>広告アカウント</td><td>いちばん下のフルアクセス<b>「広告アカウントの管理」</b></td></tr>
-<tr><td>Facebookページ</td><td>いちばん下の<b>フルアクセス</b>のスイッチ（「すべて」「すべて管理」などと出ます）</td></tr>
-<tr><td>Instagramアカウント</td><td>いちばん下の<b>フルアクセス</b>のスイッチ（「すべて」「すべて管理」などと出ます）</td></tr>
+<tr><td>Facebookページ</td><td>右の欄を下まで動かし、いちばん下の<b>「フルアクセス許可」</b>のスイッチ（「すべて（デリケートなアクションを除く）」と出ます）</td></tr>
+<tr><td>Instagramアカウント</td><td>右の欄を下まで動かし、いちばん下の<b>「フルアクセス許可」</b>の「すべて」のスイッチ（上の「広告」「インサイト」だけでは足りません）</td></tr>
 <tr><td>Threadsプロフィール（一覧に出たとき）</td><td>お店のThreadsにチェックを入れ、<b>「広告」</b>に関わるスイッチをオン（一覧に出ないときは飛ばして大丈夫です）</td></tr>
 <tr><td>データセット（ピクセル）（お持ちの方だけ）</td><td>ホームページや予約ページにMetaのピクセルをすでに入れている方は、そのデータセットを選び、いちばん下のフルアクセスをオン。お持ちでない方は飛ばして大丈夫です（しっとるで用意します）</td></tr>
 </table></div>
@@ -373,11 +403,11 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <div class="box info"><b class="h">データセット（ピクセル）とは</b><p>広告を見た方が、ホームページで予約やお申し込みをしたかを数えるための仕組みです。これがあると、広告の成果を「予約何件」で見られます。</p></div>
 <ol start="5">
 <li>フルアクセスをオンにすると、上の「広告」「コンテンツ」などのスイッチもまとめてオンになります。そのままで大丈夫です。ボタンが「保存」と出ていても「次へ」で進みます。</li>
-<li>確認の画面で<b>「Confirm」</b>。「もう少しで完了です」と出たら「アカウントを認証」を押し、案内どおりに進めます。</li>
+<li>確認の画面は、英語で出ることがあります。お店の広告アカウント・ページ・Instagramが並んでいれば、右下の青い<b>「Confirm」</b>を押します。「もう少しで完了です」と出たら「アカウントを認証」を押し、画面の案内どおりに進めます。パスワードやスマホに届く番号を求められたら、ご本人が入れてください（しっとるにお伝えいただく必要はありません）。</li>
 </ol>
-<div class="figs"><figure><img src="zm09.jpg" alt="しっとるのビジネスIDを入れて「次へ」" loading="lazy"><figcaption>しっとるのビジネスIDを入れて「次へ」</figcaption></figure><figure><img src="zm10.jpg" alt="広告アカウント：フルアクセス「広告アカウントの管理」をオン" loading="lazy"><figcaption>広告アカウント：フルアクセス「広告アカウントの管理」をオン</figcaption></figure><figure><img src="zm11.jpg" alt="Instagramアカウント：いちばん下のフルアクセスをオン（見本はスイッチを入れる前の画面です。Facebookページも同じ）" loading="lazy"><figcaption>Instagramアカウント：いちばん下のフルアクセスをオン（見本はスイッチを入れる前の画面です。Facebookページも同じ）</figcaption></figure><figure><img src="zm12.jpg" alt="確認の画面。広告アカウント（フルアクセス）・ページ・Instagramが出ていれば「Confirm」" loading="lazy"><figcaption>確認の画面。広告アカウント（フルアクセス）・ページ・Instagramが出ていれば「Confirm」</figcaption></figure><figure><img src="zm13.jpg" alt="「もう少しで完了です」→「アカウントを認証」" loading="lazy"><figcaption>「もう少しで完了です」→「アカウントを認証」</figcaption></figure><figure><img src="zm14.jpg" alt="「パートナー」の一覧に株式会社しっとるが出て、渡したものが並んでいれば完了" loading="lazy"><figcaption>「パートナー」の一覧に株式会社しっとるが出て、渡したものが並んでいれば完了</figcaption></figure></div>
+<div class="figs"><figure><a href="zm10.jpg" target="_blank" rel="noopener"><img src="zm10.jpg" alt="広告アカウント：フルアクセス「広告アカウントの管理」をオン" loading="lazy"></a><figcaption>広告アカウント：フルアクセス「広告アカウントの管理」をオン</figcaption></figure><figure><a href="pt03.jpg" target="_blank" rel="noopener"><img src="pt03.jpg" alt="Facebookページ：① 種類を選ぶ　② お店のページにチェック　③ いちばん下の「フルアクセス許可」をオン" loading="lazy"></a><figcaption>Facebookページ：① 種類を選ぶ　② お店のページにチェック　③ いちばん下の「フルアクセス許可」をオン</figcaption></figure><figure><a href="pt04.jpg" target="_blank" rel="noopener"><img src="pt04.jpg" alt="Instagramアカウント：① 種類を選ぶ　② お店のInstagramにチェック　③ いちばん下の「フルアクセス許可」の「すべて」をオン" loading="lazy"></a><figcaption>Instagramアカウント：① 種類を選ぶ　② お店のInstagramにチェック　③ いちばん下の「フルアクセス許可」の「すべて」をオン</figcaption></figure><figure><a href="zm12.jpg" target="_blank" rel="noopener"><img src="zm12.jpg" alt="確認の画面。広告アカウント・Facebookページ・Instagramの3つが出ていて、それぞれの下に「フルアクセス」と書かれていれば「Confirm」（見本は、Instagramが一部の許可のままの画面です。この形なら「戻る」でフルアクセスに直してください）" loading="lazy"></a><figcaption>確認の画面。広告アカウント・Facebookページ・Instagramの3つが出ていて、それぞれの下に「フルアクセス」と書かれていれば「Confirm」（見本は、Instagramが一部の許可のままの画面です。この形なら「戻る」でフルアクセスに直してください）</figcaption></figure><figure><a href="zm13.jpg" target="_blank" rel="noopener"><img src="zm13.jpg" alt="「もう少しで完了です」→「アカウントを認証」" loading="lazy"></a><figcaption>「もう少しで完了です」→「アカウントを認証」</figcaption></figure><figure><a href="zm14.jpg" target="_blank" rel="noopener"><img src="zm14.jpg" alt="「パートナー」の一覧で株式会社しっとるを押し、広告アカウント・Facebookページ・Instagramの3つに「フルアクセス」と出ていれば完了（見本は2件だけの古い画面です）" loading="lazy"></a><figcaption>「パートナー」の一覧で株式会社しっとるを押し、広告アカウント・Facebookページ・Instagramの3つに「フルアクセス」と出ていれば完了（見本は2件だけの古い画面です）</figcaption></figure></div>
 <div class="box info"><b class="h">あとから入れ忘れに気づいたとき</b><p>やり直す必要はありません。「パートナー」→ 株式会社しっとる → 右上の<b>「アセットを割り当てる」</b>で、足りない分を選んでフルアクセスをオンにすれば足せます。ページやInstagramを一部の許可で渡していた方も、同じ場所でフルアクセスに変えられます。</p></div>
-<div class="figs"><figure><img src="zm15.jpg" alt="パートナー「株式会社しっとる」→ 右上の「アセットを割り当てる」" loading="lazy"><figcaption>パートナー「株式会社しっとる」→ 右上の「アセットを割り当てる」</figcaption></figure></div>
+<div class="figs"><figure><a href="pt05.jpg" target="_blank" rel="noopener"><img src="pt05.jpg" alt="パートナーの一覧で株式会社しっとるを押し、① 右上の「アセットを割り当てる」。足りないものを選んでチェックを入れ、フルアクセスをオンにして「アセットを割り当てる」" loading="lazy"></a><figcaption>パートナーの一覧で株式会社しっとるを押し、① 右上の「アセットを割り当てる」。足りないものを選んでチェックを入れ、フルアクセスをオンにして「アセットを割り当てる」</figcaption></figure></div>
 </section>
 
 <section class="step" id="multi">
@@ -397,7 +427,7 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <section class="step" id="done">
 <h2>終わったら</h2>
 <span class="who">お客様の作業は、ここまでです</span>
-<p>グループLINEで<b>「権限を渡しました」</b>と一言お送りください。</p>
+<p>グループLINEで、次のどちらかを一言お送りください。</p><ul><li>Bの方（全部ご自身で進めた方）：<b>「権限を渡しました」</b></li><li>Aの方（担当を招待した方）：<b>「担当を招待しました」</b>（しっとるが招待を受け取り、残りを進めます）</li></ul>
 <div class="box ok"><b class="h">そのあと、株式会社しっとるが行うこと</b><ul>
 <li>受け取った許可を、しっとるの担当に割り当てる</li>
 <li>広告費のカードが「有効」になっているか確かめる</li>
@@ -416,7 +446,7 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <li>ビジネス設定の「Threadsプロフィール」に、お店のThreadsが出ている</li>
 <li>広告アカウント（Asia/Tokyo・日本円）がある</li>
 <li>カードが登録され、「有効」になっている</li>
-<li>パートナーに株式会社しっとるが出ていて、広告アカウント・ページ・Instagramの3つを<b>フルアクセス</b>で渡している</li>
+<li>パートナーに株式会社しっとるが出ていて、広告アカウント・ページ・Instagramの3つを<b>フルアクセス</b>で渡している（Aの方は、しっとるが設定したあとに出ます。この行は飛ばして大丈夫です）</li>
 </ul>
 </section>
 
@@ -424,14 +454,14 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 <h2>うまくいかないとき</h2>
 <div class="tbl"><table>
 <tr><th>出たこと</th><th>考えられること</th><th>すること</th></tr>
-<tr><td>「アセットが割り当てられませんでした」「既存の所有権を削除できませんでした」</td><td>別の会社の管理画面に入ったまま。またはページ・Instagram・広告アカウントが別々のポートフォリオに入っている</td><td>「はじめる前に」を確かめ、画面の写真をLINEへ</td></tr>
+<tr><td>「アセットが割り当てられませんでした」「既存の所有権を削除できませんでした」</td><td>別の会社の管理画面に入ったまま。またはページ・Instagram・広告アカウントが別々のポートフォリオに入っている</td><td><a href="#prev-agency">「以前ほかの会社に広告や運用を頼んでいた方へ」</a>を確かめ、画面の写真をLINEへ</td></tr>
 <tr><td>「ビジネスポートフォリオ用に別の名前を選択してください」</td><td>名前に記号・全部大文字の英字・一般的すぎる言葉などが入っている</td><td><a href="#name-error">手順2の「別の名前を選択してください」と出たとき</a></td></tr>
 <tr id="restricted"><td>「アカウントが制限されました」「このビジネスポートフォリオを広告に利用することはできません」</td><td>久しぶりに使うFacebookアカウントで設定を続けて行ったため、安全確認で一時的に止められている</td><td>「詳細を見る」→「審査をリクエスト」を押し、案内どおりに<b>ご本人が</b>本人確認を進めます。身分証を出すときは、Zoomの画面共有を止めてください。スマホで同じ画面を開くと、写真をそのまま出せます。結果はメールで届きます。待っている間は、新しく作る操作を続けないでください（しっとるの担当を招待済みなら、こちらで進められる分を進めます）。</td></tr>
 <tr><td>左上の一覧に、お店のビジネスポートフォリオが出ない</td><td>別のFacebookアカウントで作られている。またはInstagramをプロアカウントにしたときに自動でできている</td><td>すぐに新しく作らず、Instagramアプリの「プロフィールを編集」の画面の写真をLINEへ。どこに入っているかを確かめてから進めます</td></tr>
 <tr><td>「使用できるThreadsプロフィールがありません」</td><td>Threadsのプロフィールを作っただけで、ビジネスポートフォリオに追加していない</td><td><a href="#s4b">手順4-2</a>の3を行い、「Threadsプロフィール」の一覧にお店のThreadsが出るか確かめます</td></tr>
-<tr><td>しっとるから「ページとInstagramがつながっていない」と連絡が来た</td><td>InstagramがFacebookページにリンクされていない。つなぐ操作は、お店の側でしかできません</td><td>しっとるからお送りする手順で、お店のInstagramをページにつなぎます。つながっていなくても、Instagramを渡していただいていれば、投稿の代行は進められます</td></tr>
+<tr><td>しっとるから「ページとInstagramがつながっていない」と連絡が来た</td><td>InstagramがFacebookページにリンクされていない。つなぐ操作は、お店の側でしかできません</td><td><a href="#s4">手順4</a>のとおりに、お店のInstagramをページにつなぎます。Instagramアプリの「プロフィールを編集」にお店のページの名前が出れば完了です。つながっていない間も、写真の投稿はしっとるから代わりに行えますが、縦長の動画（リール）は、つないでからでないと、しっとるからは投稿できません。分からないときは、画面の写真をLINEへ。</td></tr>
 <tr><td>しっとるから「権限が足りない」と連絡が来た</td><td>ページやInstagramを、一部の許可（「広告」「コンテンツ」「インサイト」だけ）で渡している</td><td><a href="#s7">手順7</a>の「あとから入れ忘れに気づいたとき」の場所で、ページとInstagramをフルアクセスに変えます</td></tr>
-<tr><td>Instagramを追加できない</td><td>別のページやポートフォリオにつながったまま</td><td>手順4の「別のページやポートフォリオにつながっていたとき」</td></tr>
+<tr><td>Instagramを追加できない</td><td>別のページやポートフォリオにつながったまま</td><td><a href="#relink">手順4の「Instagramが別のページやポートフォリオにつながっていたとき」</a></td></tr>
 <tr><td>カードが登録できない</td><td>本人確認が終わっていない。ネット決済や海外利用が止められている</td><td>カード会社に確認。続けて失敗したら24〜48時間あけて再度</td></tr>
 <tr><td>本人確認・コードを求められた</td><td>Metaの安全確認</td><td>画面の案内どおりに、ご本人が進める</td></tr>
 <tr><td>名前やボタンが違う</td><td>Metaの画面の言葉は、ときどき変わります</td><td>押す前に画面の写真をLINEへ。押す場所を文字でお返しします</td></tr>
@@ -444,5 +474,8 @@ a.ext{color:inherit;text-decoration:underline;text-underline-offset:3px;word-bre
 
 </div>
 <div style="height:40px"></div>
+<script>
+document.querySelectorAll('button.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.getAttribute('data-copy');function done(){b.textContent='コピーしました'}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,function(){prompt('この番号をコピーしてください',t)})}else{prompt('この番号をコピーしてください',t)}})});
+</script>
 </body>
 </html>
